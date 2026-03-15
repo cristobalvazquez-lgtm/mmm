@@ -11,108 +11,104 @@
   .container { max-width: 1000px; margin: auto; }
 
   /* HEADER */
-  .header { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: #fff; border-radius: 16px; padding: 32px 36px; margin-bottom: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.18); }
+  .header { background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: #fff; border-radius: 16px; padding: 32px 36px; margin-bottom: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
   .header-title { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.5px; }
-  .header-subtitle { font-size: 0.95rem; color: #94a3b8; margin-top: 4px; }
-  .header-meta { display: flex; gap: 24px; flex-wrap: wrap; }
-  .header-badge { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; padding: 10px 18px; text-align: center; }
-  .header-badge .num { font-size: 1.5rem; font-weight: 800; color: #f1f5f9; }
-  .header-badge .lbl { font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
+  .header-subtitle { font-size: 0.9rem; color: #94a3b8; margin-top: 4px; }
+  .header-meta { display: flex; gap: 20px; flex-wrap: wrap; }
+  .meta-pill { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 10px 18px; text-align: center; }
+  .meta-pill .val { font-size: 1.5rem; font-weight: 700; color: #fff; }
+  .meta-pill .lbl { font-size: 0.72rem; color: #cbd5e1; text-transform: uppercase; letter-spacing: 0.5px; }
 
-  /* SECTION TITLE */
-  .section-title { font-size: 1.15rem; font-weight: 700; color: #1e293b; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; display: flex; align-items: center; gap: 8px; }
-  .section-title span.icon { font-size: 1.2rem; }
+  /* SECTION TITLES */
+  .section-title { font-size: 1.1rem; font-weight: 700; color: #334155; margin: 32px 0 16px; padding-left: 12px; border-left: 4px solid #3b82f6; }
 
   /* DASHBOARD CARDS */
-  .dashboard-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
-  .dash-card { background: #fff; border-radius: 14px; padding: 22px 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); border-left: 5px solid #22c55e; }
-  .dash-card.worst { border-left-color: #ef4444; }
-  .dash-card.avg { border-left-color: #3b82f6; }
-  .dash-card .dc-label { font-size: 0.75rem; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .dash-card .dc-name { font-size: 1.05rem; font-weight: 800; color: #1e293b; margin-bottom: 4px; }
-  .dash-card .dc-rating { font-size: 1.6rem; font-weight: 900; }
-  .dash-card.best .dc-rating { color: #22c55e; }
-  .dash-card.worst .dc-rating { color: #ef4444; }
-  .dash-card.avg .dc-rating { color: #3b82f6; }
-  .dash-card .dc-city { font-size: 0.8rem; color: #94a3b8; margin-top: 2px; }
+  .dash-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+  .dash-card { background: #fff; border-radius: 14px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); text-align: center; }
+  .dash-card .dc-icon { font-size: 2rem; margin-bottom: 6px; }
+  .dash-card .dc-label { font-size: 0.72rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .dash-card .dc-name { font-size: 1rem; font-weight: 700; color: #1e293b; margin-bottom: 4px; }
+  .dash-card .dc-val { font-size: 1.5rem; font-weight: 800; }
+  .dc-green { color: #22c55e; }
+  .dc-yellow { color: #f59e0b; }
+  .dc-red { color: #ef4444; }
+  .dc-blue { color: #3b82f6; }
 
   /* CHART */
-  .chart-card { background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 28px; }
-  .chart-wrap { position: relative; height: 260px; }
+  .chart-card { background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 28px; }
+  .chart-card h3 { font-size: 0.95rem; font-weight: 600; color: #64748b; margin-bottom: 16px; }
+  .chart-wrap { position: relative; height: 240px; }
 
   /* RESTAURANT CARDS */
-  .rest-section { margin-bottom: 28px; }
-  .rest-card { background: #fff; border-radius: 14px; padding: 26px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 20px; }
-  .rest-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9; }
+  .rest-card { background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); margin-bottom: 20px; }
+  .rest-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #f1f5f9; }
   .rest-name { font-size: 1.2rem; font-weight: 800; color: #1e293b; }
-  .rest-city { font-size: 0.82rem; color: #64748b; margin-top: 3px; }
-  .rest-rating-box { text-align: right; }
-  .rest-stars { font-size: 1.2rem; color: #f59e0b; }
-  .rest-num { font-size: 1.8rem; font-weight: 900; color: #1e293b; line-height: 1; }
-  .rest-resenas { font-size: 0.78rem; color: #94a3b8; margin-top: 2px; }
+  .rest-city { font-size: 0.82rem; color: #64748b; margin-top: 2px; }
+  .rest-rating-block { text-align: right; }
+  .rest-stars { font-size: 1.1rem; color: #f59e0b; }
+  .rest-rating-num { font-size: 1.8rem; font-weight: 800; }
+  .rest-resenas { font-size: 0.75rem; color: #94a3b8; margin-top: 2px; }
+  .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .reviews-col-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+  .pos-title { color: #16a34a; }
+  .neg-title { color: #dc2626; }
+  .review-item { border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; font-size: 0.82rem; line-height: 1.5; }
+  .review-pos { background: #dcfce7; border-left: 3px solid #22c55e; }
+  .review-neg { background: #fee2e2; border-left: 3px solid #ef4444; }
+  .review-icon { margin-right: 4px; }
+  .review-text { color: #1e293b; margin-bottom: 6px; }
+  .review-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+  .review-tag { background: rgba(0,0,0,0.06); border-radius: 5px; padding: 2px 7px; font-size: 0.7rem; color: #475569; }
+  .review-stars-small { color: #f59e0b; font-size: 0.75rem; }
 
-  .comments-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .comment-col-title { font-size: 0.85rem; font-weight: 700; color: #374151; margin-bottom: 10px; }
-  .comment-item { border-radius: 10px; padding: 14px; margin-bottom: 10px; }
-  .comment-item.pos { background: #dcfce7; border: 1px solid #bbf7d0; }
-  .comment-item.neg { background: #fee2e2; border: 1px solid #fecaca; }
-  .comment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-  .comment-icon { font-size: 1rem; }
-  .comment-rating { font-size: 0.78rem; font-weight: 700; background: #fff; padding: 2px 8px; border-radius: 20px; }
-  .comment-rating.pos { color: #16a34a; }
-  .comment-rating.neg { color: #dc2626; }
-  .comment-text { font-size: 0.82rem; color: #374151; line-height: 1.5; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-  .comment-meta { display: flex; flex-wrap: wrap; gap: 6px; }
-  .comment-tag { font-size: 0.7rem; background: rgba(255,255,255,0.7); border-radius: 6px; padding: 2px 8px; color: #475569; font-weight: 500; }
-
-  /* TABLE */
-  .table-card { background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 28px; overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
-  thead tr { background: #f1f5f9; }
-  th { padding: 12px 14px; text-align: left; font-weight: 700; color: #475569; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.4px; }
-  td { padding: 13px 14px; border-bottom: 1px solid #f1f5f9; color: #1e293b; }
+  /* TABLA COMPARATIVA */
+  .table-wrap { overflow-x: auto; margin-bottom: 28px; }
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+  thead { background: #1e293b; color: #fff; }
+  th { padding: 13px 16px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; text-align: left; }
+  td { padding: 13px 16px; font-size: 0.85rem; border-bottom: 1px solid #f1f5f9; color: #334155; }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: #f8fafc; }
-  .status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
-  .status-green { background: #dcfce7; color: #16a34a; }
-  .status-yellow { background: #fef9c3; color: #b45309; }
-  .status-red { background: #fee2e2; color: #dc2626; }
-  .table-stars { color: #f59e0b; font-size: 0.9rem; }
+  .status-badge { display: inline-block; border-radius: 20px; padding: 3px 12px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+  .badge-green { background: #dcfce7; color: #16a34a; }
+  .badge-yellow { background: #fef9c3; color: #a16207; }
+  .badge-red { background: #fee2e2; color: #dc2626; }
 
   /* ALERTAS */
-  .alert-card { background: #fff5f5; border: 1.5px solid #fca5a5; border-radius: 14px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 28px; }
-  .alert-title { font-size: 1.05rem; font-weight: 800; color: #b91c1c; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-  .alert-rest-name { font-weight: 800; color: #dc2626; font-size: 0.95rem; margin-bottom: 8px; }
-  .alert-problem { background: #fee2e2; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; font-size: 0.85rem; color: #7f1d1d; display: flex; align-items: flex-start; gap: 8px; }
-  .alert-problem .ap-icon { flex-shrink: 0; }
-  .no-alert { color: #16a34a; font-weight: 600; font-size: 0.9rem; }
+  .alert-box { background: #fff0f0; border: 1.5px solid #fca5a5; border-radius: 14px; padding: 22px 24px; margin-bottom: 28px; }
+  .alert-box .alert-header { display: flex; align-items: center; gap: 10px; font-size: 1rem; font-weight: 700; color: #dc2626; margin-bottom: 14px; }
+  .alert-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+  .alert-dot { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; flex-shrink: 0; margin-top: 6px; }
+  .alert-text { font-size: 0.85rem; color: #7f1d1d; line-height: 1.5; }
+  .alert-text strong { color: #dc2626; }
+  .no-alert { background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 14px; padding: 18px 22px; margin-bottom: 28px; color: #16a34a; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
 
   /* RECOMENDACIONES */
-  .rec-card { background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 28px; }
-  .rec-section-title { font-size: 0.88rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
-  .rec-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-radius: 10px; margin-bottom: 10px; }
-  .rec-item.low { background: #fef2f2; border: 1px solid #fecaca; }
-  .rec-item.high { background: #f0fdf4; border: 1px solid #bbf7d0; }
-  .rec-num { background: #ef4444; color: #fff; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.82rem; flex-shrink: 0; }
-  .rec-num.green { background: #22c55e; }
-  .rec-text { font-size: 0.88rem; color: #374151; line-height: 1.5; }
-  .rec-text strong { color: #1e293b; }
+  .reco-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 28px; }
+  .reco-card { border-radius: 12px; padding: 18px 20px; }
+  .reco-action { background: #eff6ff; border-left: 4px solid #3b82f6; }
+  .reco-maintain { background: #f0fdf4; border-left: 4px solid #22c55e; }
+  .reco-num { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .reco-action .reco-num { color: #2563eb; }
+  .reco-maintain .reco-num { color: #16a34a; }
+  .reco-title { font-size: 0.9rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
+  .reco-desc { font-size: 0.8rem; color: #475569; line-height: 1.55; }
 
   /* FOOTER */
-  .footer { text-align: center; color: #94a3b8; font-size: 0.78rem; padding: 16px 0 8px; }
+  .footer { text-align: center; color: #94a3b8; font-size: 0.75rem; padding: 20px 0 4px; }
 
-  /* RESPONSIVE */
   @media (max-width: 600px) {
-    .header { flex-direction: column; padding: 22px 18px; }
-    .header-title { font-size: 1.25rem; }
+    .header { flex-direction: column; padding: 22px 20px; }
+    .header-title { font-size: 1.2rem; }
     .header-meta { gap: 10px; }
-    .header-badge { padding: 8px 12px; }
-    .dashboard-cards { grid-template-columns: 1fr; }
-    .comments-grid { grid-template-columns: 1fr; }
+    .meta-pill { padding: 8px 12px; }
+    .meta-pill .val { font-size: 1.2rem; }
+    .dash-cards { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .reco-grid { grid-template-columns: 1fr; }
+    .chart-wrap { height: 180px; }
     .rest-header { flex-direction: column; }
-    .rest-rating-box { text-align: left; }
-    th, td { padding: 9px 8px; font-size: 0.78rem; }
-    .chart-wrap { height: 200px; }
+    .rest-rating-block { text-align: left; }
   }
 </style>
 </head>
@@ -123,332 +119,322 @@
   <div class="header">
     <div>
       <div class="header-title">📊 Reporte Google — Grupo Andersons</div>
-      <div class="header-subtitle">Análisis de reseñas y experiencia de cliente</div>
+      <div class="header-subtitle">Análisis de reseñas de clientes · Generado el 15/3/2026</div>
     </div>
     <div class="header-meta">
-      <div class="header-badge">
-        <div class="num">15/3/2026</div>
-        <div class="lbl">Fecha del reporte</div>
-      </div>
-      <div class="header-badge">
-        <div class="num">3</div>
+      <div class="meta-pill">
+        <div class="val">3</div>
         <div class="lbl">Restaurantes</div>
       </div>
-      <div class="header-badge">
-        <div class="num">540</div>
-        <div class="lbl">Total reseñas</div>
+      <div class="meta-pill">
+        <div class="val">180</div>
+        <div class="lbl">Reseñas</div>
+      </div>
+      <div class="meta-pill">
+        <div class="val">4.9</div>
+        <div class="lbl">Promedio Global</div>
       </div>
     </div>
   </div>
 
   <!-- DASHBOARD GENERAL -->
-  <div class="section-title"><span class="icon">🏆</span> Dashboard General</div>
-
-  <div class="dashboard-cards">
-    <div class="dash-card best">
-      <div class="dc-label">🥇 Mejor Restaurante</div>
+  <div class="section-title">Dashboard General</div>
+  <div class="dash-cards">
+    <div class="dash-card">
+      <div class="dc-icon">🏆</div>
+      <div class="dc-label">Mejor Restaurante</div>
       <div class="dc-name">Porfirio's Cancún</div>
-      <div class="dc-rating">4.9 ★</div>
-      <div class="dc-city">📍 Cancún</div>
+      <div class="dc-val dc-green">4.9 ★</div>
     </div>
-    <div class="dash-card worst">
-      <div class="dc-label">⚠️ Atención Prioritaria</div>
+    <div class="dash-card">
+      <div class="dc-icon">📉</div>
+      <div class="dc-label">Restaurante a Mejorar</div>
       <div class="dc-name">Ilios</div>
-      <div class="dc-rating">4.9 ★</div>
-      <div class="dc-city">📍 Cancún — Negativos rating 2</div>
+      <div class="dc-val dc-green">4.9 ★</div>
     </div>
-    <div class="dash-card avg">
-      <div class="dc-label">📈 Promedio Global</div>
+    <div class="dash-card">
+      <div class="dc-icon">📊</div>
+      <div class="dc-label">Promedio Global</div>
       <div class="dc-name">Grupo Andersons</div>
-      <div class="dc-rating">4.9 ★</div>
-      <div class="dc-city">3 restaurantes · 540 reseñas</div>
+      <div class="dc-val dc-green">4.9 ★</div>
     </div>
   </div>
 
-  <!-- CHART -->
   <div class="chart-card">
-    <div class="section-title" style="margin-bottom:18px;"><span class="icon">📊</span> Comparativa de Rating por Restaurante</div>
+    <h3>Comparativa de Rating Promedio por Restaurante</h3>
     <div class="chart-wrap">
-      <canvas id="ratingsChart"></canvas>
+      <canvas id="barChart"></canvas>
     </div>
   </div>
 
   <!-- SECCIÓN POR RESTAURANTE -->
-  <div class="section-title"><span class="icon">🍽️</span> Análisis por Restaurante</div>
-  <div class="rest-section">
+  <div class="section-title">Análisis por Restaurante</div>
 
-    <!-- Porfirio's Cancún -->
-    <div class="rest-card">
-      <div class="rest-header">
-        <div>
-          <div class="rest-name">Porfirio's Cancún</div>
-          <div class="rest-city">📍 Cancún</div>
+  <!-- Porfirio's Cancún -->
+  <div class="rest-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">🍽️ Porfirio's Cancún</div>
+        <div class="rest-city">📍 Cancún</div>
+      </div>
+      <div class="rest-rating-block">
+        <div class="rest-stars">★★★★★</div>
+        <div class="rest-rating-num dc-green">4.9</div>
+        <div class="rest-resenas">60 reseñas analizadas</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div>
+        <div class="reviews-col-title pos-title">✅ Top Comentarios Positivos</div>
+        <div class="review-item review-pos">
+          <div class="review-text"><span class="review-icon">✅</span><strong>ESPECTACULAR</strong> — ESPECTACULAR, la atención, la rapidez y el sitio sin igual.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★★★</span>
+            <span class="review-tag">⭐ 5</span>
+            <span class="review-tag">📅 2026-03-09</span>
+            <span class="review-tag">👨‍👩‍👧 FAMILY</span>
+            <span class="review-tag">🌐 OTHER</span>
+          </div>
         </div>
-        <div class="rest-rating-box">
-          <div class="rest-stars">★★★★★</div>
-          <div class="rest-num">4.9</div>
-          <div class="rest-resenas">180 reseñas analizadas</div>
+        <div class="review-item review-pos">
+          <div class="review-text"><span class="review-icon">✅</span><strong>⭐️⭐️⭐️⭐️⭐️</strong> — Mi amiga y yo fuimos a cenar a Porfirio's esta noche y ¡fue nuestra mejor comida! El ambiente, nuestro mesero Eric y la comida fueron perfectos.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★★★</span>
+            <span class="review-tag">⭐ 5</span>
+            <span class="review-tag">📅 2026-03-08</span>
+            <span class="review-tag">👫 FRIENDS</span>
+            <span class="review-tag">🌐 OTHER</span>
+          </div>
+        </div>
+        <div class="review-item review-pos">
+          <div class="review-text"><span class="review-icon">✅</span><strong>Excellent service</strong> — The food is delicious and the service first, Merida served us super well!</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★★★</span>
+            <span class="review-tag">⭐ 5</span>
+            <span class="review-tag">📅 2026-03-07</span>
+            <span class="review-tag">👫 FRIENDS</span>
+            <span class="review-tag">🌐 OTHER</span>
+          </div>
         </div>
       </div>
-      <div class="comments-grid">
-        <div>
-          <div class="comment-col-title">✅ Top 3 Comentarios Positivos</div>
-          <div class="comment-item pos">
-            <div class="comment-header">
-              <span class="comment-icon">✅</span>
-              <span class="comment-rating pos">⭐ 5/5</span>
-            </div>
-            <div class="comment-text">ESPECTACULAR, la atención, la rapidez y el sitio sin igual</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-09</span>
-              <span class="comment-tag">👨‍👩‍👧 FAMILY</span>
-              <span class="comment-tag">🌐 OTHER</span>
-            </div>
-          </div>
-          <div class="comment-item pos">
-            <div class="comment-header">
-              <span class="comment-icon">✅</span>
-              <span class="comment-rating pos">⭐ 5/5</span>
-            </div>
-            <div class="comment-text">Mi amiga y yo fuimos a cenar a Porfirio's esta noche y ¡fue nuestra mejor comida! Entre el ambiente, nuestro mesero Eric y la comida, ¡no te puedes equivocar con nada!</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-08</span>
-              <span class="comment-tag">👫 FRIENDS</span>
-              <span class="comment-tag">🌐 OTHER</span>
-            </div>
-          </div>
-          <div class="comment-item pos">
-            <div class="comment-header">
-              <span class="comment-icon">✅</span>
-              <span class="comment-rating pos">⭐ 5/5</span>
-            </div>
-            <div class="comment-text">The food is delicious and the service first, Merida served us super well!</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-07</span>
-              <span class="comment-tag">👫 FRIENDS</span>
-              <span class="comment-tag">🌐 OTHER</span>
-            </div>
+      <div>
+        <div class="reviews-col-title neg-title">⚠️ Top Comentarios Negativos</div>
+        <div class="review-item review-neg">
+          <div class="review-text"><span class="review-icon">⚠️</span><strong>100% MEXICO 🇲🇽</strong> — Nice atmosphere and music enjoyable, food delicious. I would only improve the service, for my taste it was nothing extraordinary and did not go beyond my expectations.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★☆☆</span>
+            <span class="review-tag">⭐ 3</span>
+            <span class="review-tag">📅 2026-02-21</span>
+            <span class="review-tag">👫 FRIENDS</span>
+            <span class="review-tag">📱 MOBILE</span>
           </div>
         </div>
-        <div>
-          <div class="comment-col-title">⚠️ Top 3 Comentarios Negativos</div>
-          <div class="comment-item neg">
-            <div class="comment-header">
-              <span class="comment-icon">⚠️</span>
-              <span class="comment-rating neg">⭐ 3/5</span>
-            </div>
-            <div class="comment-text">Nice atmosphere, music and mariachis show enjoyable, the food is super delicious. I would only improve the service, for my taste it was nothing extraordinary and did not go beyond my expectations.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-02-21</span>
-              <span class="comment-tag">👫 FRIENDS</span>
-              <span class="comment-tag">📱 MOBILE</span>
-            </div>
-          </div>
-          <div class="comment-item neg">
-            <div class="comment-header">
-              <span class="comment-icon">⚠️</span>
-              <span class="comment-rating neg">⭐ 3/5</span>
-            </div>
-            <div class="comment-text">Nice atmosphere, music and mariachis show enjoyable, the food is super delicious. THE BEST CHURROS I'VE EVER EATEN! I would only improve the service, it was nothing extraordinary.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-02-21</span>
-              <span class="comment-tag">👫 FRIENDS</span>
-              <span class="comment-tag">📱 MOBILE</span>
-            </div>
-          </div>
-          <div class="comment-item neg">
-            <div class="comment-header">
-              <span class="comment-icon">⚠️</span>
-              <span class="comment-rating neg">⭐ 3/5</span>
-            </div>
-            <div class="comment-text">Nice atmosphere, music and mariachis show enjoyable, the food is super delicious. I would only improve the service, for my taste it was nothing extraordinary.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-02-21</span>
-              <span class="comment-tag">👫 FRIENDS</span>
-              <span class="comment-tag">📱 MOBILE</span>
-            </div>
+        <div class="review-item review-neg">
+          <div class="review-text"><span class="review-icon">⚠️</span><strong>100% MEXICO 🇲🇽</strong> — Nice atmosphere, music and mariachis enjoyable, food delicious. THE BEST CHURROS I'VE EVER EATEN! I would only improve the service, it did not go beyond expectations.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★☆☆</span>
+            <span class="review-tag">⭐ 3</span>
+            <span class="review-tag">📅 2026-02-21</span>
+            <span class="review-tag">👫 FRIENDS</span>
+            <span class="review-tag">📱 MOBILE</span>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Harry's Cancun -->
-    <div class="rest-card">
-      <div class="rest-header">
-        <div>
-          <div class="rest-name">Harry's Cancun</div>
-          <div class="rest-city">📍 Cancún</div>
+  <!-- Harry's Cancun -->
+  <div class="rest-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">🍷 Harry's Cancun</div>
+        <div class="rest-city">📍 Cancún</div>
+      </div>
+      <div class="rest-rating-block">
+        <div class="rest-stars">★★★★★</div>
+        <div class="rest-rating-num dc-green">4.9</div>
+        <div class="rest-resenas">60 reseñas analizadas</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div>
+        <div class="reviews-col-title pos-title">✅ Top Comentarios Positivos</div>
+        <div class="review-item review-pos">
+          <div class="review-text"><span class="review-icon">✅</span><strong>Glorious celebration</strong> — Gorgeous location. Exceptional food and service. Josmar and Marcos went above and beyond to make it an evening to remember ❤️</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★★★</span>
+            <span class="review-tag">⭐ 5</span>
+            <span class="review-tag">📅 2026-03-10</span>
+            <span class="review-tag">👫 FRIENDS</span>
+            <span class="review-tag">🌐 OTHER</span>
+          </div>
         </div>
-        <div class="rest-rating-box">
-          <div class="rest-stars">★★★★★</div>
-          <div class="rest-num">4.9</div>
-          <div class="rest-resenas">180 reseñas analizadas</div>
+        <div class="review-item review-pos">
+          <div class="review-text"><span class="review-icon">✅</span><strong>Best place for an amazing night</strong> — The best restaurant in Mexico. Thanks to Jair and Santiago for helping us have fun and very good food.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★★★</span>
+            <span class="review-tag">⭐ 5</span>
+            <span class="review-tag">📅 2026-03-06</span>
+            <span class="review-tag">👨‍👩‍👧 FAMILY</span>
+            <span class="review-tag">🌐 OTHER</span>
+          </div>
+        </div>
+        <div class="review-item review-pos">
+          <div class="review-text"><span class="review-icon">✅</span><strong>Amazing</strong> — Franco & Farfan were amazing, attentive, and friendly. Made my birthday dinner amazing with a beautiful birthday dessert and cotton candy. Outstanding!</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★★★</span>
+            <span class="review-tag">⭐ 5</span>
+            <span class="review-tag">📅 2026-03-05</span>
+            <span class="review-tag">👨‍👩‍👧 FAMILY</span>
+            <span class="review-tag">🌐 OTHER</span>
+          </div>
         </div>
       </div>
-      <div class="comments-grid">
-        <div>
-          <div class="comment-col-title">✅ Top 3 Comentarios Positivos</div>
-          <div class="comment-item pos">
-            <div class="comment-header">
-              <span class="comment-icon">✅</span>
-              <span class="comment-rating pos">⭐ 5/5</span>
-            </div>
-            <div class="comment-text">Gorgeous location. Exceptional food and service. I was celebrating 50 years of friendship with friends, and our 65th birthdays. Josmar and Marcos went above and beyond to make it an evening to remember ❤️</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-10</span>
-              <span class="comment-tag">👫 FRIENDS</span>
-              <span class="comment-tag">🌐 OTHER</span>
-            </div>
-          </div>
-          <div class="comment-item pos">
-            <div class="comment-header">
-              <span class="comment-icon">✅</span>
-              <span class="comment-rating pos">⭐ 5/5</span>
-            </div>
-            <div class="comment-text">The best restaurant in Mexico. Best place for a very amazing night. Thanks to Jair and Santiago for helping us have fun and very good food.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-06</span>
-              <span class="comment-tag">👨‍👩‍👧 FAMILY</span>
-              <span class="comment-tag">🌐 OTHER</span>
-            </div>
-          </div>
-          <div class="comment-item pos">
-            <div class="comment-header">
-              <span class="comment-icon">✅</span>
-              <span class="comment-rating pos">⭐ 5/5</span>
-            </div>
-            <div class="comment-text">Franco & Farfan were amazing. They were attentive, friendly and made my birthday dinner amazing. I was given a beautiful birthday dessert and a cotton candy present.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-05</span>
-              <span class="comment-tag">👨‍👩‍👧 FAMILY</span>
-              <span class="comment-tag">🌐 OTHER</span>
-            </div>
+      <div>
+        <div class="reviews-col-title neg-title">⚠️ Top Comentarios Negativos</div>
+        <div class="review-item review-neg">
+          <div class="review-text"><span class="review-icon">⚠️</span><strong>Disappointed</strong> — Reserved a table outside for 8pm, arrived on time, table was not available. Shown to the bar, no one came to ask for drinks order after 20 minutes. Experience was not that good.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★☆☆</span>
+            <span class="review-tag">⭐ 3</span>
+            <span class="review-tag">📅 2026-02-18</span>
+            <span class="review-tag">💑 COUPLES</span>
+            <span class="review-tag">🌐 OTHER</span>
           </div>
         </div>
-        <div>
-          <div class="comment-col-title">⚠️ Top 3 Comentarios Negativos</div>
-          <div class="comment-item neg">
-            <div class="comment-header">
-              <span class="comment-icon">⚠️</span>
-              <span class="comment-rating neg">⭐ 3/5</span>
-            </div>
-            <div class="comment-text">We had reserved a table outside for 8pm and arrived on time. The table was not available and so we were shown to the bar. No one came to ask for our drinks order after 20 minutes.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-02-18</span>
-              <span class="comment-tag">💑 COUPLES</span>
-              <span class="comment-tag">🌐 OTHER</span>
-            </div>
-          </div>
-          <div class="comment-item neg">
-            <div class="comment-header">
-              <span class="comment-icon">⚠️</span>
-              <span class="comment-rating neg">⭐ 3/5</span>
-            </div>
-            <div class="comment-text">We were looking forward to eating here after reading previous reviews, however our experience unfortunately was not that good. Reserved table was not available on arrival.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-02-18</span>
-              <span class="comment-tag">💑 COUPLES</span>
-              <span class="comment-tag">🌐 OTHER</span>
-            </div>
-          </div>
-          <div class="comment-item neg">
-            <div class="comment-header">
-              <span class="comment-icon">⚠️</span>
-              <span class="comment-rating neg">⭐ 3/5</span>
-            </div>
-            <div class="comment-text">We were looking forward to eating here after reading previous reviews, however our experience unfortunately was not that good. The table was not available and service was slow.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-02-18</span>
-              <span class="comment-tag">💑 COUPLES</span>
-              <span class="comment-tag">🌐 OTHER</span>
-            </div>
+        <div class="review-item review-neg">
+          <div class="review-text"><span class="review-icon">⚠️</span><strong>Disappointed</strong> — Expected great service after previous reviews, but table reserved was not ready on arrival and bar service was completely absent for over 20 minutes. Disappointing experience.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★☆☆</span>
+            <span class="review-tag">⭐ 3</span>
+            <span class="review-tag">📅 2026-02-18</span>
+            <span class="review-tag">💑 COUPLES</span>
+            <span class="review-tag">🌐 OTHER</span>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Ilios -->
-    <div class="rest-card">
-      <div class="rest-header">
-        <div>
-          <div class="rest-name">Ilios</div>
-          <div class="rest-city">📍 Cancún</div>
+  <!-- Ilios -->
+  <div class="rest-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">🏛️ Ilios</div>
+        <div class="rest-city">📍 Cancún</div>
+      </div>
+      <div class="rest-rating-block">
+        <div class="rest-stars">★★★★★</div>
+        <div class="rest-rating-num dc-green">4.9</div>
+        <div class="rest-resenas">60 reseñas analizadas</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div>
+        <div class="reviews-col-title pos-title">✅ Top Comentarios Positivos</div>
+        <div class="review-item review-pos">
+          <div class="review-text"><span class="review-icon">✅</span><strong>Favorite restaurant on this visit</strong> — Highly recommend! Outstanding service by Edu and Victor. All food consumed by the four of us was spectacular.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★★★</span>
+            <span class="review-tag">⭐ 5</span>
+            <span class="review-tag">📅 2026-03-09</span>
+            <span class="review-tag">👫 FRIENDS</span>
+            <span class="review-tag">📱 MOBILE</span>
+          </div>
         </div>
-        <div class="rest-rating-box">
-          <div class="rest-stars">★★★★★</div>
-          <div class="rest-num">4.9</div>
-          <div class="rest-resenas">180 reseñas analizadas</div>
+        <div class="review-item review-pos">
+          <div class="review-text"><span class="review-icon">✅</span><strong>Stunning All Around!</strong> — Edu & Victor took great care of us. The lamb shank braised 18 hours was exceptional. The view is breathtaking.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★★★</span>
+            <span class="review-tag">⭐ 5</span>
+            <span class="review-tag">📅 2026-03-09</span>
+            <span class="review-tag">💑 COUPLES</span>
+            <span class="review-tag">📱 MOBILE</span>
+          </div>
+        </div>
+        <div class="review-item review-pos">
+          <div class="review-text"><span class="review-icon">✅</span><strong>Excelente servicio</strong> — Queremos destacar el excelente servicio de José Miranda. Su atención fue impecable: siempre amable, profesional y muy atento a cada detalle.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★★★★</span>
+            <span class="review-tag">⭐ 5</span>
+            <span class="review-tag">📅 2026-03-09</span>
+            <span class="review-tag">👨‍👩‍👧 FAMILY</span>
+            <span class="review-tag">🌐 OTHER</span>
+          </div>
         </div>
       </div>
-      <div class="comments-grid">
-        <div>
-          <div class="comment-col-title">✅ Top 3 Comentarios Positivos</div>
-          <div class="comment-item pos">
-            <div class="comment-header">
-              <span class="comment-icon">✅</span>
-              <span class="comment-rating pos">⭐ 5/5</span>
-            </div>
-            <div class="comment-text">Highly recommend! Outstanding service by Edu and Victor. All of the food consumed by the four of us was spectacular.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-09</span>
-              <span class="comment-tag">👫 FRIENDS</span>
-              <span class="comment-tag">📱 MOBILE</span>
-            </div>
-          </div>
-          <div class="comment-item pos">
-            <div class="comment-header">
-              <span class="comment-icon">✅</span>
-              <span class="comment-rating pos">⭐ 5/5</span>
-            </div>
-            <div class="comment-text">Edu & Victor took great care of us. The lamb shank (for two) is braised 18 hours and was exceptional. The view is breathtaking.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-09</span>
-              <span class="comment-tag">💑 COUPLES</span>
-              <span class="comment-tag">📱 MOBILE</span>
-            </div>
-          </div>
-          <div class="comment-item pos">
-            <div class="comment-header">
-              <span class="comment-icon">✅</span>
-              <span class="comment-rating pos">⭐ 5/5</span>
-            </div>
-            <div class="comment-text">Queremos destacar el excelente servicio de nuestro mesero, José Miranda. Su atención fue impecable durante toda la cena: siempre amable, profesional y muy atento a cada detalle.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-09</span>
-              <span class="comment-tag">👨‍👩‍👧 FAMILY</span>
-              <span class="comment-tag">🌐 OTHER</span>
-            </div>
+      <div>
+        <div class="reviews-col-title neg-title">⚠️ Top Comentarios Negativos</div>
+        <div class="review-item review-neg">
+          <div class="review-text"><span class="review-icon">⚠️</span><strong>Nos súper decepcionó</strong> — Malísimo desde la atención: tardaron 35 min en presentarse, 45 min para tomar la orden y más de 30 min en llevar la comida. Además la comida no tenía el sabor ni consistencia de comida griega.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★☆☆☆</span>
+            <span class="review-tag">⭐ 2</span>
+            <span class="review-tag">📅 2026-03-08</span>
+            <span class="review-tag">👨‍👩‍👧 FAMILY</span>
+            <span class="review-tag">📱 MOBILE</span>
           </div>
         </div>
-        <div>
-          <div class="comment-col-title">⚠️ Top 3 Comentarios Negativos</div>
-          <div class="comment-item neg">
-            <div class="comment-header">
-              <span class="comment-icon">⚠️</span>
-              <span class="comment-rating neg">⭐ 2/5</span>
-            </div>
-            <div class="comment-text">Malísimo desde la atención. Tardaron 35 min en presentarse, 45 para tomar la orden y más de 30 min en llevar la comida. Además la comida no fue de nuestro agrado, no tiene sabor ni consistencia de comida griega.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-08</span>
-              <span class="comment-tag">👨‍👩‍👧 FAMILY</span>
-              <span class="comment-tag">📱 MOBILE</span>
-            </div>
+        <div class="review-item review-neg">
+          <div class="review-text"><span class="review-icon">⚠️</span><strong>Nos súper decepcionó</strong> — Desde la entrada fue decepcionante: espera de más de 35 minutos sin atención, y la comida no cumplió las expectativas de cocina griega auténtica.</div>
+          <div class="review-meta">
+            <span class="review-stars-small">★★☆☆☆</span>
+            <span class="review-tag">⭐ 2</span>
+            <span class="review-tag">📅 2026-03-08</span>
+            <span class="review-tag">👨‍👩‍👧 FAMILY</span>
+            <span class="review-tag">📱 MOBILE</span>
           </div>
-          <div class="comment-item neg">
-            <div class="comment-header">
-              <span class="comment-icon">⚠️</span>
-              <span class="comment-rating neg">⭐ 2/5</span>
-            </div>
-            <div class="comment-text">Malísimo desde la atención. Tardaron 35 min en que llegara mesero y 45 para tomar la orden. La comida no tiene ni el sabor ni consistencia de comida griega.</div>
-            <div class="comment-meta">
-              <span class="comment-tag">📅 2026-03-08</span>
-              <span class="comment-tag">👨‍👩‍👧 FAMILY</span>
-              <span class="comment-tag">📱 MOBILE</span>
-            </div>
-          </div>
-          <div class="comment-item neg">
-            <div class="comment-header">
-              <span class="comment-icon">⚠️</span>
-              <span class="comment-rating neg">⭐ 2/5</span>
-            </div>
-            <div class="comment-text">Nos súper decepcionó. Entramos y tardaron 35 min en presentarse y más de 30 min en llevarnos
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLA COMPARATIVA -->
+  <div class="section-title">Tabla Comparativa</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Restaurante</th>
+          <th>Ciudad</th>
+          <th>Rating ★</th>
+          <th>Total Reseñas</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Porfirio's Cancún</strong></td>
+          <td>Cancún</td>
+          <td><strong style="color:#16a34a;">4.9</strong></td>
+          <td>60</td>
+          <td><span class="status-badge badge-green">Excelente</span></td>
+        </tr>
+        <tr>
+          <td><strong>Harry's Cancun</strong></td>
+          <td>Cancún</td>
+          <td><strong style="color:#16a34a;">4.9</strong></td>
+          <td>60</td>
+          <td><span class="status-badge badge-green">Excelente</span></td>
+        </tr>
+        <tr>
+          <td><strong>Ilios</strong></td>
+          <td>Cancún</td>
+          <td><strong style="color:#16a34a;">4.9</strong></td>
+          <td>60</td>
+          <td><span class="status-badge badge-green">Excelente</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ALERTAS PRIORITARIAS -->
+  <div class="section-title">Alertas Prioritarias</div>
+  <div class="no-alert">
+    ✅ Ningún restaurante tiene rating promedio por debajo de 3.5. Sin embargo, se detectaron comentarios negativos puntuales que requieren atención operativa.
+  </div>
+  <div class="alert-box">
+    <div class="alert-header">⚠️ Problemas Detectados en Comentarios Negativos</div>
+    <div class="alert-item">
+      <div class="alert-dot"></div>
+      <div class="alert-text"><strong>Ilios — Tiempos de servicio críticos:</strong> Clientes reportan esperas de 35 min para ser atendidos, 45 min para tomar la orden y más de 30 min para recibir alimentos. Experiencia calificada con 2 estrellas por familia.</div>
