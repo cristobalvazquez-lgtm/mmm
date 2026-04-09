@@ -23,270 +23,509 @@ body { font-family: system-ui, sans-serif; background: #f1f5f9; color: #1e293b; 
 .report-separator hr { flex: 1; border: none; border-top: 2px dashed #cbd5e1; }
 .report-separator span { background: #e2e8f0; color: #64748b; border-radius: 20px; padding: 4px 14px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; white-space: nowrap; }
 </style>
-<style>#panel-google *, #panel-google *::before, #panel-google *::after {
+<style></style>
+<style>#panel-ta *, #panel-ta *::before, #panel-ta *::after {
 box-sizing: border-box; margin: 0; padding: 0;
 }
-#panel-google {
-font-family: system-ui, sans-serif; background: #f8fafc; color: #1e293b; padding: 24px 16px;
+#panel-ta {
+font-family: system-ui, -apple-system, sans-serif; background: #f8fafc; color: #1e293b;
 }
-#panel-google .container {
-max-width: 1000px; margin: auto;
+#panel-ta .container {
+max-width: 1000px; margin: auto; padding: 24px 16px;
 }
-#panel-google .header {
-background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: white; border-radius: 16px; padding: 32px 36px; margin-bottom: 28px; box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+#panel-ta .header {
+background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: #fff; border-radius: 16px; padding: 32px; margin-bottom: 28px;
 }
-#panel-google .header h1 {
-font-size: 1.9rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 6px;
+#panel-ta .header h1 {
+font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px;
 }
-#panel-google .header .subtitle {
-font-size: 0.95rem; opacity: 0.85; margin-bottom: 20px;
+#panel-ta .header .subtitle {
+font-size: 0.95rem; color: #94a3b8; margin-top: 6px;
 }
-#panel-google .header-stats {
-display: flex; gap: 24px; flex-wrap: wrap; margin-top: 16px;
+#panel-ta .header-meta {
+display: flex; gap: 24px; margin-top: 18px; flex-wrap: wrap;
 }
-#panel-google .header-stat {
-background: rgba(255,255,255,0.15); border-radius: 10px; padding: 12px 20px; text-align: center; min-width: 130px;
+#panel-ta .header-meta .meta-item {
+background: rgba(255,255,255,0.1); border-radius: 10px; padding: 10px 18px;
 }
-#panel-google .header-stat .val {
-font-size: 1.7rem; font-weight: 800;
+#panel-ta .header-meta .meta-item .label {
+font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;
 }
-#panel-google .header-stat .lbl {
-font-size: 0.78rem; opacity: 0.85; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px;
+#panel-ta .header-meta .meta-item .value {
+font-size: 1.3rem; font-weight: 700; color: #fff;
 }
-#panel-google .section-title {
-font-size: 1.2rem; font-weight: 700; color: #1e3a5f; margin: 32px 0 14px; padding-left: 12px; border-left: 4px solid #2563eb;
+#panel-ta .section-title {
+font-size: 1.1rem; font-weight: 700; color: #1e293b; margin-bottom: 16px; padding-left: 12px; border-left: 4px solid #3b82f6;
 }
-#panel-google .card {
-background: white; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 24px; margin-bottom: 20px;
+#panel-ta .dashboard-cards {
+display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px;
 }
-#panel-google .dash-grid {
-display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;
+#panel-ta .dash-card {
+background: #fff; border-radius: 14px; padding: 20px; box-shadow: 0 1px 8px rgba(0,0,0,0.07);
 }
-#panel-google .dash-card {
-background: white; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 20px; text-align: center; border-top: 4px solid #e2e8f0;
+#panel-ta .dash-card .card-label {
+font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b; margin-bottom: 6px;
 }
-#panel-google .dash-card.best {
-border-top-color: #22c55e;
+#panel-ta .dash-card .card-value {
+font-size: 1.2rem; font-weight: 700; color: #1e293b;
 }
-#panel-google .dash-card.worst {
-border-top-color: #ef4444;
+#panel-ta .dash-card .card-sub {
+font-size: 0.82rem; color: #64748b; margin-top: 4px;
 }
-#panel-google .dash-card.avg {
-border-top-color: #2563eb;
+#panel-ta .dash-card.best {
+border-top: 4px solid #22c55e;
 }
-#panel-google .dash-card .dc-icon {
-font-size: 1.8rem; margin-bottom: 8px;
+#panel-ta .dash-card.worst {
+border-top: 4px solid #ef4444;
 }
-#panel-google .dash-card .dc-label {
-font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; color: #64748b; font-weight: 600; margin-bottom: 6px;
+#panel-ta .dash-card.avg {
+border-top: 4px solid #3b82f6;
 }
-#panel-google .dash-card .dc-value {
-font-size: 1.25rem; font-weight: 800; color: #1e293b; margin-bottom: 4px;
+#panel-ta .chart-card {
+background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.07); margin-bottom: 28px;
 }
-#panel-google .dash-card .dc-sub {
-font-size: 0.82rem; color: #64748b;
+#panel-ta .chart-wrap {
+position: relative; height: 260px;
 }
-#panel-google .chart-wrap {
-background: white; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 24px; margin-bottom: 8px;
+#panel-ta .rest-card {
+background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.07); margin-bottom: 22px;
 }
-#panel-google .chart-wrap canvas {
-max-height: 280px;
+#panel-ta .rest-header {
+display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;
 }
-#panel-google .rest-header {
-display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;
+#panel-ta .rest-name {
+font-size: 1.05rem; font-weight: 700; color: #1e293b;
 }
-#panel-google .rest-name {
-font-size: 1.15rem; font-weight: 800; color: #1e3a5f;
+#panel-ta .rest-city {
+font-size: 0.82rem; color: #64748b; margin-top: 2px;
 }
-#panel-google .rest-city {
-font-size: 0.83rem; color: #64748b; margin-top: 3px;
+#panel-ta .rest-rating {
+text-align: right;
 }
-#panel-google .rest-total {
-font-size: 0.8rem; color: #64748b; margin-top: 4px;
+#panel-ta .stars {
+color: #f59e0b; font-size: 1.1rem;
 }
-#panel-google .rating-badge {
-background: #1e3a5f; color: white; border-radius: 10px; padding: 8px 16px; text-align: center; min-width: 80px;
+#panel-ta .rating-num {
+font-size: 1.4rem; font-weight: 800;
 }
-#panel-google .rating-badge .rb-num {
-font-size: 1.5rem; font-weight: 800;
+#panel-ta .rating-green {
+color: #22c55e;
 }
-#panel-google .rating-badge .rb-stars {
-font-size: 0.8rem; letter-spacing: 1px;
+#panel-ta .rating-yellow {
+color: #f59e0b;
 }
-#panel-google .rating-badge.na {
-background: #94a3b8;
+#panel-ta .rating-red {
+color: #ef4444;
 }
-#panel-google .chips {
-display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0;
+#panel-ta .rest-meta {
+font-size: 0.8rem; color: #64748b; margin-bottom: 14px;
 }
-#panel-google .chip {
-background: #f1f5f9; border-radius: 20px; padding: 5px 13px; font-size: 0.82rem; color: #334155; font-weight: 500;
+#panel-ta .detailed-ratings {
+display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.82rem; color: #475569; background: #f8fafc; border-radius: 8px; padding: 10px 14px; margin-bottom: 16px;
 }
-#panel-google .chip.na-chip {
-background: #f1f5f9; color: #94a3b8;
+#panel-ta .reviews-grid {
+display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
 }
-#panel-google .resumen {
-font-style: italic; color: #64748b; font-size: 0.88rem; background: #f8fafc; border-radius: 8px; padding: 12px 14px; margin: 12px 0; border-left: 3px solid #cbd5e1;
+#panel-ta .review-section-title {
+font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px;
 }
-#panel-google .comments-section {
-margin-top: 16px;
+#panel-ta .review-pos .review-section-title {
+color: #16a34a;
 }
-#panel-google .comments-title {
-font-size: 0.88rem; font-weight: 700; color: #475569; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;
+#panel-ta .review-neg .review-section-title {
+color: #dc2626;
 }
-#panel-google .comment-item {
-border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; font-size: 0.85rem;
+#panel-ta .review-item {
+border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; font-size: 0.83rem; line-height: 1.5;
 }
-#panel-google .comment-item.pos {
+#panel-ta .review-pos .review-item {
 background: #dcfce7; border-left: 3px solid #22c55e;
 }
-#panel-google .comment-item.neg {
+#panel-ta .review-neg .review-item {
 background: #fee2e2; border-left: 3px solid #ef4444;
 }
-#panel-google .comment-item .c-text {
-color: #1e293b; margin-bottom: 6px; line-height: 1.5;
+#panel-ta .review-icon {
+display: inline-block; margin-right: 4px;
 }
-#panel-google .comment-item .c-meta {
-color: #64748b; font-size: 0.77rem;
+#panel-ta .review-text {
+color: #1e293b; margin-top: 4px;
 }
-#panel-google .comment-item .c-meta span {
-margin-right: 10px;
+#panel-ta .review-meta {
+font-size: 0.75rem; color: #64748b; margin-top: 6px;
 }
-#panel-google .no-comments {
-font-size: 0.84rem; color: #94a3b8; font-style: italic; padding: 10px 0;
+#panel-ta .review-meta span {
+margin-right: 8px;
 }
-#panel-google .table-wrap {
-overflow-x: auto; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+#panel-ta .review-reply {
+background: rgba(255,255,255,0.6); border-radius: 6px; padding: 6px 10px; margin-top: 6px; font-size: 0.75rem; color: #374151;
 }
-#panel-google table {
-width: 100%; border-collapse: collapse; background: white; border-radius: 14px; overflow: hidden;
+#panel-ta .review-reply strong {
+color: #1d4ed8;
 }
-#panel-google thead tr {
-background: #1e3a5f; color: white;
+#panel-ta .no-reviews {
+font-size: 0.82rem; color: #64748b; font-style: italic; padding: 8px;
 }
-#panel-google thead th {
-padding: 13px 14px; text-align: left; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.3px; white-space: nowrap;
+#panel-ta .table-card {
+background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.07); margin-bottom: 28px; overflow-x: auto;
 }
-#panel-google tbody tr {
-border-bottom: 1px solid #f1f5f9; transition: background 0.15s;
+#panel-ta table {
+width: 100%; border-collapse: collapse; font-size: 0.83rem;
 }
-#panel-google tbody tr:hover {
-background: #f8fafc;
+#panel-ta th {
+background: #f1f5f9; color: #475569; font-weight: 700; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.8px; padding: 10px 12px; text-align: left;
 }
-#panel-google tbody td {
-padding: 12px 14px; font-size: 0.85rem; color: #334155; white-space: nowrap;
+#panel-ta td {
+padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #1e293b; vertical-align: middle;
 }
-#panel-google .estado-badge {
-border-radius: 20px; padding: 3px 10px; font-size: 0.75rem; font-weight: 700; display: inline-block;
-}
-#panel-google .estado-verde {
-background: #dcfce7; color: #15803d;
-}
-#panel-google .estado-amarillo {
-background: #fef9c3; color: #a16207;
-}
-#panel-google .estado-rojo {
-background: #fee2e2; color: #b91c1c;
-}
-#panel-google .estado-gris {
-background: #f1f5f9; color: #64748b;
-}
-#panel-google .alert-box {
-background: #fff1f2; border: 1px solid #fecdd3; border-radius: 14px; padding: 20px 24px; margin-bottom: 14px;
-}
-#panel-google .alert-box h3 {
-color: #be123c; font-size: 1rem; margin-bottom: 10px;
-}
-#panel-google .alert-box p {
-color: #9f1239; font-size: 0.88rem; margin-bottom: 6px;
-}
-#panel-google .alert-item {
-display: flex; align-items: flex-start; gap: 8px; padding: 8px 0; border-bottom: 1px dashed #fecdd3;
-}
-#panel-google .alert-item:last-child {
+#panel-ta tr:last-child td {
 border-bottom: none;
 }
-#panel-google .alert-item .ai-icon {
-font-size: 1rem; flex-shrink: 0; margin-top: 1px;
+#panel-ta tr:hover td {
+background: #f8fafc;
 }
-#panel-google .alert-item .ai-text {
-font-size: 0.86rem; color: #9f1239;
+#panel-ta .badge {
+display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 700;
 }
-#panel-google .alert-none {
-background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 14px; padding: 18px 24px; color: #15803d; font-size: 0.92rem;
+#panel-ta .badge-green {
+background: #dcfce7; color: #166534;
 }
-#panel-google .rec-grid {
-display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+#panel-ta .badge-yellow {
+background: #fef9c3; color: #854d0e;
 }
-#panel-google .rec-card {
-border-radius: 12px; padding: 18px 20px;
+#panel-ta .badge-red {
+background: #fee2e2; color: #991b1b;
 }
-#panel-google .rec-card.low {
-background: #fff7ed; border-left: 4px solid #f97316;
+#panel-ta .alerts-card {
+background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.07); margin-bottom: 28px; border-left: 6px solid #ef4444;
 }
-#panel-google .rec-card.high {
-background: #f0fdf4; border-left: 4px solid #22c55e;
+#panel-ta .alerts-card .alert-title {
+font-size: 1rem; font-weight: 700; color: #dc2626; margin-bottom: 14px;
 }
-#panel-google .rec-card h4 {
-font-size: 0.88rem; font-weight: 700; margin-bottom: 8px;
+#panel-ta .alert-item {
+background: #fee2e2; border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; font-size: 0.83rem;
 }
-#panel-google .rec-card.low h4 {
-color: #c2410c;
+#panel-ta .alert-item strong {
+display: block; color: #991b1b; margin-bottom: 4px;
 }
-#panel-google .rec-card.high h4 {
-color: #15803d;
+#panel-ta .problem-list {
+list-style: none; margin-top: 12px;
 }
-#panel-google .rec-card p {
-font-size: 0.84rem; color: #475569; line-height: 1.55;
+#panel-ta .problem-list li {
+background: #fff3cd; border-left: 3px solid #f59e0b; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px; font-size: 0.82rem; color: #92400e;
 }
-#panel-google .rec-num {
-display: inline-block; width: 22px; height: 22px; border-radius: 50%; font-size: 0.75rem; font-weight: 800; text-align: center; line-height: 22px; margin-right: 8px; flex-shrink: 0;
+#panel-ta .recs-card {
+background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 1px 8px rgba(0,0,0,0.07); margin-bottom: 28px;
 }
-#panel-google .rec-num.orange {
-background: #f97316; color: white;
+#panel-ta .rec-item {
+display: flex; gap: 14px; padding: 14px; border-radius: 10px; margin-bottom: 12px; align-items: flex-start;
 }
-#panel-google .rec-num.green {
-background: #22c55e; color: white;
+#panel-ta .rec-item.low {
+background: #fef2f2;
 }
-#panel-google .footer {
-text-align: center; margin-top: 40px; padding: 20px; font-size: 0.78rem; color: #94a3b8; border-top: 1px solid #e2e8f0;
+#panel-ta .rec-item.high {
+background: #f0fdf4;
 }
-#panel-google .no-data-state {
-text-align: center; padding: 40px 20px; color: #94a3b8;
+#panel-ta .rec-icon {
+font-size: 1.4rem; flex-shrink: 0; margin-top: 2px;
 }
-#panel-google .no-data-state .nd-icon {
-font-size: 3rem; margin-bottom: 12px;
+#panel-ta .rec-content strong {
+display: block; font-size: 0.88rem; color: #1e293b; margin-bottom: 4px;
 }
-#panel-google .no-data-state p {
-font-size: 0.92rem;
+#panel-ta .rec-content p {
+font-size: 0.82rem; color: #475569; line-height: 1.5;
+}
+#panel-ta .rec-tag {
+display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+#panel-ta .rec-tag.low {
+background: #fee2e2; color: #991b1b;
+}
+#panel-ta .rec-tag.high {
+background: #dcfce7; color: #166534;
+}
+#panel-ta .no-alerts {
+background: #f0fdf4; border-radius: 10px; padding: 16px; font-size: 0.88rem; color: #166534; text-align: center; font-weight: 600;
 }
 @media (max-width: 600px) {
-#panel-google .header h1 {
-font-size: 1.3rem;
-}
-#panel-google .header-stats {
-gap: 10px;
-}
-#panel-google .header-stat {
-min-width: 100px; padding: 10px 14px;
-}
-#panel-google .dash-grid {
+#panel-ta .dashboard-cards {
 grid-template-columns: 1fr;
 }
-#panel-google .rec-grid {
+#panel-ta .reviews-grid {
 grid-template-columns: 1fr;
 }
-#panel-google .rest-header {
+#panel-ta .header-meta {
 flex-direction: column;
 }
-#panel-google thead th, #panel-google tbody td {
-padding: 10px 10px; font-size: 0.78rem;
+#panel-ta .rest-header {
+flex-direction: column;
 }
-#panel-google .card {
-padding: 16px;
+#panel-ta .chart-wrap {
+height: 200px;
+}
+#panel-ta th, #panel-ta td {
+font-size: 0.72rem; padding: 8px;
 }
 }</style>
-<style></style>
+<style>#panel-ot *, #panel-ot *::before, #panel-ot *::after {
+box-sizing: border-box; margin: 0; padding: 0;
+}
+#panel-ot {
+font-family: system-ui, sans-serif; background: #f8fafc; color: #1e293b; padding: 24px 16px;
+}
+#panel-ot .wrapper {
+max-width: 1000px; margin: auto;
+}
+#panel-ot .header {
+background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: #fff; border-radius: 16px; padding: 32px 36px; margin-bottom: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;
+}
+#panel-ot .header-title {
+font-size: 1.75rem; font-weight: 800; letter-spacing: -0.5px;
+}
+#panel-ot .header-subtitle {
+font-size: 0.95rem; color: #94a3b8; margin-top: 4px;
+}
+#panel-ot .header-meta {
+display: flex; gap: 20px; flex-wrap: wrap;
+}
+#panel-ot .meta-chip {
+background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 10px 18px; text-align: center;
+}
+#panel-ot .meta-chip .val {
+font-size: 1.5rem; font-weight: 700; color: #f1f5f9;
+}
+#panel-ot .meta-chip .lbl {
+font-size: 0.72rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;
+}
+#panel-ot .section-title {
+font-size: 1.15rem; font-weight: 700; color: #1e293b; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; display: flex; align-items: center; gap: 8px;
+}
+#panel-ot .section-title .icon {
+font-size: 1.2rem;
+}
+#panel-ot .cards-row {
+display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px;
+}
+#panel-ot .card {
+background: #fff; border-radius: 14px; padding: 22px 20px; box-shadow: 0 1px 6px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04);
+}
+#panel-ot .card-icon {
+font-size: 1.8rem; margin-bottom: 8px;
+}
+#panel-ot .card-label {
+font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.6px; color: #64748b; font-weight: 600;
+}
+#panel-ot .card-value {
+font-size: 1.25rem; font-weight: 800; color: #1e293b; margin-top: 4px; word-break: break-word;
+}
+#panel-ot .card-sub {
+font-size: 0.8rem; color: #94a3b8; margin-top: 3px;
+}
+#panel-ot .card.best {
+border-top: 4px solid #22c55e;
+}
+#panel-ot .card.worst {
+border-top: 4px solid #ef4444;
+}
+#panel-ot .card.avg {
+border-top: 4px solid #3b82f6;
+}
+#panel-ot .chart-card {
+background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 1px 6px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04); margin-bottom: 28px;
+}
+#panel-ot .chart-wrap {
+position: relative; height: 260px;
+}
+#panel-ot .restaurant-card {
+background: #fff; border-radius: 14px; padding: 26px; box-shadow: 0 1px 6px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04); margin-bottom: 22px;
+}
+#panel-ot .rest-header {
+display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 16px;
+}
+#panel-ot .rest-name {
+font-size: 1.2rem; font-weight: 800; color: #1e293b;
+}
+#panel-ot .rest-city {
+font-size: 0.82rem; color: #64748b; margin-top: 2px;
+}
+#panel-ot .rating-badge {
+background: #1e293b; color: #fff; border-radius: 10px; padding: 8px 16px; text-align: center; min-width: 80px;
+}
+#panel-ot .rating-badge .num {
+font-size: 1.5rem; font-weight: 800;
+}
+#panel-ot .rating-badge .stars {
+font-size: 0.75rem; letter-spacing: 1px; color: #fbbf24;
+}
+#panel-ot .rating-badge.green {
+background: #16a34a;
+}
+#panel-ot .rating-badge.yellow {
+background: #d97706;
+}
+#panel-ot .rating-badge.red {
+background: #dc2626;
+}
+#panel-ot .rating-badge.na {
+background: #64748b;
+}
+#panel-ot .resenas-count {
+font-size: 0.8rem; color: #64748b; margin-bottom: 14px;
+}
+#panel-ot .chips-row {
+display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
+}
+#panel-ot .chip {
+background: #f1f5f9; border-radius: 20px; padding: 5px 12px; font-size: 0.8rem; color: #334155; font-weight: 500;
+}
+#panel-ot .chip.na-chip {
+color: #94a3b8;
+}
+#panel-ot .summary-ia {
+font-style: italic; color: #64748b; font-size: 0.88rem; background: #f8fafc; border-left: 3px solid #cbd5e1; padding: 10px 14px; border-radius: 6px; margin-bottom: 18px; line-height: 1.6;
+}
+#panel-ot .no-data-msg {
+color: #94a3b8; font-size: 0.85rem; font-style: italic; padding: 10px 0;
+}
+#panel-ot .comments-section {
+margin-top: 4px;
+}
+#panel-ot .comments-title {
+font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #475569; margin-bottom: 10px;
+}
+#panel-ot .comment-item {
+border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; font-size: 0.84rem; line-height: 1.55;
+}
+#panel-ot .comment-item.pos {
+background: #dcfce7; border: 1px solid #bbf7d0;
+}
+#panel-ot .comment-item.neg {
+background: #fee2e2; border: 1px solid #fecaca;
+}
+#panel-ot .comment-text {
+color: #1e293b; margin-bottom: 6px;
+}
+#panel-ot .comment-meta {
+display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 0.75rem; color: #64748b;
+}
+#panel-ot .comment-meta .c-rating {
+font-weight: 700; color: #fbbf24;
+}
+#panel-ot .comment-meta .c-author {
+font-weight: 600; color: #475569;
+}
+#panel-ot .cols-2 {
+display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+}
+#panel-ot .table-wrap {
+background: #fff; border-radius: 14px; padding: 24px; box-shadow: 0 1px 6px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04); margin-bottom: 28px; overflow-x: auto;
+}
+#panel-ot table {
+width: 100%; border-collapse: collapse; font-size: 0.84rem;
+}
+#panel-ot thead tr {
+background: #f1f5f9;
+}
+#panel-ot th {
+padding: 10px 12px; text-align: left; font-weight: 700; color: #475569; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap;
+}
+#panel-ot td {
+padding: 10px 12px; border-bottom: 1px solid #f1f5f9; color: #334155; vertical-align: middle;
+}
+#panel-ot tr:last-child td {
+border-bottom: none;
+}
+#panel-ot tr:hover td {
+background: #fafafa;
+}
+#panel-ot .status-badge {
+display: inline-block; border-radius: 20px; padding: 3px 10px; font-size: 0.72rem; font-weight: 700; white-space: nowrap;
+}
+#panel-ot .status-badge.good {
+background: #dcfce7; color: #16a34a;
+}
+#panel-ot .status-badge.warn {
+background: #fef9c3; color: #a16207;
+}
+#panel-ot .status-badge.bad {
+background: #fee2e2; color: #dc2626;
+}
+#panel-ot .status-badge.na {
+background: #f1f5f9; color: #64748b;
+}
+#panel-ot .alerts-card {
+background: #fff; border-radius: 14px; padding: 26px; box-shadow: 0 1px 6px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04); margin-bottom: 28px; border-left: 5px solid #ef4444;
+}
+#panel-ot .alert-item {
+background: #fff5f5; border: 1px solid #fecaca; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px;
+}
+#panel-ot .alert-rest-name {
+font-weight: 700; color: #dc2626; font-size: 0.95rem; margin-bottom: 6px;
+}
+#panel-ot .alert-problems {
+list-style: none; padding: 0;
+}
+#panel-ot .alert-problems li {
+font-size: 0.83rem; color: #7f1d1d; padding: 3px 0; display: flex; gap: 6px; align-items: flex-start;
+}
+#panel-ot .alert-problems li::before {
+content: "▸"; color: #ef4444; flex-shrink: 0; margin-top: 1px;
+}
+#panel-ot .no-alert {
+color: #22c55e; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 8px;
+}
+#panel-ot .reco-card {
+background: #fff; border-radius: 14px; padding: 26px; box-shadow: 0 1px 6px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.04); margin-bottom: 28px;
+}
+#panel-ot .reco-item {
+display: flex; gap: 14px; align-items: flex-start; padding: 14px; border-radius: 10px; margin-bottom: 10px;
+}
+#panel-ot .reco-item.low {
+background: #fef2f2; border: 1px solid #fecaca;
+}
+#panel-ot .reco-item.high {
+background: #f0fdf4; border: 1px solid #bbf7d0;
+}
+#panel-ot .reco-num {
+width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9rem; flex-shrink: 0;
+}
+#panel-ot .reco-item.low .reco-num {
+background: #ef4444; color: #fff;
+}
+#panel-ot .reco-item.high .reco-num {
+background: #22c55e; color: #fff;
+}
+#panel-ot .reco-text {
+font-size: 0.88rem; color: #334155; line-height: 1.6;
+}
+#panel-ot .reco-text strong {
+display: block; font-size: 0.92rem; margin-bottom: 3px; color: #1e293b;
+}
+#panel-ot .footer {
+text-align: center; font-size: 0.75rem; color: #94a3b8; padding: 20px 0 8px; border-top: 1px solid #e2e8f0; margin-top: 10px;
+}
+@media (max-width: 600px) {
+#panel-ot .cards-row {
+grid-template-columns: 1fr;
+}
+#panel-ot .cols-2 {
+grid-template-columns: 1fr;
+}
+#panel-ot .header {
+flex-direction: column;
+}
+#panel-ot .header-meta {
+flex-direction: column; gap: 10px;
+}
+#panel-ot .meta-chip {
+width: 100%;
+}
+#panel-ot .header-title {
+font-size: 1.3rem;
+}
+#panel-ot .chart-wrap {
+height: 200px;
+}
+}</style>
 </head>
 <body>
 <div class="topbar">
@@ -299,408 +538,585 @@ padding: 16px;
 <div class="tab-nav">
   <button class="tab-btn active" onclick="switchTab('google', this)">📊 Google Reviews</button>
   <button class="tab-btn" onclick="switchTab('ta', this)">✈️ TripAdvisor</button>
+  <button class="tab-btn" onclick="switchTab('ot', this)">🍽️ OpenTable</button>
   <button class="tab-btn" onclick="switchTab('ambos', this)">📋 Vista Completa</button>
 </div>
-<div id="tab-google" class="tab-panel active"><div id="panel-google"><div class="container">
+<div id="tab-google" class="tab-panel active"><div id="panel-google"><p style="color:#94a3b8;padding:20px;">Sin datos Google</p></div></div>
+<div id="tab-ta"     class="tab-panel"><div id="panel-ta"><div class="container">
 
   <!-- HEADER -->
   <div class="header">
-    <h1>📊 Reporte OpenTable — Grupo Andersons</h1>
-    <div class="subtitle">Análisis de experiencia de cliente basado en reseñas verificadas</div>
-    <div class="header-stats">
-      <div class="header-stat">
-        <div class="val">9/4/2026</div>
-        <div class="lbl">📅 Fecha del reporte</div>
+    <h1>📊 Reporte TripAdvisor — Grupo Andersons</h1>
+    <div class="subtitle">Análisis de reseñas y experiencia de cliente</div>
+    <div class="header-meta">
+      <div class="meta-item">
+        <div class="label">Fecha</div>
+        <div class="value">09 abr 2026</div>
       </div>
-      <div class="header-stat">
-        <div class="val">3</div>
-        <div class="lbl">🏪 Restaurantes</div>
+      <div class="meta-item">
+        <div class="label">Restaurantes</div>
+        <div class="value">4</div>
       </div>
-      <div class="header-stat">
-        <div class="val">0</div>
-        <div class="lbl">💬 Total reseñas</div>
+      <div class="meta-item">
+        <div class="label">Total Reseñas</div>
+        <div class="value">4,600</div>
       </div>
-      <div class="header-stat">
-        <div class="val">N/A</div>
-        <div class="lbl">⭐ Rating promedio</div>
+      <div class="meta-item">
+        <div class="label">Fuentes</div>
+        <div class="value">Google + TripAdvisor</div>
       </div>
     </div>
   </div>
 
   <!-- DASHBOARD GENERAL -->
-  <div class="section-title">📈 Dashboard General</div>
-
-  <div class="dash-grid">
+  <div class="section-title">Dashboard General</div>
+  <div class="dashboard-cards">
     <div class="dash-card best">
-      <div class="dc-icon">🏆</div>
-      <div class="dc-label">Mejor Restaurante</div>
-      <div class="dc-value">Sin datos</div>
-      <div class="dc-sub">Rating: N/A</div>
+      <div class="card-label">🏆 Mejor Restaurante</div>
+      <div class="card-value">Porfirio's Cancún</div>
+      <div class="card-sub">2,700 reseñas · Volumen top</div>
+      <div class="card-sub" style="color:#22c55e;font-weight:700;">★ Rating Excelente</div>
     </div>
     <div class="dash-card worst">
-      <div class="dc-icon">⚠️</div>
-      <div class="dc-label">Restaurante a Mejorar</div>
-      <div class="dc-value">Sin datos</div>
-      <div class="dc-sub">Rating: N/A</div>
+      <div class="card-label">⚠️ A Monitorear</div>
+      <div class="card-value">Sin nombre (TripAdvisor)</div>
+      <div class="card-sub">1,500 reseñas · Sin datos de rating</div>
+      <div class="card-sub" style="color:#f59e0b;font-weight:700;">★ Rating no disponible</div>
     </div>
     <div class="dash-card avg">
-      <div class="dc-icon">📊</div>
-      <div class="dc-label">Promedio Global</div>
-      <div class="dc-value">N/A</div>
-      <div class="dc-sub">0 reseñas totales</div>
+      <div class="card-label">📈 Promedio Global</div>
+      <div class="card-value" style="color:#3b82f6;">N/D numérico</div>
+      <div class="card-sub">Todos los ratings = 0.0 (datos de plataforma)</div>
+      <div class="card-sub">Sentimiento: Predominantemente Positivo</div>
     </div>
   </div>
 
-  <div class="chart-wrap">
-    <canvas id="ratingsChart"></canvas>
+  <!-- CHART -->
+  <div class="chart-card">
+    <div class="section-title" style="margin-bottom:18px;">Comparativa por Restaurante — Volumen de Reseñas</div>
+    <div class="chart-wrap">
+      <canvas id="barChart"></canvas>
+    </div>
   </div>
 
   <!-- SECCIÓN POR RESTAURANTE -->
-  <div class="section-title">🍽 Análisis por Restaurante</div>
+  <div class="section-title">Análisis por Restaurante</div>
 
-  <!-- Restaurante 1 -->
-  <div class="card">
+  <!-- RESTAURANTE 1: Porfirio's Cancún -->
+  <div class="rest-card">
     <div class="rest-header">
       <div>
-        <div class="rest-name">Sin nombre</div>
-        <div class="rest-city">📍 Ciudad no disponible</div>
-        <div class="rest-total">📋 0 reseñas analizadas</div>
+        <div class="rest-name">🍽️ Porfirio's Cancún | Restaurante de comida mexicana</div>
+        <div class="rest-city">📍 Cancún, México &nbsp;·&nbsp; Google Reviews</div>
       </div>
-      <div class="rating-badge na">
-        <div class="rb-num">N/A</div>
-        <div class="rb-stars">Sin rating</div>
+      <div class="rest-rating">
+        <div class="stars">★★★★★</div>
+        <div class="rating-num rating-green">Excelente</div>
+        <div style="font-size:0.75rem;color:#64748b;">Rating promedio N/D numérico</div>
       </div>
     </div>
-    <div class="chips">
-      <span class="chip na-chip">🍽 Comida: N/A</span>
-      <span class="chip na-chip">👥 Servicio: N/A</span>
-      <span class="chip na-chip">🏮 Ambiente: N/A</span>
-      <span class="chip na-chip">💰 Valor: N/A</span>
+    <div class="rest-meta">📋 <strong>2,700</strong> reseñas analizadas &nbsp;·&nbsp; ✅ <strong>2,630</strong> positivas &nbsp;·&nbsp; ⚠️ <strong>70</strong> negativas &nbsp;·&nbsp; Tasa positiva: <strong>97.4%</strong></div>
+    <div class="detailed-ratings">
+      <span>🍽️ Comida: N/D</span>
+      <span>👥 Servicio: N/D</span>
+      <span>🏠 Ambiente: N/D</span>
     </div>
-    <div class="resumen">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
-    <div class="comments-section">
-      <div class="comments-title">✅ Comentarios Positivos</div>
-      <div class="no-comments">No hay comentarios positivos disponibles aún.</div>
-      <div class="comments-title" style="margin-top:14px;">⚠️ Comentarios a Mejorar</div>
-      <div class="no-comments">No hay comentarios negativos disponibles aún.</div>
+    <div class="reviews-grid">
+      <div class="review-pos">
+        <div class="review-section-title">✅ Top 3 Comentarios Positivos</div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"An absolutely incredible experience from start to finish! From the moment we arrived, the hostess was welcoming... The food was fresh and flavorful—and I have to mention the churros, which were simply divine. The highlight for parents? The playroom with an on-site nanny. A perfect 10/10"</em></div>
+          <div class="review-meta"><span>📅 Hace 2 días</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Porfirio's was a fantastic experience from start to finish. The food was excellent and the meat was truly exceptional, high quality and perfectly prepared. The service was out of this world. Every detail was taken care of and the staff was attentive from the moment we arrived until the end of the evening."</em></div>
+          <div class="review-meta"><span>📅 Hace 5 días</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Una experiencia verdaderamente extraordinaria. La comida es impecable: sabores muy bien logrados, ingredientes de gran calidad y una presentación cuidada hasta el último detalle. El servicio es atento, amable y muy profesional... El ambiente es muy agradable, elegante pero relajado."</em></div>
+          <div class="review-meta"><span>📅 Hace una semana</span></div>
+        </div>
+      </div>
+      <div class="review-neg">
+        <div class="review-section-title">⚠️ Top 3 Comentarios Negativos</div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"Pretty good but quite expensive for what you get. The service was a bit slow especially when I sat for 15 minutes with my menu closed waiting for someone to take my order. Portions seemed quite small compared to what I was used to."</em></div>
+          <div class="review-meta"><span>📅 Hace 2 días</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"El ambiente es muy ruidoso y cargado, no es un sitio para relajarse. La comida no está mal pero no es la mejor de la zona en nuestra opinión."</em></div>
+          <div class="review-meta"><span>📅 Hace 6 días</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"Los postres tardaron mucho en llegar, quizá más de 10 minutos. Un té negro era una especie de ponche con trozos como de fruta... el de manzanilla era agua clara con una sola florecita flotando."</em></div>
+          <div class="review-meta"><span>📅 Hace una semana</span></div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Restaurante 2 -->
-  <div class="card">
+  <!-- RESTAURANTE 2: Harry's Steakhouse -->
+  <div class="rest-card">
     <div class="rest-header">
       <div>
-        <div class="rest-name">Sin nombre</div>
-        <div class="rest-city">📍 Ciudad no disponible</div>
-        <div class="rest-total">📋 0 reseñas analizadas</div>
+        <div class="rest-name">🥩 Harry's Steakhouse & Raw Bar | Cancun</div>
+        <div class="rest-city">📍 Cancún, México &nbsp;·&nbsp; Google Reviews</div>
       </div>
-      <div class="rating-badge na">
-        <div class="rb-num">N/A</div>
-        <div class="rb-stars">Sin rating</div>
+      <div class="rest-rating">
+        <div class="stars">★★★★★</div>
+        <div class="rating-num rating-green">Excelente</div>
+        <div style="font-size:0.75rem;color:#64748b;">Rating promedio N/D numérico</div>
       </div>
     </div>
-    <div class="chips">
-      <span class="chip na-chip">🍽 Comida: N/A</span>
-      <span class="chip na-chip">👥 Servicio: N/A</span>
-      <span class="chip na-chip">🏮 Ambiente: N/A</span>
-      <span class="chip na-chip">💰 Valor: N/A</span>
+    <div class="rest-meta">📋 <strong>200</strong> reseñas analizadas &nbsp;·&nbsp; ✅ <strong>200</strong> positivas &nbsp;·&nbsp; ⚠️ <strong>0</strong> negativas &nbsp;·&nbsp; Tasa positiva: <strong>100%</strong></div>
+    <div class="detailed-ratings">
+      <span>🍽️ Comida: N/D</span>
+      <span>👥 Servicio: N/D</span>
+      <span>🏠 Ambiente: N/D</span>
     </div>
-    <div class="resumen">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
-    <div class="comments-section">
-      <div class="comments-title">✅ Comentarios Positivos</div>
-      <div class="no-comments">No hay comentarios positivos disponibles aún.</div>
-      <div class="comments-title" style="margin-top:14px;">⚠️ Comentarios a Mejorar</div>
-      <div class="no-comments">No hay comentarios negativos disponibles aún.</div>
+    <div class="reviews-grid">
+      <div class="review-pos">
+        <div class="review-section-title">✅ Top 3 Comentarios Positivos</div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Unreal experience. Everything was out of this world from the food to the service. I would highly highly recommend! Sergio and Eduardo made the experience so special. They had such special personal touches and paid such close attention to each and every table. This place is incredible!!"</em></div>
+          <div class="review-meta"><span>📅 Hace un día</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Our experience at Harry's was top notch... Pedro Chiquini and his assistant Luz were the best, an easy 10/10. We have been to a lot of restaurants in our time and this was by far the best experience we have EVER had."</em></div>
+          <div class="review-meta"><span>📅 Hace una semana</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Harry's is not just some of the most amazing food, it is an incredible experience. Attention to detail is second to none! If you are looking to fabulous food and an experience to match, look no further, you won't be disappointed."</em></div>
+          <div class="review-meta"><span>📅 Hace una semana</span></div>
+        </div>
+      </div>
+      <div class="review-neg">
+        <div class="review-section-title">⚠️ Comentarios Negativos</div>
+        <div class="no-reviews">✅ No se registraron comentarios negativos en el período analizado. ¡Desempeño perfecto!</div>
+      </div>
     </div>
   </div>
 
-  <!-- Restaurante 3 -->
-  <div class="card">
+  <!-- RESTAURANTE 3: Ilios -->
+  <div class="rest-card">
     <div class="rest-header">
       <div>
-        <div class="rest-name">Sin nombre</div>
-        <div class="rest-city">📍 Ciudad no disponible</div>
-        <div class="rest-total">📋 0 reseñas analizadas</div>
+        <div class="rest-name">🇬🇷 Ilios | Greek Restaurant in Cancun</div>
+        <div class="rest-city">📍 Cancún, México &nbsp;·&nbsp; Google Reviews</div>
       </div>
-      <div class="rating-badge na">
-        <div class="rb-num">N/A</div>
-        <div class="rb-stars">Sin rating</div>
+      <div class="rest-rating">
+        <div class="stars">★★★★☆</div>
+        <div class="rating-num rating-green">Muy Bueno</div>
+        <div style="font-size:0.75rem;color:#64748b;">Rating promedio N/D numérico</div>
       </div>
     </div>
-    <div class="chips">
-      <span class="chip na-chip">🍽 Comida: N/A</span>
-      <span class="chip na-chip">👥 Servicio: N/A</span>
-      <span class="chip na-chip">🏮 Ambiente: N/A</span>
-      <span class="chip na-chip">💰 Valor: N/A</span>
+    <div class="rest-meta">📋 <strong>200</strong> reseñas analizadas &nbsp;·&nbsp; ✅ <strong>200</strong> positivas (incl. mixtas) &nbsp;·&nbsp; ⚠️ <strong>0</strong> registradas negativas &nbsp;·&nbsp; Nota: algunos comentarios tienen observaciones mixtas</div>
+    <div class="detailed-ratings">
+      <span>🍽️ Comida: N/D</span>
+      <span>👥 Servicio: N/D</span>
+      <span>🏠 Ambiente: N/D</span>
     </div>
-    <div class="resumen">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
-    <div class="comments-section">
-      <div class="comments-title">✅ Comentarios Positivos</div>
-      <div class="no-comments">No hay comentarios positivos disponibles aún.</div>
-      <div class="comments-title" style="margin-top:14px;">⚠️ Comentarios a Mejorar</div>
-      <div class="no-comments">No hay comentarios negativos disponibles aún.</div>
+    <div class="reviews-grid">
+      <div class="review-pos">
+        <div class="review-section-title">✅ Top 3 Comentarios Positivos</div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Tuve una experiencia increíble en Ílios Cancún. El restaurante es absolutamente espectacular: la decoración, el ambiente y la comida son de primer nivel. Daniel y Marcos nos atendieron de una manera impecable. Fueron extremadamente amables, atentos y profesionales en todo momento."</em></div>
+          <div class="review-meta"><span>📅 Hace 1 minuto</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"What an absolutely amazing evening and big thanks to Edu and Paul! Our service was over the top and needed for nothing! We ate almost every appetizer and could not pick a favorite bc they were all so good! The entertainment and vibe of the whole place was outstanding."</em></div>
+          <div class="review-meta"><span>📅 Hace 2 días</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Erick and Brandon are amazing!!! This place is lively. Go around 9-10p if you want to break plates. The food is incredible and the service is outstanding. 11/10 I would recommend if you are in Cancún."</em></div>
+          <div class="review-meta"><span>📅 Hace una hora</span></div>
+        </div>
+      </div>
+      <div class="review-neg">
+        <div class="review-section-title">⚠️ Observaciones Mixtas (Clasificadas en positivos)</div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"Cool vibes and atmosphere right on the water. Food and service were on the mediocre side... the lobster is not worth the price. The wine pours are on the short side and over priced. Bottle of wine ran out on our pour..."</em></div>
+          <div class="review-meta"><span>📅 Hace un día</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"The hostess spilled fish juice on my daughter, it's spilled wine on the table, which ended up getting on my wife's dress. The food was OK and the service was OK... For the price, expected more."</em></div>
+          <div class="review-meta"><span>📅 Hace un día</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"Vista espectacular. Show hermoso. Deliciosa y en poca cantidad la comida, pero en estos restaurantes así es. Deli pero poco."</em></div>
+          <div class="review-meta"><span>📅 Hace 2 días</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESTAURANTE 4: Sin nombre (TripAdvisor) -->
+  <div class="rest-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">📋 Restaurante sin nombre (TripAdvisor)</div>
+        <div class="rest-city">📍 Ciudad no especificada &nbsp;·&nbsp; TripAdvisor (COUPLES, FAMILY, FRIENDS, SOLO, BUSINESS)</div>
+      </div>
+      <div class="rest-rating">
+        <div class="stars">★★★★★</div>
+        <div class="rating-num rating-yellow">N/D</div>
+        <div style="font-size:0.75rem;color:#64748b;">Títulos solo, sin textos completos</div>
+      </div>
+    </div>
+    <div class="rest-meta">📋 <strong>1,500</strong> reseñas analizadas &nbsp;·&nbsp; ✅ <strong>1,500</strong> positivas &nbsp;·&nbsp; ⚠️ <strong>0</strong> negativas &nbsp;·&nbsp; ⚡ Nota: Solo títulos disponibles, sin textos de reseña</div>
+    <div class="detailed-ratings">
+      <span>🍽️ Comida: N/D</span>
+      <span>👥 Servicio: N/D</span>
+      <span>🏠 Ambiente: N/D</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-pos">
+        <div class="review-section-title">✅ Top 3 Títulos Positivos Destacados</div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Continued excellence time and time again."</em> — Tipo: FAMILY</div>
+          <div class="review-meta"><span>📅 Fecha no disponible</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"The best restaurant I have ever been to."</em> — Tipo: FRIENDS</div>
+          <div class="review-meta"><span>📅 Fecha no disponible</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Excellent experience, really customer service is another level and the mariachis experience is crazy!"</em> — Tipo: FAMILY</div>
+          <div class="review-meta"><span>📅 Fecha no disponible</span></div>
+        </div>
+      </div>
+      <div class="review-neg">
+        <div class="review-section-title">⚠️ Comentarios Negativos</div>
+        <div class="no-reviews">✅ No se registraron comentarios negativos. Solo títulos positivos disponibles en este conjunto de datos.</div>
+      </div>
     </div>
   </div>
 
   <!-- TABLA COMPARATIVA -->
-  <div class="section-title">📋 Tabla Comparativa</div>
-  <div class="table-wrap">
+  <div class="section-title">Tabla Comparativa</div>
+  <div class="table-card">
     <table>
       <thead>
         <tr>
-          <th>#</th>
           <th>Restaurante</th>
           <th>Ciudad</th>
           <th>Rating</th>
-          <th>🍽 Comida</th>
-          <th>👥 Servicio</th>
-          <th>🏮 Ambiente</th>
-          <th>💰 Valor</th>
           <th>Total Reseñas</th>
+          <th>Comida</th>
+          <th>Servicio</th>
+          <th>Ambiente</th>
           <th>Estado</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>Sin nombre</td>
-          <td>—</td>
-          <td>N/A</td>
-          <td>—</td>
-          <td>—</td>
-          <td>—</td>
-          <td>—</td>
-          <td>0</td>
-          <td><span class="estado-badge estado-gris">Sin datos</span></td>
+          <td><strong>Harry's Steakhouse & Raw Bar</strong></td>
+          <td>Cancún</td>
+          <td><span style="color:#22c55e;font-weight:700;">★ Excelente</span></td>
+          <td>200</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td><span class="badge badge-green">100% Positivo</span></td>
         </tr>
         <tr>
-          <td>2</td>
-          <td>Sin nombre</td>
-          <td>—</td>
-          <td>N/A</td>
-          <td>—</td>
-          <td>—</td>
-          <td>—</td>
-          <td>—</td>
-          <td>0</td>
-          <td><span class="estado-badge estado-gris">Sin datos</span></td>
+          <td><strong>Porfirio's Cancún</strong></td>
+          <td>Cancún</td>
+          <td><span style="color:#22c55e;font-weight:700;">★ Excelente</span></td>
+          <td>2,700</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td><span class="badge badge-green">97.4% Positivo</span></td>
         </tr>
         <tr>
-          <td>3</td>
-          <td>Sin nombre</td>
-          <td>—</td>
-          <td>N/A</td>
-          <td>—</td>
-          <td>—</td>
-          <td>—</td>
-          <td>—</td>
-          <td>0</td>
-          <td><span class="estado-badge estado-gris">Sin datos</span></td>
+          <td><strong>Ilios Greek Restaurant</strong></td>
+          <td>Cancún</td>
+          <td><span style="color:#22c55e;font-weight:700;">★ Muy Bueno</span></td>
+          <td>200</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td><span class="badge badge-yellow">Mixto — Observar</span></td>
+        </tr>
+        <tr>
+          <td><strong>Sin nombre (TripAdvisor)</strong></td>
+          <td>N/D</td>
+          <td><span style="color:#f59e0b;font-weight:700;">★ N/D</span></td>
+          <td>1,500</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td><span class="badge badge-yellow">Solo Títulos</span></td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <!-- ALERTAS PRIORITARIAS -->
-  <div class="section-title">🚨 Alertas Prioritarias</div>
+  <div class="section-title">Alertas Prioritarias</div>
+  <div class="alerts-card">
+    <div class="alert-title">🚨 Alertas de Calidad — Problemas Detectados</div>
 
-  <div class="alert-none">
-    <strong>✅ Sin alertas críticas activas</strong><br>
-    <span style="font-size:0.85rem; margin-top:4px; display:block;">No hay restaurantes con rating_promedio menor a 3.5 en este reporte, ya que no se han cargado datos de reseñas. Las alertas se generarán automáticamente cuando se procesen reseñas reales de OpenTable.</span>
-  </div>
+    <div class="alert-item">
+      <strong>⚠️ Ilios — Incidentes de Servicio Físico</strong>
+      La hostess derramó líquido de pescado sobre una cliente y vino sobre otra. Estos incidentes físicos generan reseñas de alto impacto negativo y deben atenderse con protocolos de manejo de bandejas y capacitación urgente.
+    </div>
 
-  <div class="alert-box" style="margin-top:14px;">
-    <h3>⚠️ Aviso de datos insuficientes</h3>
     <div class="alert-item">
-      <span class="ai-icon">📭</span>
-      <span class="ai-text"><strong>Sin reseñas procesadas:</strong> Los 3 restaurantes del grupo no tienen reseñas cargadas en este período. Verifique la integración con OpenTable y que el rango de fechas del reporte sea correcto.</span>
+      <strong>⚠️ Porfirio's Cancún — Tiempo de Espera y Rotación de Mesas</strong>
+      Clientes reportan servicio lento (15+ minutos esperando que tomen su orden), postres con demoras >10 minutos, y presión implícita para liberar mesas en hora pico. Impacta la percepción de valor.
     </div>
+
     <div class="alert-item">
-      <span class="ai-icon">🏷️</span>
-      <span class="ai-text"><strong>Nombres no asignados:</strong> Los restaurantes figuran como "Sin nombre" y sin ciudad. Es necesario completar los metadatos de cada propiedad en el sistema de gestión.</span>
+      <strong>⚠️ Porfirio's Cancún — Calidad de Bebidas y Menú</strong>
+      Té de manzanilla servido como agua clara, té negro no identificado. Queja de precios muy elevados de alcohol (2 shots Don Julio = $61 USD). Un cliente solicita regreso del postre "Tres leches" al menú.
     </div>
+
     <div class="alert-item">
-      <span class="ai-icon">📊</span>
-      <span class="ai-text"><strong>Métricas no disponibles:</strong> Food, Servicio, Ambiente y Valor aparecen como N/A. Sin estos datos no es posible generar benchmarks ni comparativas internas.</span>
+      <strong>⚠️ Ilios — Precio vs. Valor Percibido</strong>
+      Porciones pequeñas para los precios cobrados, vinos con porciones cortas y sobrevalorados, langosta considerada no rentable por el precio. Riesgo de disonancia precio-valor en segmento premium.
+    </div>
+
+    <div class="alert-item">
+      <strong>⚠️ Restaurante sin nombre (TripAdvisor) — Datos Incompletos</strong>
+      1,500 reseñas sin texto de contenido, sin rating numérico, sin ciudad, sin nombre de restaurante. Requiere revisión de la integración de datos de TripAdvisor para identificar a qué establecimiento corresponde.
+    </div>
+
+    <div style="margin-top:16px;">
+      <div style="font-size:0.85rem;font-weight:700;color:#92400e;margin-bottom:8px;">🔁 Problemas Más Repetidos en Comentarios Negativos:</div>
+      <ul class="problem-list">
+        <li>🔊 <strong>Ruido excesivo:</strong> Ambiente muy ruidoso y cargado, especialmente en Porfirio's e Ilios durante horas pico.</li>
+        <li>⏱️ <strong>Tiempos de espera:</strong> Servicio lento en Porfirio's — clientes esperando hasta 15 min para ser atendidos.</li>
+        <li>💸 <strong>Precio percibido alto:</strong> Múltiples menciones de precios elevados en ambos restaurantes de Cancún.</li>
+        <li>🍽️ <strong>Porciones pequeñas:</strong> Reportado en Porfirio's e Ilios — valor no proporcional al costo.</li>
+        <li>🍷 <strong>Inconsistencia en bebidas:</strong> Té mal preparado, porciones de vino cortas, precios de alcohol desproporcionados.</li>
+        <li>🔄 <strong>Presión en rotación de mesas:</strong> Clientes sienten que se les pide desocupar en horas de alta demanda.</li>
+        <li>💧 <strong>Incidentes físicos (Ilios):</strong> Derrame de líquidos sobre clientes — requiere acción inmediata de protocolo.</li>
+        <li>📋 <strong>Ítems faltantes en menú:</strong> Tres leches discontinuado en Porfirio's — múltiples clientes lo solicitan.</li>
+      </ul>
     </div>
   </div>
 
   <!-- RECOMENDACIONES -->
-  <div class="section-title">💡 Recomendaciones Estratégicas</div>
+  <div class="section-title">Recomendaciones Estratégicas</div>
+  <div class="recs-card">
 
-  <div class="rec-grid">
-    <div class="rec-card low">
-      <h4><span class="rec-num orange">1</span>Activar captura de reseñas</h4>
-      <p>Implementar campañas post-visita por email o SMS para invitar a los comensales a dejar su reseña en OpenTable. El benchmark de la industria sugiere una tasa de conversión de 8–15% con seguimiento automatizado dentro de las 24 hrs.</p>
+    <div class="rec-item low">
+      <div class="rec-icon">🛠️</div>
+      <div class="rec-content">
+        <span class="rec-tag low">Acción Urgente — Ilios</span>
+        <strong>Implementar protocolo de manejo seguro de bandejas y servicio en mesa</strong>
+        <p>Los derrames sobre clientes reportados en Ilios representan un riesgo reputacional y legal. Capacitar inmediatamente al personal de piso (especialmente hostesses y meseros) en técnicas de manejo de bandejas, protocolos de derrame y manejo de crisis. Establecer compensaciones estándar para incidentes (bebida cortesía, descuento, disculpa del gerente en mesa).</p>
+      </div>
     </div>
-    <div class="rec-card low">
-      <h4><span class="rec-num orange">2</span>Completar perfiles de restaurante</h4>
-      <p>Asignar nombre, ciudad y categoría a cada propiedad en el sistema. Los perfiles completos en OpenTable reciben hasta 3× más visitas orgánicas y mejoran el posicionamiento en búsquedas locales.</p>
-    </div>
-    <div class="rec-card low">
-      <h4><span class="rec-num orange">3</span>Establecer KPIs baseline</h4>
-      <p>Una vez procesadas las primeras 30 reseñas por restaurante, definir metas de rating mínimo (ej. ≥ 4.2 global, ≥ 4.0 por categoría). Revisar resultados en ciclos mensuales y comparar contra la competencia local.</p>
-    </div>
-    <div class="rec-card high">
-      <h4><span class="rec-num green">✓</span>Mantenimiento para ratings altos</h4>
-      <p>Para restaurantes que alcancen rating ≥ 4.5: reconocer públicamente al equipo, documentar las prácticas de servicio exitosas y replicarlas como estándar en las demás propiedades del grupo. Responder el 100% de reseñas positivas para fortalecer la fidelidad.</p>
-    </div>
-  </div>
 
-  <!-- FOOTER -->
-  <div class="footer">
-    <p>🍽 <strong>Reporte OpenTable — Grupo Andersons</strong> &nbsp;|&nbsp; Generado el 9/4/2026 &nbsp;|&nbsp; Análisis de Experiencia de Cliente</p>
-    <p style="margin-top:6px;">Este reporte es de uso interno y confidencial. Los datos provienen de reseñas verificadas de OpenTable.</p>
+    <div class="rec-item low">
+      <div class="rec-icon">⏱️</div>
+      <div class="rec-content">
+        <span class="rec-tag low">Acción Prioritaria — Porfirio's Cancún</span>
+        <strong>Optimizar tiempos de servicio y flujo de atención en horas pico</strong>
+        <p>Implementar un sistema de asignación de secciones más eficiente y un protocolo de bienvenida de 3 minutos máximo. Capacitar a los capitanes para detectar clientes esperando atención. Para los postres, establecer un tiempo máximo de 7 minutos desde la solicitud. Considerar un sistema de QR para auto-pedidos en momentos de alta ocupación para bebidas adicionales.</p>
+      </div>
+    </div>
+
+    <div class="rec-item low">
+      <div class="rec-icon">📋</div>
+      <div class="rec-content">
+        <span class="rec-tag low">Acción Recomendada — Porfirio's &amp; Ilios</span>
+        <strong>Revisión de carta: precio-porción-calidad y recuperación de ítems populares</strong>
+        <p>Evaluar el regreso del postre Tres leches al menú de Porfirio's, ya que múltiples clientes lo solicitan activamente (señal de demanda latente). En Ilios, revisar la relación precio-porción en langosta y vinos de botella. Considerar opciones de maridaje por copa con mejor relación de valor. Añadir una descripción más transparente de tamaños de porción en el menú para gestionar expectativas.</p>
+      </div>
+    </div>
+
+    <div class="rec-item high">
+      <div class="rec-icon">🌟</div>
+      <div class="rec-content">
+        <span class="rec-tag high">Mantenimiento de Excelencia — Harry's Steakhouse</span>
+        <strong>Capitalizar la excelencia del personal para crear un programa de embajadores internos</strong>
+        <p>Harry's presenta un récord perfecto de 0 reseñas negativas. Aprovechar este momento para documentar las mejores prácticas del equipo (Samuel, Valentina, Franco, Lazaro, Barrios, Sergio, Eduardo, etc.) y crear un manual de "estándares de oro" replicable en el resto del grupo. Implementar un programa de reconocimiento mensual para meseros nominados en reseñas, fortaleciendo la cultura de excelencia y reduciendo la rotación de talento estrella.</p>
+      </div>
+    </div>
+
   </div>
 
 </div>
 
 </div></div>
-<div id="tab-ta" class="tab-panel"><div id="panel-ta"><p style="color:#94a3b8;padding:20px;">Sin datos TripAdvisor</p></div></div>
-<div id="tab-ambos" class="tab-panel">
-  <div id="panel-google-2"><div class="container">
+<div id="tab-ot"     class="tab-panel"><div id="panel-ot"><div class="wrapper">
 
   <!-- HEADER -->
   <div class="header">
-    <h1>📊 Reporte OpenTable — Grupo Andersons</h1>
-    <div class="subtitle">Análisis de experiencia de cliente basado en reseñas verificadas</div>
-    <div class="header-stats">
-      <div class="header-stat">
+    <div>
+      <div class="header-title">📋 Reporte OpenTable</div>
+      <div class="header-subtitle">Grupo Andersons — Análisis de Experiencia de Cliente</div>
+    </div>
+    <div class="header-meta">
+      <div class="meta-chip">
         <div class="val">9/4/2026</div>
-        <div class="lbl">📅 Fecha del reporte</div>
+        <div class="lbl">Fecha</div>
       </div>
-      <div class="header-stat">
+      <div class="meta-chip">
         <div class="val">3</div>
-        <div class="lbl">🏪 Restaurantes</div>
+        <div class="lbl">Restaurantes</div>
       </div>
-      <div class="header-stat">
+      <div class="meta-chip">
         <div class="val">0</div>
-        <div class="lbl">💬 Total reseñas</div>
-      </div>
-      <div class="header-stat">
-        <div class="val">N/A</div>
-        <div class="lbl">⭐ Rating promedio</div>
+        <div class="lbl">Reseñas Totales</div>
       </div>
     </div>
   </div>
 
   <!-- DASHBOARD GENERAL -->
-  <div class="section-title">📈 Dashboard General</div>
+  <div class="section-title"><span class="icon">📊</span> Dashboard General</div>
 
-  <div class="dash-grid">
-    <div class="dash-card best">
-      <div class="dc-icon">🏆</div>
-      <div class="dc-label">Mejor Restaurante</div>
-      <div class="dc-value">Sin datos</div>
-      <div class="dc-sub">Rating: N/A</div>
+  <div class="cards-row">
+    <div class="card best">
+      <div class="card-icon">🏆</div>
+      <div class="card-label">Mejor Restaurante</div>
+      <div class="card-value">Sin datos suficientes</div>
+      <div class="card-sub">Sin reseñas disponibles</div>
     </div>
-    <div class="dash-card worst">
-      <div class="dc-icon">⚠️</div>
-      <div class="dc-label">Restaurante a Mejorar</div>
-      <div class="dc-value">Sin datos</div>
-      <div class="dc-sub">Rating: N/A</div>
+    <div class="card worst">
+      <div class="card-icon">⚠️</div>
+      <div class="card-label">Restaurante con Menor Rating</div>
+      <div class="card-value">Sin datos suficientes</div>
+      <div class="card-sub">Sin reseñas disponibles</div>
     </div>
-    <div class="dash-card avg">
-      <div class="dc-icon">📊</div>
-      <div class="dc-label">Promedio Global</div>
-      <div class="dc-value">N/A</div>
-      <div class="dc-sub">0 reseñas totales</div>
+    <div class="card avg">
+      <div class="card-icon">📈</div>
+      <div class="card-label">Promedio Global</div>
+      <div class="card-value">N/A</div>
+      <div class="card-sub">0 reseñas analizadas</div>
     </div>
   </div>
 
-  <div class="chart-wrap">
-    <canvas id="ratingsChart"></canvas>
+  <div class="chart-card">
+    <div class="section-title" style="border:none;margin-bottom:12px;"><span class="icon">📉</span> Comparativo de Rating por Restaurante</div>
+    <div class="chart-wrap">
+      <canvas id="ratingsChart"></canvas>
+    </div>
   </div>
 
   <!-- SECCIÓN POR RESTAURANTE -->
-  <div class="section-title">🍽 Análisis por Restaurante</div>
+  <div class="section-title"><span class="icon">🍽️</span> Detalle por Restaurante</div>
 
   <!-- Restaurante 1 -->
-  <div class="card">
+  <div class="restaurant-card">
     <div class="rest-header">
       <div>
         <div class="rest-name">Sin nombre</div>
-        <div class="rest-city">📍 Ciudad no disponible</div>
-        <div class="rest-total">📋 0 reseñas analizadas</div>
+        <div class="rest-city">📍 Ciudad no especificada</div>
       </div>
       <div class="rating-badge na">
-        <div class="rb-num">N/A</div>
-        <div class="rb-stars">Sin rating</div>
+        <div class="num">N/A</div>
+        <div class="stars">— — —</div>
       </div>
     </div>
-    <div class="chips">
+    <div class="resenas-count">🗂 0 reseñas analizadas</div>
+    <div class="chips-row">
       <span class="chip na-chip">🍽 Comida: N/A</span>
       <span class="chip na-chip">👥 Servicio: N/A</span>
       <span class="chip na-chip">🏮 Ambiente: N/A</span>
       <span class="chip na-chip">💰 Valor: N/A</span>
     </div>
-    <div class="resumen">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
-    <div class="comments-section">
-      <div class="comments-title">✅ Comentarios Positivos</div>
-      <div class="no-comments">No hay comentarios positivos disponibles aún.</div>
-      <div class="comments-title" style="margin-top:14px;">⚠️ Comentarios a Mejorar</div>
-      <div class="no-comments">No hay comentarios negativos disponibles aún.</div>
+    <div class="summary-ia">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
+    <div class="cols-2">
+      <div class="comments-section">
+        <div class="comments-title">✅ Comentarios Positivos</div>
+        <div class="no-data-msg">No hay comentarios positivos disponibles.</div>
+      </div>
+      <div class="comments-section">
+        <div class="comments-title">⚠️ Comentarios Negativos</div>
+        <div class="no-data-msg">No hay comentarios negativos disponibles.</div>
+      </div>
     </div>
   </div>
 
   <!-- Restaurante 2 -->
-  <div class="card">
+  <div class="restaurant-card">
     <div class="rest-header">
       <div>
         <div class="rest-name">Sin nombre</div>
-        <div class="rest-city">📍 Ciudad no disponible</div>
-        <div class="rest-total">📋 0 reseñas analizadas</div>
+        <div class="rest-city">📍 Ciudad no especificada</div>
       </div>
       <div class="rating-badge na">
-        <div class="rb-num">N/A</div>
-        <div class="rb-stars">Sin rating</div>
+        <div class="num">N/A</div>
+        <div class="stars">— — —</div>
       </div>
     </div>
-    <div class="chips">
+    <div class="resenas-count">🗂 0 reseñas analizadas</div>
+    <div class="chips-row">
       <span class="chip na-chip">🍽 Comida: N/A</span>
       <span class="chip na-chip">👥 Servicio: N/A</span>
       <span class="chip na-chip">🏮 Ambiente: N/A</span>
       <span class="chip na-chip">💰 Valor: N/A</span>
     </div>
-    <div class="resumen">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
-    <div class="comments-section">
-      <div class="comments-title">✅ Comentarios Positivos</div>
-      <div class="no-comments">No hay comentarios positivos disponibles aún.</div>
-      <div class="comments-title" style="margin-top:14px;">⚠️ Comentarios a Mejorar</div>
-      <div class="no-comments">No hay comentarios negativos disponibles aún.</div>
+    <div class="summary-ia">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
+    <div class="cols-2">
+      <div class="comments-section">
+        <div class="comments-title">✅ Comentarios Positivos</div>
+        <div class="no-data-msg">No hay comentarios positivos disponibles.</div>
+      </div>
+      <div class="comments-section">
+        <div class="comments-title">⚠️ Comentarios Negativos</div>
+        <div class="no-data-msg">No hay comentarios negativos disponibles.</div>
+      </div>
     </div>
   </div>
 
   <!-- Restaurante 3 -->
-  <div class="card">
+  <div class="restaurant-card">
     <div class="rest-header">
       <div>
         <div class="rest-name">Sin nombre</div>
-        <div class="rest-city">📍 Ciudad no disponible</div>
-        <div class="rest-total">📋 0 reseñas analizadas</div>
+        <div class="rest-city">📍 Ciudad no especificada</div>
       </div>
       <div class="rating-badge na">
-        <div class="rb-num">N/A</div>
-        <div class="rb-stars">Sin rating</div>
+        <div class="num">N/A</div>
+        <div class="stars">— — —</div>
       </div>
     </div>
-    <div class="chips">
+    <div class="resenas-count">🗂 0 reseñas analizadas</div>
+    <div class="chips-row">
       <span class="chip na-chip">🍽 Comida: N/A</span>
       <span class="chip na-chip">👥 Servicio: N/A</span>
       <span class="chip na-chip">🏮 Ambiente: N/A</span>
       <span class="chip na-chip">💰 Valor: N/A</span>
     </div>
-    <div class="resumen">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
-    <div class="comments-section">
-      <div class="comments-title">✅ Comentarios Positivos</div>
-      <div class="no-comments">No hay comentarios positivos disponibles aún.</div>
-      <div class="comments-title" style="margin-top:14px;">⚠️ Comentarios a Mejorar</div>
-      <div class="no-comments">No hay comentarios negativos disponibles aún.</div>
+    <div class="summary-ia">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
+    <div class="cols-2">
+      <div class="comments-section">
+        <div class="comments-title">✅ Comentarios Positivos</div>
+        <div class="no-data-msg">No hay comentarios positivos disponibles.</div>
+      </div>
+      <div class="comments-section">
+        <div class="comments-title">⚠️ Comentarios Negativos</div>
+        <div class="no-data-msg">No hay comentarios negativos disponibles.</div>
+      </div>
     </div>
   </div>
 
   <!-- TABLA COMPARATIVA -->
-  <div class="section-title">📋 Tabla Comparativa</div>
+  <div class="section-title"><span class="icon">📋</span> Tabla Comparativa</div>
   <div class="table-wrap">
     <table>
       <thead>
@@ -709,10 +1125,10 @@ padding: 16px;
           <th>Restaurante</th>
           <th>Ciudad</th>
           <th>Rating</th>
-          <th>🍽 Comida</th>
-          <th>👥 Servicio</th>
-          <th>🏮 Ambiente</th>
-          <th>💰 Valor</th>
+          <th>Comida</th>
+          <th>Servicio</th>
+          <th>Ambiente</th>
+          <th>Valor</th>
           <th>Total Reseñas</th>
           <th>Estado</th>
         </tr>
@@ -720,7 +1136,7 @@ padding: 16px;
       <tbody>
         <tr>
           <td>1</td>
-          <td>Sin nombre</td>
+          <td><strong>Sin nombre</strong></td>
           <td>—</td>
           <td>N/A</td>
           <td>—</td>
@@ -728,11 +1144,11 @@ padding: 16px;
           <td>—</td>
           <td>—</td>
           <td>0</td>
-          <td><span class="estado-badge estado-gris">Sin datos</span></td>
+          <td><span class="status-badge na">Sin datos</span></td>
         </tr>
         <tr>
           <td>2</td>
-          <td>Sin nombre</td>
+          <td><strong>Sin nombre</strong></td>
           <td>—</td>
           <td>N/A</td>
           <td>—</td>
@@ -740,11 +1156,11 @@ padding: 16px;
           <td>—</td>
           <td>—</td>
           <td>0</td>
-          <td><span class="estado-badge estado-gris">Sin datos</span></td>
+          <td><span class="status-badge na">Sin datos</span></td>
         </tr>
         <tr>
           <td>3</td>
-          <td>Sin nombre</td>
+          <td><strong>Sin nombre</strong></td>
           <td>—</td>
           <td>N/A</td>
           <td>—</td>
@@ -752,69 +1168,770 @@ padding: 16px;
           <td>—</td>
           <td>—</td>
           <td>0</td>
-          <td><span class="estado-badge estado-gris">Sin datos</span></td>
+          <td><span class="status-badge na">Sin datos</span></td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <!-- ALERTAS PRIORITARIAS -->
-  <div class="section-title">🚨 Alertas Prioritarias</div>
-
-  <div class="alert-none">
-    <strong>✅ Sin alertas críticas activas</strong><br>
-    <span style="font-size:0.85rem; margin-top:4px; display:block;">No hay restaurantes con rating_promedio menor a 3.5 en este reporte, ya que no se han cargado datos de reseñas. Las alertas se generarán automáticamente cuando se procesen reseñas reales de OpenTable.</span>
-  </div>
-
-  <div class="alert-box" style="margin-top:14px;">
-    <h3>⚠️ Aviso de datos insuficientes</h3>
-    <div class="alert-item">
-      <span class="ai-icon">📭</span>
-      <span class="ai-text"><strong>Sin reseñas procesadas:</strong> Los 3 restaurantes del grupo no tienen reseñas cargadas en este período. Verifique la integración con OpenTable y que el rango de fechas del reporte sea correcto.</span>
+  <div class="section-title"><span class="icon">🚨</span> Alertas Prioritarias</div>
+  <div class="alerts-card">
+    <div class="no-alert">
+      <span>✅</span>
+      <span>No se detectan alertas activas — ningún restaurante cuenta con reseñas registradas en este período. Se recomienda activar la recolección de reseñas en OpenTable para los 3 establecimientos del grupo.</span>
     </div>
-    <div class="alert-item">
-      <span class="ai-icon">🏷️</span>
-      <span class="ai-text"><strong>Nombres no asignados:</strong> Los restaurantes figuran como "Sin nombre" y sin ciudad. Es necesario completar los metadatos de cada propiedad en el sistema de gestión.</span>
-    </div>
-    <div class="alert-item">
-      <span class="ai-icon">📊</span>
-      <span class="ai-text"><strong>Métricas no disponibles:</strong> Food, Servicio, Ambiente y Valor aparecen como N/A. Sin estos datos no es posible generar benchmarks ni comparativas internas.</span>
+    <div style="margin-top:16px;">
+      <div class="alert-item">
+        <div class="alert-rest-name">⚠️ Alerta General — Ausencia de datos</div>
+        <ul class="alert-problems">
+          <li>Los 3 restaurantes reportan 0 reseñas en OpenTable para el período analizado.</li>
+          <li>Sin datos de rating, es imposible evaluar comida, servicio, ambiente y valor.</li>
+          <li>La visibilidad del grupo en plataformas de reservas puede estar comprometida.</li>
+          <li>Se recomienda verificar la configuración de los perfiles en OpenTable de inmediato.</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <!-- RECOMENDACIONES -->
-  <div class="section-title">💡 Recomendaciones Estratégicas</div>
-
-  <div class="rec-grid">
-    <div class="rec-card low">
-      <h4><span class="rec-num orange">1</span>Activar captura de reseñas</h4>
-      <p>Implementar campañas post-visita por email o SMS para invitar a los comensales a dejar su reseña en OpenTable. El benchmark de la industria sugiere una tasa de conversión de 8–15% con seguimiento automatizado dentro de las 24 hrs.</p>
+  <div class="section-title"><span class="icon">💡</span> Recomendaciones Estratégicas</div>
+  <div class="reco-card">
+    <div class="reco-item low">
+      <div class="reco-num">1</div>
+      <div class="reco-text">
+        <strong>Activar y auditar perfiles en OpenTable</strong>
+        Verificar que los 3 restaurantes del Grupo Andersons tengan perfiles activos, correctamente configurados y vinculados a las campañas de reservas en OpenTable. Revisar que las solicitudes de reseña post-visita estén habilitadas para todos los comensales.
+      </div>
     </div>
-    <div class="rec-card low">
-      <h4><span class="rec-num orange">2</span>Completar perfiles de restaurante</h4>
-      <p>Asignar nombre, ciudad y categoría a cada propiedad en el sistema. Los perfiles completos en OpenTable reciben hasta 3× más visitas orgánicas y mejoran el posicionamiento en búsquedas locales.</p>
+    <div class="reco-item low">
+      <div class="reco-num">2</div>
+      <div class="reco-text">
+        <strong>Implementar estrategia proactiva de captación de reseñas</strong>
+        Diseñar un flujo automatizado de correo o SMS post-reserva invitando a los comensales a dejar su opinión en OpenTable. Establece una meta mínima de 15 reseñas por restaurante por mes para generar datos estadísticamente representativos.
+      </div>
     </div>
-    <div class="rec-card low">
-      <h4><span class="rec-num orange">3</span>Establecer KPIs baseline</h4>
-      <p>Una vez procesadas las primeras 30 reseñas por restaurante, definir metas de rating mínimo (ej. ≥ 4.2 global, ≥ 4.0 por categoría). Revisar resultados en ciclos mensuales y comparar contra la competencia local.</p>
+    <div class="reco-item low">
+      <div class="reco-num">3</div>
+      <div class="reco-text">
+        <strong>Establecer KPIs base y sistema de monitoreo semanal</strong>
+        Una vez que se comiencen a acumular reseñas, definir umbrales mínimos de satisfacción por categoría (comida ≥ 4.0, servicio ≥ 4.0, ambiente ≥ 3.8, valor ≥ 3.5) y asignar un responsable de hospitalidad que revise el panel OpenTable cada semana para detectar caídas a tiempo.
+      </div>
     </div>
-    <div class="rec-card high">
-      <h4><span class="rec-num green">✓</span>Mantenimiento para ratings altos</h4>
-      <p>Para restaurantes que alcancen rating ≥ 4.5: reconocer públicamente al equipo, documentar las prácticas de servicio exitosas y replicarlas como estándar en las demás propiedades del grupo. Responder el 100% de reseñas positivas para fortalecer la fidelidad.</p>
+    <div class="reco-item high">
+      <div class="reco-num">✓</div>
+      <div class="reco-text">
+        <strong>Acción de mantenimiento para restaurantes con alto rating (cuando aplique)</strong>
+        Para cualquier restaurante que alcance un rating promedio ≥ 4.5, implementar un programa de reconocimiento al equipo de servicio vinculado a las métricas de OpenTable, y solicitar a los comensales más fieles que compartan su experiencia en redes sociales para amplificar la reputación positiva del establecimiento.
+      </div>
     </div>
   </div>
 
   <!-- FOOTER -->
   <div class="footer">
-    <p>🍽 <strong>Reporte OpenTable — Grupo Andersons</strong> &nbsp;|&nbsp; Generado el 9/4/2026 &nbsp;|&nbsp; Análisis de Experiencia de Cliente</p>
-    <p style="margin-top:6px;">Este reporte es de uso interno y confidencial. Los datos provienen de reseñas verificadas de OpenTable.</p>
+    Reporte generado el 9/4/2026 &nbsp;·&nbsp; Grupo Andersons &nbsp;·&nbsp; Datos fuente: OpenTable &nbsp;·&nbsp; Análisis por IA de Experiencia de Cliente
+  </div>
+
+</div>
+
+</div></div>
+<div id="tab-ambos"  class="tab-panel">
+  <div id="panel-google-2"><p style="color:#94a3b8;padding:20px;">Sin datos Google</p></div>
+  <div class="report-separator"><hr/><span>✈️ TripAdvisor</span><hr/></div>
+  <div id="panel-ta-2"><div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>📊 Reporte TripAdvisor — Grupo Andersons</h1>
+    <div class="subtitle">Análisis de reseñas y experiencia de cliente</div>
+    <div class="header-meta">
+      <div class="meta-item">
+        <div class="label">Fecha</div>
+        <div class="value">09 abr 2026</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Restaurantes</div>
+        <div class="value">4</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Total Reseñas</div>
+        <div class="value">4,600</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Fuentes</div>
+        <div class="value">Google + TripAdvisor</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD GENERAL -->
+  <div class="section-title">Dashboard General</div>
+  <div class="dashboard-cards">
+    <div class="dash-card best">
+      <div class="card-label">🏆 Mejor Restaurante</div>
+      <div class="card-value">Porfirio's Cancún</div>
+      <div class="card-sub">2,700 reseñas · Volumen top</div>
+      <div class="card-sub" style="color:#22c55e;font-weight:700;">★ Rating Excelente</div>
+    </div>
+    <div class="dash-card worst">
+      <div class="card-label">⚠️ A Monitorear</div>
+      <div class="card-value">Sin nombre (TripAdvisor)</div>
+      <div class="card-sub">1,500 reseñas · Sin datos de rating</div>
+      <div class="card-sub" style="color:#f59e0b;font-weight:700;">★ Rating no disponible</div>
+    </div>
+    <div class="dash-card avg">
+      <div class="card-label">📈 Promedio Global</div>
+      <div class="card-value" style="color:#3b82f6;">N/D numérico</div>
+      <div class="card-sub">Todos los ratings = 0.0 (datos de plataforma)</div>
+      <div class="card-sub">Sentimiento: Predominantemente Positivo</div>
+    </div>
+  </div>
+
+  <!-- CHART -->
+  <div class="chart-card">
+    <div class="section-title" style="margin-bottom:18px;">Comparativa por Restaurante — Volumen de Reseñas</div>
+    <div class="chart-wrap">
+      <canvas id="barChart"></canvas>
+    </div>
+  </div>
+
+  <!-- SECCIÓN POR RESTAURANTE -->
+  <div class="section-title">Análisis por Restaurante</div>
+
+  <!-- RESTAURANTE 1: Porfirio's Cancún -->
+  <div class="rest-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">🍽️ Porfirio's Cancún | Restaurante de comida mexicana</div>
+        <div class="rest-city">📍 Cancún, México &nbsp;·&nbsp; Google Reviews</div>
+      </div>
+      <div class="rest-rating">
+        <div class="stars">★★★★★</div>
+        <div class="rating-num rating-green">Excelente</div>
+        <div style="font-size:0.75rem;color:#64748b;">Rating promedio N/D numérico</div>
+      </div>
+    </div>
+    <div class="rest-meta">📋 <strong>2,700</strong> reseñas analizadas &nbsp;·&nbsp; ✅ <strong>2,630</strong> positivas &nbsp;·&nbsp; ⚠️ <strong>70</strong> negativas &nbsp;·&nbsp; Tasa positiva: <strong>97.4%</strong></div>
+    <div class="detailed-ratings">
+      <span>🍽️ Comida: N/D</span>
+      <span>👥 Servicio: N/D</span>
+      <span>🏠 Ambiente: N/D</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-pos">
+        <div class="review-section-title">✅ Top 3 Comentarios Positivos</div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"An absolutely incredible experience from start to finish! From the moment we arrived, the hostess was welcoming... The food was fresh and flavorful—and I have to mention the churros, which were simply divine. The highlight for parents? The playroom with an on-site nanny. A perfect 10/10"</em></div>
+          <div class="review-meta"><span>📅 Hace 2 días</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Porfirio's was a fantastic experience from start to finish. The food was excellent and the meat was truly exceptional, high quality and perfectly prepared. The service was out of this world. Every detail was taken care of and the staff was attentive from the moment we arrived until the end of the evening."</em></div>
+          <div class="review-meta"><span>📅 Hace 5 días</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Una experiencia verdaderamente extraordinaria. La comida es impecable: sabores muy bien logrados, ingredientes de gran calidad y una presentación cuidada hasta el último detalle. El servicio es atento, amable y muy profesional... El ambiente es muy agradable, elegante pero relajado."</em></div>
+          <div class="review-meta"><span>📅 Hace una semana</span></div>
+        </div>
+      </div>
+      <div class="review-neg">
+        <div class="review-section-title">⚠️ Top 3 Comentarios Negativos</div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"Pretty good but quite expensive for what you get. The service was a bit slow especially when I sat for 15 minutes with my menu closed waiting for someone to take my order. Portions seemed quite small compared to what I was used to."</em></div>
+          <div class="review-meta"><span>📅 Hace 2 días</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"El ambiente es muy ruidoso y cargado, no es un sitio para relajarse. La comida no está mal pero no es la mejor de la zona en nuestra opinión."</em></div>
+          <div class="review-meta"><span>📅 Hace 6 días</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"Los postres tardaron mucho en llegar, quizá más de 10 minutos. Un té negro era una especie de ponche con trozos como de fruta... el de manzanilla era agua clara con una sola florecita flotando."</em></div>
+          <div class="review-meta"><span>📅 Hace una semana</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESTAURANTE 2: Harry's Steakhouse -->
+  <div class="rest-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">🥩 Harry's Steakhouse & Raw Bar | Cancun</div>
+        <div class="rest-city">📍 Cancún, México &nbsp;·&nbsp; Google Reviews</div>
+      </div>
+      <div class="rest-rating">
+        <div class="stars">★★★★★</div>
+        <div class="rating-num rating-green">Excelente</div>
+        <div style="font-size:0.75rem;color:#64748b;">Rating promedio N/D numérico</div>
+      </div>
+    </div>
+    <div class="rest-meta">📋 <strong>200</strong> reseñas analizadas &nbsp;·&nbsp; ✅ <strong>200</strong> positivas &nbsp;·&nbsp; ⚠️ <strong>0</strong> negativas &nbsp;·&nbsp; Tasa positiva: <strong>100%</strong></div>
+    <div class="detailed-ratings">
+      <span>🍽️ Comida: N/D</span>
+      <span>👥 Servicio: N/D</span>
+      <span>🏠 Ambiente: N/D</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-pos">
+        <div class="review-section-title">✅ Top 3 Comentarios Positivos</div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Unreal experience. Everything was out of this world from the food to the service. I would highly highly recommend! Sergio and Eduardo made the experience so special. They had such special personal touches and paid such close attention to each and every table. This place is incredible!!"</em></div>
+          <div class="review-meta"><span>📅 Hace un día</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Our experience at Harry's was top notch... Pedro Chiquini and his assistant Luz were the best, an easy 10/10. We have been to a lot of restaurants in our time and this was by far the best experience we have EVER had."</em></div>
+          <div class="review-meta"><span>📅 Hace una semana</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Harry's is not just some of the most amazing food, it is an incredible experience. Attention to detail is second to none! If you are looking to fabulous food and an experience to match, look no further, you won't be disappointed."</em></div>
+          <div class="review-meta"><span>📅 Hace una semana</span></div>
+        </div>
+      </div>
+      <div class="review-neg">
+        <div class="review-section-title">⚠️ Comentarios Negativos</div>
+        <div class="no-reviews">✅ No se registraron comentarios negativos en el período analizado. ¡Desempeño perfecto!</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESTAURANTE 3: Ilios -->
+  <div class="rest-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">🇬🇷 Ilios | Greek Restaurant in Cancun</div>
+        <div class="rest-city">📍 Cancún, México &nbsp;·&nbsp; Google Reviews</div>
+      </div>
+      <div class="rest-rating">
+        <div class="stars">★★★★☆</div>
+        <div class="rating-num rating-green">Muy Bueno</div>
+        <div style="font-size:0.75rem;color:#64748b;">Rating promedio N/D numérico</div>
+      </div>
+    </div>
+    <div class="rest-meta">📋 <strong>200</strong> reseñas analizadas &nbsp;·&nbsp; ✅ <strong>200</strong> positivas (incl. mixtas) &nbsp;·&nbsp; ⚠️ <strong>0</strong> registradas negativas &nbsp;·&nbsp; Nota: algunos comentarios tienen observaciones mixtas</div>
+    <div class="detailed-ratings">
+      <span>🍽️ Comida: N/D</span>
+      <span>👥 Servicio: N/D</span>
+      <span>🏠 Ambiente: N/D</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-pos">
+        <div class="review-section-title">✅ Top 3 Comentarios Positivos</div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Tuve una experiencia increíble en Ílios Cancún. El restaurante es absolutamente espectacular: la decoración, el ambiente y la comida son de primer nivel. Daniel y Marcos nos atendieron de una manera impecable. Fueron extremadamente amables, atentos y profesionales en todo momento."</em></div>
+          <div class="review-meta"><span>📅 Hace 1 minuto</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"What an absolutely amazing evening and big thanks to Edu and Paul! Our service was over the top and needed for nothing! We ate almost every appetizer and could not pick a favorite bc they were all so good! The entertainment and vibe of the whole place was outstanding."</em></div>
+          <div class="review-meta"><span>📅 Hace 2 días</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Erick and Brandon are amazing!!! This place is lively. Go around 9-10p if you want to break plates. The food is incredible and the service is outstanding. 11/10 I would recommend if you are in Cancún."</em></div>
+          <div class="review-meta"><span>📅 Hace una hora</span></div>
+        </div>
+      </div>
+      <div class="review-neg">
+        <div class="review-section-title">⚠️ Observaciones Mixtas (Clasificadas en positivos)</div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"Cool vibes and atmosphere right on the water. Food and service were on the mediocre side... the lobster is not worth the price. The wine pours are on the short side and over priced. Bottle of wine ran out on our pour..."</em></div>
+          <div class="review-meta"><span>📅 Hace un día</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"The hostess spilled fish juice on my daughter, it's spilled wine on the table, which ended up getting on my wife's dress. The food was OK and the service was OK... For the price, expected more."</em></div>
+          <div class="review-meta"><span>📅 Hace un día</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">⚠️</span>
+          <div class="review-text"><em>"Vista espectacular. Show hermoso. Deliciosa y en poca cantidad la comida, pero en estos restaurantes así es. Deli pero poco."</em></div>
+          <div class="review-meta"><span>📅 Hace 2 días</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESTAURANTE 4: Sin nombre (TripAdvisor) -->
+  <div class="rest-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">📋 Restaurante sin nombre (TripAdvisor)</div>
+        <div class="rest-city">📍 Ciudad no especificada &nbsp;·&nbsp; TripAdvisor (COUPLES, FAMILY, FRIENDS, SOLO, BUSINESS)</div>
+      </div>
+      <div class="rest-rating">
+        <div class="stars">★★★★★</div>
+        <div class="rating-num rating-yellow">N/D</div>
+        <div style="font-size:0.75rem;color:#64748b;">Títulos solo, sin textos completos</div>
+      </div>
+    </div>
+    <div class="rest-meta">📋 <strong>1,500</strong> reseñas analizadas &nbsp;·&nbsp; ✅ <strong>1,500</strong> positivas &nbsp;·&nbsp; ⚠️ <strong>0</strong> negativas &nbsp;·&nbsp; ⚡ Nota: Solo títulos disponibles, sin textos de reseña</div>
+    <div class="detailed-ratings">
+      <span>🍽️ Comida: N/D</span>
+      <span>👥 Servicio: N/D</span>
+      <span>🏠 Ambiente: N/D</span>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-pos">
+        <div class="review-section-title">✅ Top 3 Títulos Positivos Destacados</div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Continued excellence time and time again."</em> — Tipo: FAMILY</div>
+          <div class="review-meta"><span>📅 Fecha no disponible</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"The best restaurant I have ever been to."</em> — Tipo: FRIENDS</div>
+          <div class="review-meta"><span>📅 Fecha no disponible</span></div>
+        </div>
+        <div class="review-item">
+          <span class="review-icon">✅</span>
+          <div class="review-text"><em>"Excellent experience, really customer service is another level and the mariachis experience is crazy!"</em> — Tipo: FAMILY</div>
+          <div class="review-meta"><span>📅 Fecha no disponible</span></div>
+        </div>
+      </div>
+      <div class="review-neg">
+        <div class="review-section-title">⚠️ Comentarios Negativos</div>
+        <div class="no-reviews">✅ No se registraron comentarios negativos. Solo títulos positivos disponibles en este conjunto de datos.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLA COMPARATIVA -->
+  <div class="section-title">Tabla Comparativa</div>
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Restaurante</th>
+          <th>Ciudad</th>
+          <th>Rating</th>
+          <th>Total Reseñas</th>
+          <th>Comida</th>
+          <th>Servicio</th>
+          <th>Ambiente</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Harry's Steakhouse & Raw Bar</strong></td>
+          <td>Cancún</td>
+          <td><span style="color:#22c55e;font-weight:700;">★ Excelente</span></td>
+          <td>200</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td><span class="badge badge-green">100% Positivo</span></td>
+        </tr>
+        <tr>
+          <td><strong>Porfirio's Cancún</strong></td>
+          <td>Cancún</td>
+          <td><span style="color:#22c55e;font-weight:700;">★ Excelente</span></td>
+          <td>2,700</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td><span class="badge badge-green">97.4% Positivo</span></td>
+        </tr>
+        <tr>
+          <td><strong>Ilios Greek Restaurant</strong></td>
+          <td>Cancún</td>
+          <td><span style="color:#22c55e;font-weight:700;">★ Muy Bueno</span></td>
+          <td>200</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td><span class="badge badge-yellow">Mixto — Observar</span></td>
+        </tr>
+        <tr>
+          <td><strong>Sin nombre (TripAdvisor)</strong></td>
+          <td>N/D</td>
+          <td><span style="color:#f59e0b;font-weight:700;">★ N/D</span></td>
+          <td>1,500</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td>N/D</td>
+          <td><span class="badge badge-yellow">Solo Títulos</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ALERTAS PRIORITARIAS -->
+  <div class="section-title">Alertas Prioritarias</div>
+  <div class="alerts-card">
+    <div class="alert-title">🚨 Alertas de Calidad — Problemas Detectados</div>
+
+    <div class="alert-item">
+      <strong>⚠️ Ilios — Incidentes de Servicio Físico</strong>
+      La hostess derramó líquido de pescado sobre una cliente y vino sobre otra. Estos incidentes físicos generan reseñas de alto impacto negativo y deben atenderse con protocolos de manejo de bandejas y capacitación urgente.
+    </div>
+
+    <div class="alert-item">
+      <strong>⚠️ Porfirio's Cancún — Tiempo de Espera y Rotación de Mesas</strong>
+      Clientes reportan servicio lento (15+ minutos esperando que tomen su orden), postres con demoras >10 minutos, y presión implícita para liberar mesas en hora pico. Impacta la percepción de valor.
+    </div>
+
+    <div class="alert-item">
+      <strong>⚠️ Porfirio's Cancún — Calidad de Bebidas y Menú</strong>
+      Té de manzanilla servido como agua clara, té negro no identificado. Queja de precios muy elevados de alcohol (2 shots Don Julio = $61 USD). Un cliente solicita regreso del postre "Tres leches" al menú.
+    </div>
+
+    <div class="alert-item">
+      <strong>⚠️ Ilios — Precio vs. Valor Percibido</strong>
+      Porciones pequeñas para los precios cobrados, vinos con porciones cortas y sobrevalorados, langosta considerada no rentable por el precio. Riesgo de disonancia precio-valor en segmento premium.
+    </div>
+
+    <div class="alert-item">
+      <strong>⚠️ Restaurante sin nombre (TripAdvisor) — Datos Incompletos</strong>
+      1,500 reseñas sin texto de contenido, sin rating numérico, sin ciudad, sin nombre de restaurante. Requiere revisión de la integración de datos de TripAdvisor para identificar a qué establecimiento corresponde.
+    </div>
+
+    <div style="margin-top:16px;">
+      <div style="font-size:0.85rem;font-weight:700;color:#92400e;margin-bottom:8px;">🔁 Problemas Más Repetidos en Comentarios Negativos:</div>
+      <ul class="problem-list">
+        <li>🔊 <strong>Ruido excesivo:</strong> Ambiente muy ruidoso y cargado, especialmente en Porfirio's e Ilios durante horas pico.</li>
+        <li>⏱️ <strong>Tiempos de espera:</strong> Servicio lento en Porfirio's — clientes esperando hasta 15 min para ser atendidos.</li>
+        <li>💸 <strong>Precio percibido alto:</strong> Múltiples menciones de precios elevados en ambos restaurantes de Cancún.</li>
+        <li>🍽️ <strong>Porciones pequeñas:</strong> Reportado en Porfirio's e Ilios — valor no proporcional al costo.</li>
+        <li>🍷 <strong>Inconsistencia en bebidas:</strong> Té mal preparado, porciones de vino cortas, precios de alcohol desproporcionados.</li>
+        <li>🔄 <strong>Presión en rotación de mesas:</strong> Clientes sienten que se les pide desocupar en horas de alta demanda.</li>
+        <li>💧 <strong>Incidentes físicos (Ilios):</strong> Derrame de líquidos sobre clientes — requiere acción inmediata de protocolo.</li>
+        <li>📋 <strong>Ítems faltantes en menú:</strong> Tres leches discontinuado en Porfirio's — múltiples clientes lo solicitan.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RECOMENDACIONES -->
+  <div class="section-title">Recomendaciones Estratégicas</div>
+  <div class="recs-card">
+
+    <div class="rec-item low">
+      <div class="rec-icon">🛠️</div>
+      <div class="rec-content">
+        <span class="rec-tag low">Acción Urgente — Ilios</span>
+        <strong>Implementar protocolo de manejo seguro de bandejas y servicio en mesa</strong>
+        <p>Los derrames sobre clientes reportados en Ilios representan un riesgo reputacional y legal. Capacitar inmediatamente al personal de piso (especialmente hostesses y meseros) en técnicas de manejo de bandejas, protocolos de derrame y manejo de crisis. Establecer compensaciones estándar para incidentes (bebida cortesía, descuento, disculpa del gerente en mesa).</p>
+      </div>
+    </div>
+
+    <div class="rec-item low">
+      <div class="rec-icon">⏱️</div>
+      <div class="rec-content">
+        <span class="rec-tag low">Acción Prioritaria — Porfirio's Cancún</span>
+        <strong>Optimizar tiempos de servicio y flujo de atención en horas pico</strong>
+        <p>Implementar un sistema de asignación de secciones más eficiente y un protocolo de bienvenida de 3 minutos máximo. Capacitar a los capitanes para detectar clientes esperando atención. Para los postres, establecer un tiempo máximo de 7 minutos desde la solicitud. Considerar un sistema de QR para auto-pedidos en momentos de alta ocupación para bebidas adicionales.</p>
+      </div>
+    </div>
+
+    <div class="rec-item low">
+      <div class="rec-icon">📋</div>
+      <div class="rec-content">
+        <span class="rec-tag low">Acción Recomendada — Porfirio's &amp; Ilios</span>
+        <strong>Revisión de carta: precio-porción-calidad y recuperación de ítems populares</strong>
+        <p>Evaluar el regreso del postre Tres leches al menú de Porfirio's, ya que múltiples clientes lo solicitan activamente (señal de demanda latente). En Ilios, revisar la relación precio-porción en langosta y vinos de botella. Considerar opciones de maridaje por copa con mejor relación de valor. Añadir una descripción más transparente de tamaños de porción en el menú para gestionar expectativas.</p>
+      </div>
+    </div>
+
+    <div class="rec-item high">
+      <div class="rec-icon">🌟</div>
+      <div class="rec-content">
+        <span class="rec-tag high">Mantenimiento de Excelencia — Harry's Steakhouse</span>
+        <strong>Capitalizar la excelencia del personal para crear un programa de embajadores internos</strong>
+        <p>Harry's presenta un récord perfecto de 0 reseñas negativas. Aprovechar este momento para documentar las mejores prácticas del equipo (Samuel, Valentina, Franco, Lazaro, Barrios, Sergio, Eduardo, etc.) y crear un manual de "estándares de oro" replicable en el resto del grupo. Implementar un programa de reconocimiento mensual para meseros nominados en reseñas, fortaleciendo la cultura de excelencia y reduciendo la rotación de talento estrella.</p>
+      </div>
+    </div>
+
   </div>
 
 </div>
 
 </div>
-  <div class="report-separator"><hr/><span>✈️ TripAdvisor</span><hr/></div>
-  <div id="panel-ta-2"><p style="color:#94a3b8;padding:20px;">Sin datos TripAdvisor</p></div>
+  <div class="report-separator"><hr/><span>🍽️ OpenTable</span><hr/></div>
+  <div id="panel-ot-2"><div class="wrapper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div>
+      <div class="header-title">📋 Reporte OpenTable</div>
+      <div class="header-subtitle">Grupo Andersons — Análisis de Experiencia de Cliente</div>
+    </div>
+    <div class="header-meta">
+      <div class="meta-chip">
+        <div class="val">9/4/2026</div>
+        <div class="lbl">Fecha</div>
+      </div>
+      <div class="meta-chip">
+        <div class="val">3</div>
+        <div class="lbl">Restaurantes</div>
+      </div>
+      <div class="meta-chip">
+        <div class="val">0</div>
+        <div class="lbl">Reseñas Totales</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DASHBOARD GENERAL -->
+  <div class="section-title"><span class="icon">📊</span> Dashboard General</div>
+
+  <div class="cards-row">
+    <div class="card best">
+      <div class="card-icon">🏆</div>
+      <div class="card-label">Mejor Restaurante</div>
+      <div class="card-value">Sin datos suficientes</div>
+      <div class="card-sub">Sin reseñas disponibles</div>
+    </div>
+    <div class="card worst">
+      <div class="card-icon">⚠️</div>
+      <div class="card-label">Restaurante con Menor Rating</div>
+      <div class="card-value">Sin datos suficientes</div>
+      <div class="card-sub">Sin reseñas disponibles</div>
+    </div>
+    <div class="card avg">
+      <div class="card-icon">📈</div>
+      <div class="card-label">Promedio Global</div>
+      <div class="card-value">N/A</div>
+      <div class="card-sub">0 reseñas analizadas</div>
+    </div>
+  </div>
+
+  <div class="chart-card">
+    <div class="section-title" style="border:none;margin-bottom:12px;"><span class="icon">📉</span> Comparativo de Rating por Restaurante</div>
+    <div class="chart-wrap">
+      <canvas id="ratingsChart"></canvas>
+    </div>
+  </div>
+
+  <!-- SECCIÓN POR RESTAURANTE -->
+  <div class="section-title"><span class="icon">🍽️</span> Detalle por Restaurante</div>
+
+  <!-- Restaurante 1 -->
+  <div class="restaurant-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">Sin nombre</div>
+        <div class="rest-city">📍 Ciudad no especificada</div>
+      </div>
+      <div class="rating-badge na">
+        <div class="num">N/A</div>
+        <div class="stars">— — —</div>
+      </div>
+    </div>
+    <div class="resenas-count">🗂 0 reseñas analizadas</div>
+    <div class="chips-row">
+      <span class="chip na-chip">🍽 Comida: N/A</span>
+      <span class="chip na-chip">👥 Servicio: N/A</span>
+      <span class="chip na-chip">🏮 Ambiente: N/A</span>
+      <span class="chip na-chip">💰 Valor: N/A</span>
+    </div>
+    <div class="summary-ia">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
+    <div class="cols-2">
+      <div class="comments-section">
+        <div class="comments-title">✅ Comentarios Positivos</div>
+        <div class="no-data-msg">No hay comentarios positivos disponibles.</div>
+      </div>
+      <div class="comments-section">
+        <div class="comments-title">⚠️ Comentarios Negativos</div>
+        <div class="no-data-msg">No hay comentarios negativos disponibles.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Restaurante 2 -->
+  <div class="restaurant-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">Sin nombre</div>
+        <div class="rest-city">📍 Ciudad no especificada</div>
+      </div>
+      <div class="rating-badge na">
+        <div class="num">N/A</div>
+        <div class="stars">— — —</div>
+      </div>
+    </div>
+    <div class="resenas-count">🗂 0 reseñas analizadas</div>
+    <div class="chips-row">
+      <span class="chip na-chip">🍽 Comida: N/A</span>
+      <span class="chip na-chip">👥 Servicio: N/A</span>
+      <span class="chip na-chip">🏮 Ambiente: N/A</span>
+      <span class="chip na-chip">💰 Valor: N/A</span>
+    </div>
+    <div class="summary-ia">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
+    <div class="cols-2">
+      <div class="comments-section">
+        <div class="comments-title">✅ Comentarios Positivos</div>
+        <div class="no-data-msg">No hay comentarios positivos disponibles.</div>
+      </div>
+      <div class="comments-section">
+        <div class="comments-title">⚠️ Comentarios Negativos</div>
+        <div class="no-data-msg">No hay comentarios negativos disponibles.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Restaurante 3 -->
+  <div class="restaurant-card">
+    <div class="rest-header">
+      <div>
+        <div class="rest-name">Sin nombre</div>
+        <div class="rest-city">📍 Ciudad no especificada</div>
+      </div>
+      <div class="rating-badge na">
+        <div class="num">N/A</div>
+        <div class="stars">— — —</div>
+      </div>
+    </div>
+    <div class="resenas-count">🗂 0 reseñas analizadas</div>
+    <div class="chips-row">
+      <span class="chip na-chip">🍽 Comida: N/A</span>
+      <span class="chip na-chip">👥 Servicio: N/A</span>
+      <span class="chip na-chip">🏮 Ambiente: N/A</span>
+      <span class="chip na-chip">💰 Valor: N/A</span>
+    </div>
+    <div class="summary-ia">Sin resumen disponible — no se han registrado reseñas para este restaurante.</div>
+    <div class="cols-2">
+      <div class="comments-section">
+        <div class="comments-title">✅ Comentarios Positivos</div>
+        <div class="no-data-msg">No hay comentarios positivos disponibles.</div>
+      </div>
+      <div class="comments-section">
+        <div class="comments-title">⚠️ Comentarios Negativos</div>
+        <div class="no-data-msg">No hay comentarios negativos disponibles.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLA COMPARATIVA -->
+  <div class="section-title"><span class="icon">📋</span> Tabla Comparativa</div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Restaurante</th>
+          <th>Ciudad</th>
+          <th>Rating</th>
+          <th>Comida</th>
+          <th>Servicio</th>
+          <th>Ambiente</th>
+          <th>Valor</th>
+          <th>Total Reseñas</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Sin nombre</strong></td>
+          <td>—</td>
+          <td>N/A</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>0</td>
+          <td><span class="status-badge na">Sin datos</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Sin nombre</strong></td>
+          <td>—</td>
+          <td>N/A</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>0</td>
+          <td><span class="status-badge na">Sin datos</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Sin nombre</strong></td>
+          <td>—</td>
+          <td>N/A</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>0</td>
+          <td><span class="status-badge na">Sin datos</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ALERTAS PRIORITARIAS -->
+  <div class="section-title"><span class="icon">🚨</span> Alertas Prioritarias</div>
+  <div class="alerts-card">
+    <div class="no-alert">
+      <span>✅</span>
+      <span>No se detectan alertas activas — ningún restaurante cuenta con reseñas registradas en este período. Se recomienda activar la recolección de reseñas en OpenTable para los 3 establecimientos del grupo.</span>
+    </div>
+    <div style="margin-top:16px;">
+      <div class="alert-item">
+        <div class="alert-rest-name">⚠️ Alerta General — Ausencia de datos</div>
+        <ul class="alert-problems">
+          <li>Los 3 restaurantes reportan 0 reseñas en OpenTable para el período analizado.</li>
+          <li>Sin datos de rating, es imposible evaluar comida, servicio, ambiente y valor.</li>
+          <li>La visibilidad del grupo en plataformas de reservas puede estar comprometida.</li>
+          <li>Se recomienda verificar la configuración de los perfiles en OpenTable de inmediato.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOMENDACIONES -->
+  <div class="section-title"><span class="icon">💡</span> Recomendaciones Estratégicas</div>
+  <div class="reco-card">
+    <div class="reco-item low">
+      <div class="reco-num">1</div>
+      <div class="reco-text">
+        <strong>Activar y auditar perfiles en OpenTable</strong>
+        Verificar que los 3 restaurantes del Grupo Andersons tengan perfiles activos, correctamente configurados y vinculados a las campañas de reservas en OpenTable. Revisar que las solicitudes de reseña post-visita estén habilitadas para todos los comensales.
+      </div>
+    </div>
+    <div class="reco-item low">
+      <div class="reco-num">2</div>
+      <div class="reco-text">
+        <strong>Implementar estrategia proactiva de captación de reseñas</strong>
+        Diseñar un flujo automatizado de correo o SMS post-reserva invitando a los comensales a dejar su opinión en OpenTable. Establece una meta mínima de 15 reseñas por restaurante por mes para generar datos estadísticamente representativos.
+      </div>
+    </div>
+    <div class="reco-item low">
+      <div class="reco-num">3</div>
+      <div class="reco-text">
+        <strong>Establecer KPIs base y sistema de monitoreo semanal</strong>
+        Una vez que se comiencen a acumular reseñas, definir umbrales mínimos de satisfacción por categoría (comida ≥ 4.0, servicio ≥ 4.0, ambiente ≥ 3.8, valor ≥ 3.5) y asignar un responsable de hospitalidad que revise el panel OpenTable cada semana para detectar caídas a tiempo.
+      </div>
+    </div>
+    <div class="reco-item high">
+      <div class="reco-num">✓</div>
+      <div class="reco-text">
+        <strong>Acción de mantenimiento para restaurantes con alto rating (cuando aplique)</strong>
+        Para cualquier restaurante que alcance un rating promedio ≥ 4.5, implementar un programa de reconocimiento al equipo de servicio vinculado a las métricas de OpenTable, y solicitar a los comensales más fieles que compartan su experiencia en redes sociales para amplificar la reputación positiva del establecimiento.
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Reporte generado el 9/4/2026 &nbsp;·&nbsp; Grupo Andersons &nbsp;·&nbsp; Datos fuente: OpenTable &nbsp;·&nbsp; Análisis por IA de Experiencia de Cliente
+  </div>
+
+</div>
+
+</div>
 </div>
 <script>
 function switchTab(name, btn) {
