@@ -23,295 +23,174 @@ body { font-family: system-ui, sans-serif; background: #f1f5f9; color: #1e293b; 
 .report-separator hr { flex: 1; border: none; border-top: 2px dashed #cbd5e1; }
 .report-separator span { background: #e2e8f0; color: #64748b; border-radius: 20px; padding: 4px 14px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; white-space: nowrap; }
 </style>
-<style></style>
-<style>#panel-ta * {
-margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+<style>#panel-google * {
+box-sizing: border-box; margin: 0; padding: 0;
 }
-#panel-ta {
-font-family: system-ui, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            line-height: 1.6;
+#panel-google {
+font-family: system-ui, sans-serif; background: #f8fafc; color: #1e293b;
 }
-#panel-ta .container {
-max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+#panel-google .container {
+max-width: 1000px; margin: auto; padding: 24px;
 }
-#panel-ta .header {
-text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+#panel-google header {
+background: linear-gradient(135deg, #1e3a5f, #2563eb); color: white; padding: 32px; border-radius: 12px; margin-bottom: 24px;
 }
-#panel-ta .header h1 {
-font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+#panel-google header h1 {
+font-size: 1.8rem; font-weight: 700; margin-bottom: 8px;
 }
-#panel-ta .header-info {
-display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
+#panel-google header p {
+opacity: 0.85; font-size: 0.95rem;
 }
-#panel-ta .dashboard {
-display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+#panel-google .header-meta {
+display: flex; gap: 24px; margin-top: 16px; flex-wrap: wrap;
 }
-#panel-ta .card {
-background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
+#panel-google .header-meta span {
+background: rgba(255,255,255,0.15); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem;
 }
-#panel-ta .card:hover {
-transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+#panel-google .section-title {
+font-size: 1.2rem; font-weight: 700; color: #1e293b; margin: 28px 0 14px; border-left: 4px solid #2563eb; padding-left: 12px;
 }
-#panel-ta .card-title {
-font-size: 0.9rem;
-            color: #64748b;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            letter-spacing: 0.5px;
+#panel-google .dashboard-cards {
+display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;
 }
-#panel-ta .metric-value {
-font-size: 2rem;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 0.5rem;
+#panel-google .dash-card {
+background: white; border-radius: 10px; padding: 20px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); text-align: center;
 }
-#panel-ta .metric-subtitle {
-font-size: 0.85rem;
-            color: #94a3b8;
+#panel-google .dash-card .label {
+font-size: 0.78rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px;
 }
-#panel-ta .status-green {
-color: #22c55e;
+#panel-google .dash-card .value {
+font-size: 1.5rem; font-weight: 700;
 }
-#panel-ta .status-yellow {
-color: #f59e0b;
+#panel-google .dash-card .sub {
+font-size: 0.82rem; color: #64748b; margin-top: 4px;
 }
-#panel-ta .status-red {
-color: #ef4444;
+#panel-google .dash-card.best .value {
+color: #16a34a;
 }
-#panel-ta .chart-container {
-background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 3rem;
+#panel-google .dash-card.worst .value {
+color: #dc2626;
 }
-#panel-ta .chart-title {
-font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: #1e293b;
+#panel-google .dash-card.avg .value {
+color: #2563eb;
 }
-#panel-ta .restaurant-section {
-background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 2rem;
-            border-left: 4px solid #667eea;
+#panel-google .chart-box {
+background: white; border-radius: 10px; padding: 24px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); margin-bottom: 24px;
 }
-#panel-ta .restaurant-header {
-display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1.5rem;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 1rem;
+#panel-google .restaurant-card {
+background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); margin-bottom: 20px;
 }
-#panel-ta .restaurant-title {
-font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e293b;
+#panel-google .restaurant-header {
+display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;
 }
-#panel-ta .restaurant-meta {
-font-size: 0.9rem;
-            color: #64748b;
-            margin-top: 0.25rem;
+#panel-google .restaurant-name {
+font-size: 1.15rem; font-weight: 700; color: #1e293b;
 }
-#panel-ta .rating-badge {
-display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
+#panel-google .restaurant-city {
+font-size: 0.82rem; color: #64748b; margin-top: 2px;
 }
-#panel-ta .stars {
-color: #f59e0b;
+#panel-google .rating-badge {
+background: #1e3a5f; color: white; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem;
 }
-#panel-ta .stats-grid {
-display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
+#panel-google .stars {
+color: #f59e0b; font-size: 1rem;
 }
-#panel-ta .stat-item {
-background: #f1f5f9;
-            padding: 1rem;
-            border-radius: 6px;
-            text-align: center;
+#panel-google .total-reviews {
+font-size: 0.8rem; color: #64748b; margin-top: 6px;
 }
-#panel-ta .stat-label {
-font-size: 0.8rem;
-            color: #64748b;
-            text-transform: uppercase;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
+#panel-google .reviews-section {
+margin-top: 14px;
 }
-#panel-ta .stat-value {
-font-size: 1.5rem;
-            font-weight: 700;
-            color: #1e293b;
+#panel-google .reviews-title {
+font-size: 0.85rem; font-weight: 600; color: #374151; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em;
 }
-#panel-ta .comments-section {
-margin-top: 2rem;
+#panel-google .review-item {
+border-radius: 8px; padding: 12px 14px; margin-bottom: 8px;
 }
-#panel-ta .comments-title {
-font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #1e293b;
+#panel-google .review-item.positive {
+background: #dcfce7; border-left: 3px solid #22c55e;
 }
-#panel-ta .comment {
-padding: 1rem;
-            margin-bottom: 0.75rem;
-            border-radius: 6px;
-            border-left: 3px solid;
-            font-size: 0.9rem;
+#panel-google .review-item.negative {
+background: #fee2e2; border-left: 3px solid #ef4444;
 }
-#panel-ta .comment-positive {
-background: #dcfce7;
-            border-left-color: #22c55e;
+#panel-google .review-text {
+font-size: 0.88rem; color: #374151; line-height: 1.5;
 }
-#panel-ta .comment-negative {
-background: #fee2e2;
-            border-left-color: #ef4444;
+#panel-google .review-meta {
+font-size: 0.75rem; color: #6b7280; margin-top: 6px;
 }
-#panel-ta .comment-text {
-margin: 0.5rem 0;
-            font-style: italic;
-            color: #374151;
+#panel-google .review-meta span {
+margin-right: 10px;
 }
-#panel-ta .comment-meta {
-font-size: 0.8rem;
-            color: #64748b;
-            margin-top: 0.5rem;
+#panel-google table {
+width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 6px rgba(0,0,0,0.08);
 }
-#panel-ta .comment-owner-response {
-margin-top: 0.75rem;
-            padding-top: 0.75rem;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            font-size: 0.85rem;
-            color: #475569;
-            font-weight: 500;
+#panel-google th {
+background: #1e3a5f; color: white; padding: 12px 14px; text-align: left; font-size: 0.85rem;
 }
-#panel-ta table {
-width: 100%;
-            border-collapse: collapse;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            margin-bottom: 2rem;
+#panel-google td {
+padding: 11px 14px; font-size: 0.85rem; border-bottom: 1px solid #f1f5f9;
 }
-#panel-ta th {
-background: #667eea;
-            color: white;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-            font-size: 0.9rem;
+#panel-google tr:last-child td {
+border-bottom: none;
 }
-#panel-ta td {
-padding: 0.75rem 1rem;
-            border-bottom: 1px solid #e2e8f0;
-}
-#panel-ta tr:hover {
+#panel-google tr:nth-child(even) td {
 background: #f8fafc;
 }
-#panel-ta .alert-section {
-background: #fee2e2;
-            border-left: 4px solid #ef4444;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
+#panel-google .status-badge {
+padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 600;
 }
-#panel-ta .alert-title {
-font-size: 1.2rem;
-            font-weight: 700;
-            color: #dc2626;
-            margin-bottom: 1rem;
+#panel-google .status-green {
+background: #dcfce7; color: #15803d;
 }
-#panel-ta .alert-item {
-background: white;
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-            border-radius: 6px;
-            border-left: 3px solid #ef4444;
+#panel-google .status-yellow {
+background: #fef9c3; color: #854d0e;
 }
-#panel-ta .recommendations-section {
-background: #dbeafe;
-            border-left: 4px solid #3b82f6;
-            padding: 1.5rem;
-            border-radius: 8px;
+#panel-google .status-red {
+background: #fee2e2; color: #991b1b;
 }
-#panel-ta .rec-title {
-font-size: 1.2rem;
-            font-weight: 700;
-            color: #1e40af;
-            margin-bottom: 1rem;
+#panel-google .alert-box {
+background: #fee2e2; border: 1px solid #fca5a5; border-radius: 10px; padding: 20px; margin-bottom: 16px;
 }
-#panel-ta .rec-item {
-background: white;
-            padding: 1rem;
-            margin-bottom: 0.75rem;
-            border-radius: 6px;
-            border-left: 3px solid #3b82f6;
+#panel-google .alert-box h3 {
+color: #991b1b; font-size: 1rem; margin-bottom: 8px;
 }
-#panel-ta .rec-restaurant {
-font-weight: 600;
-            color: #1e40af;
-            margin-bottom: 0.25rem;
+#panel-google .alert-box p {
+font-size: 0.87rem; color: #7f1d1d;
 }
-#panel-ta .rec-action {
-color: #1e293b;
-            margin-top: 0.25rem;
+#panel-google .no-alert {
+background: #dcfce7; border: 1px solid #86efac; border-radius: 10px; padding: 16px; color: #166534; font-weight: 600;
+}
+#panel-google .rec-box {
+background: white; border-radius: 10px; padding: 20px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); margin-bottom: 12px; border-left: 4px solid #2563eb;
+}
+#panel-google .rec-box h4 {
+font-size: 0.95rem; font-weight: 700; color: #1e40af; margin-bottom: 6px;
+}
+#panel-google .rec-box p {
+font-size: 0.87rem; color: #374151; line-height: 1.5;
+}
+#panel-google .rec-box.maintain {
+border-left-color: #22c55e;
+}
+#panel-google .rec-box.maintain h4 {
+color: #15803d;
 }
 @media (max-width: 600px) {
-#panel-ta .container {
-padding: 1rem;
-}
-#panel-ta .header h1 {
-font-size: 1.5rem;
-}
-#panel-ta .dashboard {
+#panel-google .dashboard-cards {
 grid-template-columns: 1fr;
 }
-#panel-ta .restaurant-header {
+#panel-google .restaurant-header {
 flex-direction: column;
-                gap: 0.5rem;
 }
-#panel-ta table {
-font-size: 0.85rem;
+#panel-google .header-meta {
+flex-direction: column; gap: 8px;
 }
-#panel-ta th, #panel-ta td {
-padding: 0.5rem;
+#panel-google th, #panel-google td {
+padding: 8px; font-size: 0.78rem;
 }
 }</style>
+<style></style>
 <style></style>
 </head>
 <body>
@@ -328,531 +207,597 @@ padding: 0.5rem;
   <button class="tab-btn" onclick="switchTab('ot', this)">🍽️ OpenTable</button>
   <button class="tab-btn" onclick="switchTab('ambos', this)">📋 Vista Completa</button>
 </div>
-<div id="tab-google" class="tab-panel active"><div id="panel-google"><p style="color:#94a3b8;padding:20px;">Sin datos Google</p></div></div>
-<div id="tab-ta"     class="tab-panel"><div id="panel-ta"><div class="container">
-        <div class="header">
-            <h1>📊 Reporte TripAdvisor</h1>
-            <h2 style="font-size: 1.3rem; margin-top: 0.5rem;">Grupo Andersons</h2>
-            <div class="header-info">
-                <div><strong>Fecha del reporte:</strong> 11 de Abril, 2026</div>
-                <div><strong>Total restaurantes:</strong> 2</div>
-                <div><strong>Total reseñas analizadas:</strong> 80</div>
-            </div>
-        </div>
+<div id="tab-google" class="tab-panel active"><div id="panel-google"><div class="container">
 
-        <div class="dashboard">
-            <div class="card">
-                <div class="card-title">🏆 Mejor Restaurante</div>
-                <div class="metric-value status-green">Harry's Cancún</div>
-                <div class="metric-subtitle">Rating: 4.88/5 (40 reseñas)</div>
-            </div>
-            <div class="card">
-                <div class="card-title">⚠️ Peor Restaurante</div>
-                <div class="metric-value status-red">Porfirio's Canún</div>
-                <div class="metric-subtitle">Rating: 4.55/5 (40 reseñas)</div>
-            </div>
-            <div class="card">
-                <div class="card-title">📈 Promedio Global</div>
-                <div class="metric-value status-green">4.72/5</div>
-                <div class="metric-subtitle">★★★★☆ Excelente desempeño</div>
-            </div>
-        </div>
+  <!-- HEADER -->
+  <header>
+    <h1>📊 Reporte Google — Grupo Andersons</h1>
+    <p>Análisis de reseñas reales de Google para los restaurantes del grupo</p>
+    <div class="header-meta">
+      <span>📅 Fecha del reporte: 13 de abril de 2026</span>
+      <span>🏪 Total restaurantes: 2</span>
+      <span>💬 Total reseñas analizadas: 100</span>
+    </div>
+  </header>
 
-        <div class="chart-container">
-            <div class="chart-title">Comparativa de Ratings por Restaurante</div>
-            <canvas id="comparisonChart" height="80"></canvas>
-        </div>
+  <!-- DASHBOARD GENERAL -->
+  <div class="section-title">📈 Dashboard General</div>
+  <div class="dashboard-cards">
+    <div class="dash-card best">
+      <div class="label">🏆 Mejor Restaurante</div>
+      <div class="value">Harry's Steakhouse</div>
+      <div class="sub">Rating: ⭐ 4.9 | Cancún</div>
+    </div>
+    <div class="dash-card worst">
+      <div class="label">⚠️ Restaurante con Rating Menor</div>
+      <div class="value">Porfirio's Cancún</div>
+      <div class="sub">Rating: ⭐ 4.6 | Cancún</div>
+    </div>
+    <div class="dash-card avg">
+      <div class="label">📊 Promedio Global</div>
+      <div class="value">4.75</div>
+      <div class="sub">Promedio de los 2 restaurantes</div>
+    </div>
+  </div>
 
-        <div class="restaurant-section">
-            <div class="restaurant-header">
-                <div>
-                    <div class="restaurant-title">Harry's Cancún</div>
-                    <div class="restaurant-meta">📍 Cancún</div>
-                </div>
-                <div class="rating-badge status-green">
-                    <span class="stars">★★★★★</span>
-                    <span>4.88</span>
-                </div>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-label">Total Reseñas</div>
-                    <div class="stat-value">40</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">🍽️ Comida</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">👥 Servicio</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">🏠 Ambiente</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-            </div>
-            <div class="comments-section">
-                <div class="comments-title">✅ Top 3 Comentarios Positivos</div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Lovely food welcoming and Sergio and pedro our waitress were friendly and welcoming"</div>
-                    <div class="comment-meta">👤 Usuario | 📅 11-04-2026</div>
-                </div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Jair and José were wonderful. Service snd food were excellent."</div>
-                    <div class="comment-meta">👤 Usuario | 📅 11-04-2026</div>
-                </div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Lively, great food and our service team of Jerry and Fernanda were the best!"</div>
-                    <div class="comment-meta">👤 Usuario | 📅 10-04-2026</div>
-                </div>
-            </div>
-            <div class="comments-section">
-                <div class="comments-title">⚠️ Top 3 Comentarios Negativos</div>
-                <div class="comment comment-negative">
-                    <strong>★★★★ 4/5</strong>
-                    <div class="comment-text">"Very good experience, only the meat looked very alone on such a large plate. Offer tortillas and a plate of beans to diners."</div>
-                    <div class="comment-meta">👤 Usuario | 📅 28-03-2026</div>
-                </div>
-            </div>
-        </div>
+  <div class="chart-box">
+    <canvas id="barChart" height="120"></canvas>
+  </div>
 
-        <div class="restaurant-section">
-            <div class="restaurant-header">
-                <div>
-                    <div class="restaurant-title">Porfirio's Canún</div>
-                    <div class="restaurant-meta">📍 Cancún</div>
-                </div>
-                <div class="rating-badge status-green">
-                    <span class="stars">★★★★☆</span>
-                    <span>4.55</span>
-                </div>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-label">Total Reseñas</div>
-                    <div class="stat-value">40</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">🍽️ Comida</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">👥 Servicio</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">🏠 Ambiente</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-            </div>
-            <div class="comments-section">
-                <div class="comments-title">✅ Top 3 Comentarios Positivos</div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Excellent service par Kevin et nourriture hors pair. Bon rapport qualité prix!"</div>
-                    <div class="comment-meta">👤 Usuario | 📅 11-04-2026</div>
-                </div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Kevin était excellent, il nous a bien accompagné et il a pris le temps de nous expliquer les plats et nous recommandé les spécialités. L'ambiance était parfaite et la vue magnifique."</div>
-                    <div class="comment-meta">👤 Usuario | 📅 11-04-2026</div>
-                </div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Fui con mi esposo por nuestro aniversario, el lugar esta increíble, la comida y la atención. Muchas gracias a Kevin por recomendarnos los platillos y nuestro vino. Todo exquisito"</div>
-                    <div class="comment-meta">👤 Usuario | 📅 11-04-2026</div>
-                </div>
-            </div>
-            <div class="comments-section">
-                <div class="comments-title">⚠️ Top 3 Comentarios Negativos</div>
-                <div class="comment comment-negative">
-                    <strong>★☆☆☆☆ 1/5</strong>
-                    <div class="comment-text">"Where do I start? With reservations we were given an outside table (great) with water views that were stunning! However, the music is so L O U D that a normal conversation is impossible. Then, they start (twice during our 1.5 hour long dinner) sending around a band with members places unwanted hats on guests. We ordered two appetizers (only one arrived); one of us ordered wine and a cocktail. The cocktail arrived in a timely manner but the wine only arrived AFTER the appetizers and our second request. The steak for both of us were cooked to perfection! The sides NEVER arrived -- we ordered one baked potato and one order of mashed potatoes. Despite being assured that both would be sent out asap. Our dinner consisted of an appetizer and steak. We returned to the Kempinski across the street and ordered a full proper meal for 1/2 the price. The dinner bill was over $200. Tip not included nor given. When the \"manager\" came to our table at the end he expressed his apologies, ok fine, but wanted to know what they could do better in the future! I'm not interested in teaching him how to do his or his staff's job. Try to stay away from this place unless you want loud music, lousy service and a bill that is outrageous! There are better places to visit in Cancun. We especially enjoyed two dinners at the Puerto Madero Restaurant nearby."</div>
-                    <div class="comment-meta">👤 Usuario | 📅 10-04-2026</div>
-                </div>
-                <div class="comment comment-negative">
-                    <strong>★★★★ 4/5</strong>
-                    <div class="comment-text">"It is a beautiful place with great atmosphere and decoration. Mexican flavors are appropriate in terms of entrees and strong dishes. The only point is that they always put 4 tortillas for a table of 6 people and you have to be ordering often and when they arrive there is no longer a plate to use the tortillas.\nMaybe it's a recommended site"</div>
-                    <div class="comment-meta">👤 Usuario | 📅 04-04-2026</div>
-                </div>
-                <div class="comment comment-negative">
-                    <strong>★★★★ 4/5</strong>
-                    <div class="comment-text">"We had a great time there and the service was very attentive and enjoyable.  The food was good, probably a little overpriced but you're also paying for the atmosphere which was lively albeit quite loud.  Difficult to have a conversation but lots to observe.  At one point, they were beating drums and doing some Mayan based show which was entertaining."</div>
-                    <div class="comment-meta">👤 Usuario | 📅 04-04-2026</div>
-                </div>
-            </div>
-        </div>
+  <!-- SECCIÓN POR RESTAURANTE -->
+  <div class="section-title">🍽️ Detalle por Restaurante</div>
 
-        <div class="chart-container">
-            <div class="chart-title">Tabla Comparativa Detallada</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Restaurante</th>
-                        <th>Ciudad</th>
-                        <th>Rating</th>
-                        <th>Total Reseñas</th>
-                        <th>Comida</th>
-                        <th>Servicio</th>
-                        <th>Ambiente</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Harry's Cancún</strong></td>
-                        <td>Cancún</td>
-                        <td><span class="status-green">★★★★★ 4.88</span></td>
-                        <td>40</td>
-                        <td>N/D</td>
-                        <td>N/D</td>
-                        <td>N/D</td>
-                        <td><span class="status-green">✓ Excelente</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Porfirio's Canún</strong></td>
-                        <td>Cancún</td>
-                        <td><span class="status-green">★★★★☆ 4.55</span></td>
-                        <td>40</td>
-                        <td>N/D</td>
-                        <td>N/D</td>
-                        <td>N/D</td>
-                        <td><span class="status-yellow">⚠ Revisar</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="alert-section">
-            <div class="alert-title">🚨 Alertas Prioritarias</div>
-            <p style="margin-bottom: 1rem; color: #7f1d1d;">Sin alertas críticas detectadas. Todos los restaurantes mantienen ratings superiores a 3.5/5.</p>
-        </div>
-
-        <div class="recommendations-section">
-            <div class="rec-title">💡 Recomendaciones Estratégicas</div>
-            
-            <div class="rec-item">
-                <div class="rec-restaurant">📌 Porfirio's Canún (Acción Inmediata)</div>
-                <div class="rec-action"><strong>1. Control de Niveles de Ruido:</strong> Implementar sistema de monitoreo de decibeles en tiempo real y establec límites máximos durante servicios. Una reseña crítica menciona que "la música es tan FUERTE que una conversación normal es imposible".</div>
-            </div>
-            
-            <div class="rec-item">
-                <div class="rec-restaurant">📌 Porfirio's Canún (Acción Inmediata)</div>
-                <div class="rec-action"><strong>2. Entrega Consistente de Pedidos:</strong> Reforzar el control de calidad en cocina y coordinación con meseros. Fueron reportados: bebidas servidas fuera de tiempo, falta de acompañamientos (papas, puré) y retrasos en entregas. Implementar checklist de órdenes.</div>
-            </div>
-            
-            <div class="rec-item">
-                <div class="rec-restaurant">📌 Porfirio's Canún (Acción Inmediata)</div>
-                <div class="rec-action"><strong>3. Proporción de Porciones:</strong> Estandarizar cantidad de tortillas y acompañamientos por mesa. Se reporta insuficiencia de tortillas (4 para 6 comensales) y presentación de platos con espacios excesivos.</div>
-            </div>
-            
-            <div class="rec-item">
-                <div class="rec-restaurant">📌 Harry's Cancún (Mantenimiento de Excelencia)</div>
-                <div class="rec-action"><strong>1. Consolidación de Equipo de Servicio:</strong> Mantener y certificar regularmente a los staff top performers (Jerry, Sergio, Fernando, Javi, Santi). Crear programa de reconocimiento para garantizar retención de talento que genera 5★ ratings.</div>
-            </div>
-        </div>
+  <!-- RESTAURANTE 1: Porfirio's Cancún -->
+  <div class="restaurant-card">
+    <div class="restaurant-header">
+      <div>
+        <div class="restaurant-name">Porfirio's Cancún | Restaurante de comida mexicana</div>
+        <div class="restaurant-city">📍 Cancún, Quintana Roo</div>
+        <div class="stars">★★★★★</div>
+        <div class="total-reviews">50 reseñas analizadas | Rating Google: 4.6 ⭐ | Total reseñas en plataforma: 5,193</div>
+      </div>
+      <div class="rating-badge">4.6 ★</div>
     </div>
 
-    </div></div>
+    <div class="reviews-section">
+      <div class="reviews-title">✅ Comentarios Positivos Destacados</div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "An Absolute Must-Visit in Cancún: Five-Star Perfection! Porfirio's Cancún completely exceeded all expectations! From the moment we arrived until the last bite, the entire experience was nothing short of phenomenal. The Food & Presentation We ordered a wide assortment of appetizers, main courses, and desserts, and honestly, every single dish was top tier. The flavors were vibrant, elevated, and perfectly executed. But what really blew us away was the presentation—every plate was a brilliant work of art. The attention to detail, the creativity, and the flair made the meal feel like a true culinary event. The Staff & Atmosphere The service was just as amazing as the food. The entire team was incredibly attentive, welcoming, and genuinely passionate about ensuring we had a great time. A special shoutout to Jorge, who was absolutely fantastic! He recommended perfect drinks and brought such a warm, fun energy to the evening that truly elevated the whole experience. If you are looking for an unforgettable meal with world-class service, stunning presentation, and top-tier flavors, Porfirio's is the place to be. I cannot recommend it highly enough!"</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 hace 6 días</span>
+          <span>👤 Antonio Hall (Iammrhall)</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "Nayib gave us excellent service and made us feel right at home. The chalupas are a must try! Seriously some of the best bites of food on the planet. The atmosphere is fun and lively with live music and a staff that encourages a good time."</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 Hace 19 horas</span>
+          <span>👤 Kenny Ruffo</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "Wonderful experience! Live mariachi made for an amazing atmosphere, not sure if it was a celebration or something they do every time but it truly made the experience so fun! Live Dj played great music. The food &amp; drinks were the cherry on top honestly.. Nyiab (I believe this is how he spelled his name) was a lovely server, very pleasant &amp; took the time to explain the menu &amp; ensure we all were having a good time. My favorite was the truck they bring the tortas on &amp; the ice cream tasting / churro carts! Great views, even greater vibes."</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 Hace 3 semanas</span>
+          <span>👤 Samantha Dixon</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="reviews-title" style="margin-top:14px;">⚠️ Comentarios Negativos Destacados</div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ "Pretty good but quite expensive for what you get. Margaritas were good but two Double-Shot Don Julios set me back $61 USD!!! Not the most I've spent on booze but close! The Yellowfin Tostadas and the Ribeye tacos were extremely flavorful. However the service was a bit slow especially when I sat for 15 minutes with my menu closed waiting for someone to take my order. Portions seemed quite small compared to what I was used to. When my entre came out I was immediately disappointed that the tacos were so small. Water was extra because it was bottled. The atmosphere would have been nicer if they had just had the music a little lower. I was dining by myself but it definitely would have been hard to hold a conversation. The bill for one person was $120 after tip. Two margaritas, appetizer, entre, and water."</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 2</span>
+          <span>📅 hace 5 días</span>
+          <span>👤 Christian Lattimer</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ "En general estuvo excelente, solo tuvimos un par de detalles que quisiera compartir: - al finalizar la cena, dos acompañantes pidieron un té negro y uno de manzanilla; el de manzanilla era agua clara con una sola florecita flotando, y cuando le comentamos a la mesera, nos dijo que traería otro y no, no lo trajo; el té negro era una especie de ponche con trozos como de fruta (no identificamos cuál). - los postres tardaron mucho en llegar, y recalco mucho, quizá más de 10 minutos, y tomando en cuenta que ya están listos, el servicio no debería ser tan tardado. - el sabor de la comida fue muy bueno, a mí parecer la textura de los esquites podría ser un poquito más suave, porque se sentían duros, además de que la crema de elote estaba fría. El servicio fue muy bueno, realmente atentos, la vista espectacular y el ambiente y la música muy relajados."</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 4</span>
+          <span>📅 Hace 2 semanas</span>
+          <span>👤 Edi Miss</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ "Go right before sunset! So beautiful! The food is good, not amazing. You're really going for the atmosphere."</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 4</span>
+          <span>📅 hace un día</span>
+          <span>👤 Sophie</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESTAURANTE 2: Harry's Steakhouse -->
+  <div class="restaurant-card">
+    <div class="restaurant-header">
+      <div>
+        <div class="restaurant-name">Harry's Steakhouse &amp; Raw Bar | Cancun</div>
+        <div class="restaurant-city">📍 Cancún, Q.R.</div>
+        <div class="stars">★★★★★</div>
+        <div class="total-reviews">50 reseñas analizadas | Rating Google: 4.9 ⭐ | Total reseñas en plataforma: 8,954</div>
+      </div>
+      <div class="rating-badge">4.9 ★</div>
+    </div>
+
+    <div class="reviews-section">
+      <div class="reviews-title">✅ Comentarios Positivos Destacados</div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "From the moment we walked into Harry's in Cancun, we were treated like royalty. The staff didn't just greet us; they welcomed us with the kind of warmth and attention that makes you feel like the entire evening was designed around you. Once we stepped onto the deck overlooking the lagoon, the whole experience elevated even further. The scenery was stunning, soft lights reflecting off the water, a gentle breeze, and live music drifting through the air like the perfect soundtrack to an already unforgettable night. Then came the food, each dish was its own little masterpiece. The bread service alone set the tone: warm, golden rolls with just the right touch off salt. The wedge salad followed. It was crisp, cold, and generously dressed, with smoky bacon and bright tomatoes adding all the right contrasts. The dry-aged steak was the star of the table, cooked perfectly with that deep, rich flavor only dry-aging can create. The roasted peppers and silky sauce on the side made every bite feel intentional. The octopus was another standout, tender, beautifully charred, and plated with a vibrant puree that balanced the dish with a touch of sweetness. One of the best plates we had. The table got more entrees since there were 8 of us but didn't get pictures. Sea brass was another favorite. Even the lobster soup arrived with flair: a velvety bowl paired with a seafood-topped toast that brought texture and richness together in one elegant bite. The beef tartare with fries was classic and fresh, refined without losing its fun. Dessert turned into a full performance. The liquid-nitrogen ice cream came with swirling clouds of cold vapor, dramatic and delicious. The birthday cake arrived crowned with berries and a sparkling candle that lit up the whole table. And just when we thought the night couldn't get any more whimsical, out came the towering blue cotton candy, playful, over-the-top, and impossible not to smile at. Harry's doesn't just serve dinner. It creates an experience, one where the service, the scenery, the atmosphere, and the food all work together to make you feel celebrated. Our night felt luxurious, thoughtful, and truly unforgettable for my husband's 50th birthday! Well done Harry's!"</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 Hace una semana</span>
+          <span>👤 Holly</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "We had an amazing experience here! There are a lot of overrated, tourist-trap restaurants in Cancun and this is not one of them. Everything we ate was delicious, the food was all wonderful, amazing wine selection, great music, and gorgeous vibes. The service was absolutely impeccable. We came for our mom's birthday, a group of 6, and they took amazing care of us. The setting and the views are incredible as well. The price is high end, but worth every single penny. We will return the next time we are in Cancun!"</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 Hace una hora</span>
+          <span>👤 Andrew Smith</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "We visited Harry's Steak House last night and the experience was simply impeccable. The staff and service were outstanding, attentive, professional, and genuinely welcoming. The steak was absolutely incredible, top-quality. Every detail impressed us, from the fresh bread at the start to the complimentary cotton candy at the end, everything was divine. The atmosphere is sophisticated, elegant, and beautifully designed, making the whole experience even more special. Highly recommended. Definitely a place we'll be coming back to!"</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 Hace una semana</span>
+          <span>👤 Roseanne Farinha</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="reviews-title" style="margin-top:14px;">⚠️ Comentarios Negativos Destacados</div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ "Family of 5 and all 5 steaks were rare ! Asked for medium. No real excuse for a steak house . Took steaks back but meal was ruined, advice!!!! Give this place a miss . The restaurant looks the part but unfortunately the food didn't fit the bill . We waited for our last night and to celebrate a birthday dinner but we were so let down !"</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 2</span>
+          <span>📅 hace 6 días</span>
+          <span>👤 Pearse Lydon</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ (Reseña sin texto — calificación 2 estrellas)</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 2</span>
+          <span>📅 hace un día</span>
+          <span>👤 Elena Hernandez</span>
+          <span>Calificación detallada: Comida: 2, Servicio: 2, Ambiente: 2</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ (Reseña sin texto — calificación 2 estrellas)</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 2</span>
+          <span>📅 Hace una semana</span>
+          <span>👤 Andrik</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLA COMPARATIVA -->
+  <div class="section-title">📋 Tabla Comparativa</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Restaurante</th>
+        <th>Ciudad</th>
+        <th>Rating ⭐</th>
+        <th>Total Reseñas</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Harry's Steakhouse &amp; Raw Bar | Cancun</strong></td>
+        <td>Cancún</td>
+        <td>4.9</td>
+        <td>8,954</td>
+        <td><span class="status-badge status-green">Excelente</span></td>
+      </tr>
+      <tr>
+        <td><strong>Porfirio's Cancún | Restaurante de comida mexicana</strong></td>
+        <td>Cancún</td>
+        <td>4.6</td>
+        <td>5,193</td>
+        <td><span class="status-badge status-green">Muy Bueno</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ALERTAS PRIORITARIAS -->
+  <div class="section-title">🚨 Alertas Prioritarias</div>
+  <div class="no-alert">✅ Sin alertas críticas — Ningún restaurante tiene un rating_promedio inferior a 3.5. Ambos restaurantes se encuentran en rangos de desempeño satisfactorio a excelente.</div>
+
+  <br>
+  <p style="font-size:0.87rem; color:#374151; background:white; border-radius:10px; padding:16px; box-shadow:0 1px 6px rgba(0,0,0,0.08);">
+    <strong>Observaciones detectadas en comentarios negativos:</strong><br><br>
+    <strong>Porfirio's Cancún:</strong> Se detectaron quejas de servicio lento (espera de 15 minutos con menú cerrado sin ser atendido), porciones percibidas como pequeñas para el precio cobrado, bebidas con precios elevados ($61 USD por dos tragos), música demasiado alta que dificulta la conversación, platos con temperatura incorrecta (crema de elote fría), postres con demora superior a 10 minutos, y bebidas infusionadas (té de manzanilla) que no correspondían a lo esperado.<br><br>
+    <strong>Harry's Steakhouse &amp; Raw Bar:</strong> Se detectaron quejas de término incorrecto en filetes (5 bistecs pedidos al punto llegaron crudos/poco hechos), lo cual arruinó una cena de cumpleaños según el cliente. También se registraron dos reseñas de 2 estrellas sin texto que indican insatisfacción general.
+  </p>
+
+  <!-- RECOMENDACIONES -->
+  <div class="section-title">💡 Recomendaciones</div>
+
+  <div class="rec-box">
+    <h4>🔧 Acción 1 — Porfirio's Cancún: Mejorar tiempos de servicio y atención proactiva</h4>
+    <p>Los comentarios negativos señalan que los meseros tardan en tomar la orden y en servir los postres. Se recomienda implementar un protocolo de atención que establezca tiempos máximos de respuesta (ej. saludo y toma de orden en menos de 5 minutos, postres en no más de 7 minutos), y capacitar al personal para revisar activamente las mesas antes de que el cliente deba solicitar atención.</p>
+  </div>
+
+  <div class="rec-box">
+    <h4>🔧 Acción 2 — Porfirio's Cancún: Revisar percepción de relación precio-porción y música</h4>
+    <p>Clientes expresaron decepción con el tamaño de las porciones en relación al precio cobrado, y molestia por el volumen de la música. Se recomienda revisar el estándar de porciones en platos principales (especialmente tacos y entradas), así como establecer protocolos de control de volumen musical para que los comensales puedan conversar sin dificultad, especialmente en el horario de cena individual o en grupos pequeños.</p>
+  </div>
+
+  <div class="rec-box">
+    <h4>🔧 Acción 3 — Harry's Steakhouse: Reforzar control de punto de cocción en filetes</h4>
+    <p>La queja más grave detectada en Harry's es que una mesa completa (5 filetes) llegó con el término incorrecto (crudos en lugar de término medio), arruinando una cena de cumpleaños. Para un steakhouse de lujo, esto es inaceptable. Se recomienda implementar un protocolo de verificación de punto de cocción antes de que los platos salgan de cocina, y capacitar al staff de sala para confirmar el término deseado al momento de tomar la orden y antes de servir.</p>
+  </div>
+
+  <div class="rec-box maintain">
+    <h4>✅ Acción de Mantenimiento — Harry's Steakhouse (Rating 4.9): Sostener la cultura de servicio personalizado</h4>
+    <p>Harry's destaca consistentemente por el reconocimiento nominativo de su personal (Sergio, Fernanda, Jerry, Javier, Alfredo, Santiago, Antonio, Chalo, Samuel, Lázaro, entre otros). Esta práctica de personalización del servicio es un diferenciador clave que genera lealtad y recomendaciones positivas. Se recomienda mantener y formalizar este estándar de servicio con nombre, y continuar compartiendo las menciones positivas con el equipo para reforzar la motivación del personal.</p>
+  </div>
+
+</div>
+
+</div></div>
+<div id="tab-ta"     class="tab-panel"><div id="panel-ta"><p style="color:#94a3b8;padding:20px;">Sin datos TripAdvisor</p></div></div>
 <div id="tab-ot"     class="tab-panel"><div id="panel-ot"><p style="color:#94a3b8;padding:20px;">Sin datos OpenTable</p></div></div>
 <div id="tab-ambos"  class="tab-panel">
-  <div id="panel-google-2"><p style="color:#94a3b8;padding:20px;">Sin datos Google</p></div>
+  <div id="panel-google-2"><div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <h1>📊 Reporte Google — Grupo Andersons</h1>
+    <p>Análisis de reseñas reales de Google para los restaurantes del grupo</p>
+    <div class="header-meta">
+      <span>📅 Fecha del reporte: 13 de abril de 2026</span>
+      <span>🏪 Total restaurantes: 2</span>
+      <span>💬 Total reseñas analizadas: 100</span>
+    </div>
+  </header>
+
+  <!-- DASHBOARD GENERAL -->
+  <div class="section-title">📈 Dashboard General</div>
+  <div class="dashboard-cards">
+    <div class="dash-card best">
+      <div class="label">🏆 Mejor Restaurante</div>
+      <div class="value">Harry's Steakhouse</div>
+      <div class="sub">Rating: ⭐ 4.9 | Cancún</div>
+    </div>
+    <div class="dash-card worst">
+      <div class="label">⚠️ Restaurante con Rating Menor</div>
+      <div class="value">Porfirio's Cancún</div>
+      <div class="sub">Rating: ⭐ 4.6 | Cancún</div>
+    </div>
+    <div class="dash-card avg">
+      <div class="label">📊 Promedio Global</div>
+      <div class="value">4.75</div>
+      <div class="sub">Promedio de los 2 restaurantes</div>
+    </div>
+  </div>
+
+  <div class="chart-box">
+    <canvas id="barChart" height="120"></canvas>
+  </div>
+
+  <!-- SECCIÓN POR RESTAURANTE -->
+  <div class="section-title">🍽️ Detalle por Restaurante</div>
+
+  <!-- RESTAURANTE 1: Porfirio's Cancún -->
+  <div class="restaurant-card">
+    <div class="restaurant-header">
+      <div>
+        <div class="restaurant-name">Porfirio's Cancún | Restaurante de comida mexicana</div>
+        <div class="restaurant-city">📍 Cancún, Quintana Roo</div>
+        <div class="stars">★★★★★</div>
+        <div class="total-reviews">50 reseñas analizadas | Rating Google: 4.6 ⭐ | Total reseñas en plataforma: 5,193</div>
+      </div>
+      <div class="rating-badge">4.6 ★</div>
+    </div>
+
+    <div class="reviews-section">
+      <div class="reviews-title">✅ Comentarios Positivos Destacados</div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "An Absolute Must-Visit in Cancún: Five-Star Perfection! Porfirio's Cancún completely exceeded all expectations! From the moment we arrived until the last bite, the entire experience was nothing short of phenomenal. The Food & Presentation We ordered a wide assortment of appetizers, main courses, and desserts, and honestly, every single dish was top tier. The flavors were vibrant, elevated, and perfectly executed. But what really blew us away was the presentation—every plate was a brilliant work of art. The attention to detail, the creativity, and the flair made the meal feel like a true culinary event. The Staff & Atmosphere The service was just as amazing as the food. The entire team was incredibly attentive, welcoming, and genuinely passionate about ensuring we had a great time. A special shoutout to Jorge, who was absolutely fantastic! He recommended perfect drinks and brought such a warm, fun energy to the evening that truly elevated the whole experience. If you are looking for an unforgettable meal with world-class service, stunning presentation, and top-tier flavors, Porfirio's is the place to be. I cannot recommend it highly enough!"</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 hace 6 días</span>
+          <span>👤 Antonio Hall (Iammrhall)</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "Nayib gave us excellent service and made us feel right at home. The chalupas are a must try! Seriously some of the best bites of food on the planet. The atmosphere is fun and lively with live music and a staff that encourages a good time."</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 Hace 19 horas</span>
+          <span>👤 Kenny Ruffo</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "Wonderful experience! Live mariachi made for an amazing atmosphere, not sure if it was a celebration or something they do every time but it truly made the experience so fun! Live Dj played great music. The food &amp; drinks were the cherry on top honestly.. Nyiab (I believe this is how he spelled his name) was a lovely server, very pleasant &amp; took the time to explain the menu &amp; ensure we all were having a good time. My favorite was the truck they bring the tortas on &amp; the ice cream tasting / churro carts! Great views, even greater vibes."</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 Hace 3 semanas</span>
+          <span>👤 Samantha Dixon</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="reviews-title" style="margin-top:14px;">⚠️ Comentarios Negativos Destacados</div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ "Pretty good but quite expensive for what you get. Margaritas were good but two Double-Shot Don Julios set me back $61 USD!!! Not the most I've spent on booze but close! The Yellowfin Tostadas and the Ribeye tacos were extremely flavorful. However the service was a bit slow especially when I sat for 15 minutes with my menu closed waiting for someone to take my order. Portions seemed quite small compared to what I was used to. When my entre came out I was immediately disappointed that the tacos were so small. Water was extra because it was bottled. The atmosphere would have been nicer if they had just had the music a little lower. I was dining by myself but it definitely would have been hard to hold a conversation. The bill for one person was $120 after tip. Two margaritas, appetizer, entre, and water."</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 2</span>
+          <span>📅 hace 5 días</span>
+          <span>👤 Christian Lattimer</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ "En general estuvo excelente, solo tuvimos un par de detalles que quisiera compartir: - al finalizar la cena, dos acompañantes pidieron un té negro y uno de manzanilla; el de manzanilla era agua clara con una sola florecita flotando, y cuando le comentamos a la mesera, nos dijo que traería otro y no, no lo trajo; el té negro era una especie de ponche con trozos como de fruta (no identificamos cuál). - los postres tardaron mucho en llegar, y recalco mucho, quizá más de 10 minutos, y tomando en cuenta que ya están listos, el servicio no debería ser tan tardado. - el sabor de la comida fue muy bueno, a mí parecer la textura de los esquites podría ser un poquito más suave, porque se sentían duros, además de que la crema de elote estaba fría. El servicio fue muy bueno, realmente atentos, la vista espectacular y el ambiente y la música muy relajados."</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 4</span>
+          <span>📅 Hace 2 semanas</span>
+          <span>👤 Edi Miss</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ "Go right before sunset! So beautiful! The food is good, not amazing. You're really going for the atmosphere."</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 4</span>
+          <span>📅 hace un día</span>
+          <span>👤 Sophie</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESTAURANTE 2: Harry's Steakhouse -->
+  <div class="restaurant-card">
+    <div class="restaurant-header">
+      <div>
+        <div class="restaurant-name">Harry's Steakhouse &amp; Raw Bar | Cancun</div>
+        <div class="restaurant-city">📍 Cancún, Q.R.</div>
+        <div class="stars">★★★★★</div>
+        <div class="total-reviews">50 reseñas analizadas | Rating Google: 4.9 ⭐ | Total reseñas en plataforma: 8,954</div>
+      </div>
+      <div class="rating-badge">4.9 ★</div>
+    </div>
+
+    <div class="reviews-section">
+      <div class="reviews-title">✅ Comentarios Positivos Destacados</div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "From the moment we walked into Harry's in Cancun, we were treated like royalty. The staff didn't just greet us; they welcomed us with the kind of warmth and attention that makes you feel like the entire evening was designed around you. Once we stepped onto the deck overlooking the lagoon, the whole experience elevated even further. The scenery was stunning, soft lights reflecting off the water, a gentle breeze, and live music drifting through the air like the perfect soundtrack to an already unforgettable night. Then came the food, each dish was its own little masterpiece. The bread service alone set the tone: warm, golden rolls with just the right touch off salt. The wedge salad followed. It was crisp, cold, and generously dressed, with smoky bacon and bright tomatoes adding all the right contrasts. The dry-aged steak was the star of the table, cooked perfectly with that deep, rich flavor only dry-aging can create. The roasted peppers and silky sauce on the side made every bite feel intentional. The octopus was another standout, tender, beautifully charred, and plated with a vibrant puree that balanced the dish with a touch of sweetness. One of the best plates we had. The table got more entrees since there were 8 of us but didn't get pictures. Sea brass was another favorite. Even the lobster soup arrived with flair: a velvety bowl paired with a seafood-topped toast that brought texture and richness together in one elegant bite. The beef tartare with fries was classic and fresh, refined without losing its fun. Dessert turned into a full performance. The liquid-nitrogen ice cream came with swirling clouds of cold vapor, dramatic and delicious. The birthday cake arrived crowned with berries and a sparkling candle that lit up the whole table. And just when we thought the night couldn't get any more whimsical, out came the towering blue cotton candy, playful, over-the-top, and impossible not to smile at. Harry's doesn't just serve dinner. It creates an experience, one where the service, the scenery, the atmosphere, and the food all work together to make you feel celebrated. Our night felt luxurious, thoughtful, and truly unforgettable for my husband's 50th birthday! Well done Harry's!"</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 Hace una semana</span>
+          <span>👤 Holly</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "We had an amazing experience here! There are a lot of overrated, tourist-trap restaurants in Cancun and this is not one of them. Everything we ate was delicious, the food was all wonderful, amazing wine selection, great music, and gorgeous vibes. The service was absolutely impeccable. We came for our mom's birthday, a group of 6, and they took amazing care of us. The setting and the views are incredible as well. The price is high end, but worth every single penny. We will return the next time we are in Cancun!"</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 Hace una hora</span>
+          <span>👤 Andrew Smith</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item positive">
+        <div class="review-text">✅ "We visited Harry's Steak House last night and the experience was simply impeccable. The staff and service were outstanding, attentive, professional, and genuinely welcoming. The steak was absolutely incredible, top-quality. Every detail impressed us, from the fresh bread at the start to the complimentary cotton candy at the end, everything was divine. The atmosphere is sophisticated, elegant, and beautifully designed, making the whole experience even more special. Highly recommended. Definitely a place we'll be coming back to!"</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 5</span>
+          <span>📅 Hace una semana</span>
+          <span>👤 Roseanne Farinha</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="reviews-title" style="margin-top:14px;">⚠️ Comentarios Negativos Destacados</div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ "Family of 5 and all 5 steaks were rare ! Asked for medium. No real excuse for a steak house . Took steaks back but meal was ruined, advice!!!! Give this place a miss . The restaurant looks the part but unfortunately the food didn't fit the bill . We waited for our last night and to celebrate a birthday dinner but we were so let down !"</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 2</span>
+          <span>📅 hace 6 días</span>
+          <span>👤 Pearse Lydon</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ (Reseña sin texto — calificación 2 estrellas)</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 2</span>
+          <span>📅 hace un día</span>
+          <span>👤 Elena Hernandez</span>
+          <span>Calificación detallada: Comida: 2, Servicio: 2, Ambiente: 2</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+
+      <div class="review-item negative">
+        <div class="review-text">⚠️ (Reseña sin texto — calificación 2 estrellas)</div>
+        <div class="review-meta">
+          <span>⭐ Rating: 2</span>
+          <span>📅 Hace una semana</span>
+          <span>👤 Andrik</span>
+          <span>🌐 Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TABLA COMPARATIVA -->
+  <div class="section-title">📋 Tabla Comparativa</div>
+  <table>
+    <thead>
+      <tr>
+        <th>Restaurante</th>
+        <th>Ciudad</th>
+        <th>Rating ⭐</th>
+        <th>Total Reseñas</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Harry's Steakhouse &amp; Raw Bar | Cancun</strong></td>
+        <td>Cancún</td>
+        <td>4.9</td>
+        <td>8,954</td>
+        <td><span class="status-badge status-green">Excelente</span></td>
+      </tr>
+      <tr>
+        <td><strong>Porfirio's Cancún | Restaurante de comida mexicana</strong></td>
+        <td>Cancún</td>
+        <td>4.6</td>
+        <td>5,193</td>
+        <td><span class="status-badge status-green">Muy Bueno</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ALERTAS PRIORITARIAS -->
+  <div class="section-title">🚨 Alertas Prioritarias</div>
+  <div class="no-alert">✅ Sin alertas críticas — Ningún restaurante tiene un rating_promedio inferior a 3.5. Ambos restaurantes se encuentran en rangos de desempeño satisfactorio a excelente.</div>
+
+  <br>
+  <p style="font-size:0.87rem; color:#374151; background:white; border-radius:10px; padding:16px; box-shadow:0 1px 6px rgba(0,0,0,0.08);">
+    <strong>Observaciones detectadas en comentarios negativos:</strong><br><br>
+    <strong>Porfirio's Cancún:</strong> Se detectaron quejas de servicio lento (espera de 15 minutos con menú cerrado sin ser atendido), porciones percibidas como pequeñas para el precio cobrado, bebidas con precios elevados ($61 USD por dos tragos), música demasiado alta que dificulta la conversación, platos con temperatura incorrecta (crema de elote fría), postres con demora superior a 10 minutos, y bebidas infusionadas (té de manzanilla) que no correspondían a lo esperado.<br><br>
+    <strong>Harry's Steakhouse &amp; Raw Bar:</strong> Se detectaron quejas de término incorrecto en filetes (5 bistecs pedidos al punto llegaron crudos/poco hechos), lo cual arruinó una cena de cumpleaños según el cliente. También se registraron dos reseñas de 2 estrellas sin texto que indican insatisfacción general.
+  </p>
+
+  <!-- RECOMENDACIONES -->
+  <div class="section-title">💡 Recomendaciones</div>
+
+  <div class="rec-box">
+    <h4>🔧 Acción 1 — Porfirio's Cancún: Mejorar tiempos de servicio y atención proactiva</h4>
+    <p>Los comentarios negativos señalan que los meseros tardan en tomar la orden y en servir los postres. Se recomienda implementar un protocolo de atención que establezca tiempos máximos de respuesta (ej. saludo y toma de orden en menos de 5 minutos, postres en no más de 7 minutos), y capacitar al personal para revisar activamente las mesas antes de que el cliente deba solicitar atención.</p>
+  </div>
+
+  <div class="rec-box">
+    <h4>🔧 Acción 2 — Porfirio's Cancún: Revisar percepción de relación precio-porción y música</h4>
+    <p>Clientes expresaron decepción con el tamaño de las porciones en relación al precio cobrado, y molestia por el volumen de la música. Se recomienda revisar el estándar de porciones en platos principales (especialmente tacos y entradas), así como establecer protocolos de control de volumen musical para que los comensales puedan conversar sin dificultad, especialmente en el horario de cena individual o en grupos pequeños.</p>
+  </div>
+
+  <div class="rec-box">
+    <h4>🔧 Acción 3 — Harry's Steakhouse: Reforzar control de punto de cocción en filetes</h4>
+    <p>La queja más grave detectada en Harry's es que una mesa completa (5 filetes) llegó con el término incorrecto (crudos en lugar de término medio), arruinando una cena de cumpleaños. Para un steakhouse de lujo, esto es inaceptable. Se recomienda implementar un protocolo de verificación de punto de cocción antes de que los platos salgan de cocina, y capacitar al staff de sala para confirmar el término deseado al momento de tomar la orden y antes de servir.</p>
+  </div>
+
+  <div class="rec-box maintain">
+    <h4>✅ Acción de Mantenimiento — Harry's Steakhouse (Rating 4.9): Sostener la cultura de servicio personalizado</h4>
+    <p>Harry's destaca consistentemente por el reconocimiento nominativo de su personal (Sergio, Fernanda, Jerry, Javier, Alfredo, Santiago, Antonio, Chalo, Samuel, Lázaro, entre otros). Esta práctica de personalización del servicio es un diferenciador clave que genera lealtad y recomendaciones positivas. Se recomienda mantener y formalizar este estándar de servicio con nombre, y continuar compartiendo las menciones positivas con el equipo para reforzar la motivación del personal.</p>
+  </div>
+
+</div>
+
+</div>
   <div class="report-separator"><hr/><span>✈️ TripAdvisor</span><hr/></div>
-  <div id="panel-ta-2"><div class="container">
-        <div class="header">
-            <h1>📊 Reporte TripAdvisor</h1>
-            <h2 style="font-size: 1.3rem; margin-top: 0.5rem;">Grupo Andersons</h2>
-            <div class="header-info">
-                <div><strong>Fecha del reporte:</strong> 11 de Abril, 2026</div>
-                <div><strong>Total restaurantes:</strong> 2</div>
-                <div><strong>Total reseñas analizadas:</strong> 80</div>
-            </div>
-        </div>
-
-        <div class="dashboard">
-            <div class="card">
-                <div class="card-title">🏆 Mejor Restaurante</div>
-                <div class="metric-value status-green">Harry's Cancún</div>
-                <div class="metric-subtitle">Rating: 4.88/5 (40 reseñas)</div>
-            </div>
-            <div class="card">
-                <div class="card-title">⚠️ Peor Restaurante</div>
-                <div class="metric-value status-red">Porfirio's Canún</div>
-                <div class="metric-subtitle">Rating: 4.55/5 (40 reseñas)</div>
-            </div>
-            <div class="card">
-                <div class="card-title">📈 Promedio Global</div>
-                <div class="metric-value status-green">4.72/5</div>
-                <div class="metric-subtitle">★★★★☆ Excelente desempeño</div>
-            </div>
-        </div>
-
-        <div class="chart-container">
-            <div class="chart-title">Comparativa de Ratings por Restaurante</div>
-            <canvas id="comparisonChart" height="80"></canvas>
-        </div>
-
-        <div class="restaurant-section">
-            <div class="restaurant-header">
-                <div>
-                    <div class="restaurant-title">Harry's Cancún</div>
-                    <div class="restaurant-meta">📍 Cancún</div>
-                </div>
-                <div class="rating-badge status-green">
-                    <span class="stars">★★★★★</span>
-                    <span>4.88</span>
-                </div>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-label">Total Reseñas</div>
-                    <div class="stat-value">40</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">🍽️ Comida</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">👥 Servicio</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">🏠 Ambiente</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-            </div>
-            <div class="comments-section">
-                <div class="comments-title">✅ Top 3 Comentarios Positivos</div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Lovely food welcoming and Sergio and pedro our waitress were friendly and welcoming"</div>
-                    <div class="comment-meta">👤 Usuario | 📅 11-04-2026</div>
-                </div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Jair and José were wonderful. Service snd food were excellent."</div>
-                    <div class="comment-meta">👤 Usuario | 📅 11-04-2026</div>
-                </div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Lively, great food and our service team of Jerry and Fernanda were the best!"</div>
-                    <div class="comment-meta">👤 Usuario | 📅 10-04-2026</div>
-                </div>
-            </div>
-            <div class="comments-section">
-                <div class="comments-title">⚠️ Top 3 Comentarios Negativos</div>
-                <div class="comment comment-negative">
-                    <strong>★★★★ 4/5</strong>
-                    <div class="comment-text">"Very good experience, only the meat looked very alone on such a large plate. Offer tortillas and a plate of beans to diners."</div>
-                    <div class="comment-meta">👤 Usuario | 📅 28-03-2026</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="restaurant-section">
-            <div class="restaurant-header">
-                <div>
-                    <div class="restaurant-title">Porfirio's Canún</div>
-                    <div class="restaurant-meta">📍 Cancún</div>
-                </div>
-                <div class="rating-badge status-green">
-                    <span class="stars">★★★★☆</span>
-                    <span>4.55</span>
-                </div>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-label">Total Reseñas</div>
-                    <div class="stat-value">40</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">🍽️ Comida</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">👥 Servicio</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-label">🏠 Ambiente</div>
-                    <div class="stat-value">N/D</div>
-                </div>
-            </div>
-            <div class="comments-section">
-                <div class="comments-title">✅ Top 3 Comentarios Positivos</div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Excellent service par Kevin et nourriture hors pair. Bon rapport qualité prix!"</div>
-                    <div class="comment-meta">👤 Usuario | 📅 11-04-2026</div>
-                </div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Kevin était excellent, il nous a bien accompagné et il a pris le temps de nous expliquer les plats et nous recommandé les spécialités. L'ambiance était parfaite et la vue magnifique."</div>
-                    <div class="comment-meta">👤 Usuario | 📅 11-04-2026</div>
-                </div>
-                <div class="comment comment-positive">
-                    <strong>★★★★★ 5/5</strong>
-                    <div class="comment-text">"Fui con mi esposo por nuestro aniversario, el lugar esta increíble, la comida y la atención. Muchas gracias a Kevin por recomendarnos los platillos y nuestro vino. Todo exquisito"</div>
-                    <div class="comment-meta">👤 Usuario | 📅 11-04-2026</div>
-                </div>
-            </div>
-            <div class="comments-section">
-                <div class="comments-title">⚠️ Top 3 Comentarios Negativos</div>
-                <div class="comment comment-negative">
-                    <strong>★☆☆☆☆ 1/5</strong>
-                    <div class="comment-text">"Where do I start? With reservations we were given an outside table (great) with water views that were stunning! However, the music is so L O U D that a normal conversation is impossible. Then, they start (twice during our 1.5 hour long dinner) sending around a band with members places unwanted hats on guests. We ordered two appetizers (only one arrived); one of us ordered wine and a cocktail. The cocktail arrived in a timely manner but the wine only arrived AFTER the appetizers and our second request. The steak for both of us were cooked to perfection! The sides NEVER arrived -- we ordered one baked potato and one order of mashed potatoes. Despite being assured that both would be sent out asap. Our dinner consisted of an appetizer and steak. We returned to the Kempinski across the street and ordered a full proper meal for 1/2 the price. The dinner bill was over $200. Tip not included nor given. When the \"manager\" came to our table at the end he expressed his apologies, ok fine, but wanted to know what they could do better in the future! I'm not interested in teaching him how to do his or his staff's job. Try to stay away from this place unless you want loud music, lousy service and a bill that is outrageous! There are better places to visit in Cancun. We especially enjoyed two dinners at the Puerto Madero Restaurant nearby."</div>
-                    <div class="comment-meta">👤 Usuario | 📅 10-04-2026</div>
-                </div>
-                <div class="comment comment-negative">
-                    <strong>★★★★ 4/5</strong>
-                    <div class="comment-text">"It is a beautiful place with great atmosphere and decoration. Mexican flavors are appropriate in terms of entrees and strong dishes. The only point is that they always put 4 tortillas for a table of 6 people and you have to be ordering often and when they arrive there is no longer a plate to use the tortillas.\nMaybe it's a recommended site"</div>
-                    <div class="comment-meta">👤 Usuario | 📅 04-04-2026</div>
-                </div>
-                <div class="comment comment-negative">
-                    <strong>★★★★ 4/5</strong>
-                    <div class="comment-text">"We had a great time there and the service was very attentive and enjoyable.  The food was good, probably a little overpriced but you're also paying for the atmosphere which was lively albeit quite loud.  Difficult to have a conversation but lots to observe.  At one point, they were beating drums and doing some Mayan based show which was entertaining."</div>
-                    <div class="comment-meta">👤 Usuario | 📅 04-04-2026</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="chart-container">
-            <div class="chart-title">Tabla Comparativa Detallada</div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Restaurante</th>
-                        <th>Ciudad</th>
-                        <th>Rating</th>
-                        <th>Total Reseñas</th>
-                        <th>Comida</th>
-                        <th>Servicio</th>
-                        <th>Ambiente</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Harry's Cancún</strong></td>
-                        <td>Cancún</td>
-                        <td><span class="status-green">★★★★★ 4.88</span></td>
-                        <td>40</td>
-                        <td>N/D</td>
-                        <td>N/D</td>
-                        <td>N/D</td>
-                        <td><span class="status-green">✓ Excelente</span></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Porfirio's Canún</strong></td>
-                        <td>Cancún</td>
-                        <td><span class="status-green">★★★★☆ 4.55</span></td>
-                        <td>40</td>
-                        <td>N/D</td>
-                        <td>N/D</td>
-                        <td>N/D</td>
-                        <td><span class="status-yellow">⚠ Revisar</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="alert-section">
-            <div class="alert-title">🚨 Alertas Prioritarias</div>
-            <p style="margin-bottom: 1rem; color: #7f1d1d;">Sin alertas críticas detectadas. Todos los restaurantes mantienen ratings superiores a 3.5/5.</p>
-        </div>
-
-        <div class="recommendations-section">
-            <div class="rec-title">💡 Recomendaciones Estratégicas</div>
-            
-            <div class="rec-item">
-                <div class="rec-restaurant">📌 Porfirio's Canún (Acción Inmediata)</div>
-                <div class="rec-action"><strong>1. Control de Niveles de Ruido:</strong> Implementar sistema de monitoreo de decibeles en tiempo real y establec límites máximos durante servicios. Una reseña crítica menciona que "la música es tan FUERTE que una conversación normal es imposible".</div>
-            </div>
-            
-            <div class="rec-item">
-                <div class="rec-restaurant">📌 Porfirio's Canún (Acción Inmediata)</div>
-                <div class="rec-action"><strong>2. Entrega Consistente de Pedidos:</strong> Reforzar el control de calidad en cocina y coordinación con meseros. Fueron reportados: bebidas servidas fuera de tiempo, falta de acompañamientos (papas, puré) y retrasos en entregas. Implementar checklist de órdenes.</div>
-            </div>
-            
-            <div class="rec-item">
-                <div class="rec-restaurant">📌 Porfirio's Canún (Acción Inmediata)</div>
-                <div class="rec-action"><strong>3. Proporción de Porciones:</strong> Estandarizar cantidad de tortillas y acompañamientos por mesa. Se reporta insuficiencia de tortillas (4 para 6 comensales) y presentación de platos con espacios excesivos.</div>
-            </div>
-            
-            <div class="rec-item">
-                <div class="rec-restaurant">📌 Harry's Cancún (Mantenimiento de Excelencia)</div>
-                <div class="rec-action"><strong>1. Consolidación de Equipo de Servicio:</strong> Mantener y certificar regularmente a los staff top performers (Jerry, Sergio, Fernando, Javi, Santi). Crear programa de reconocimiento para garantizar retención de talento que genera 5★ ratings.</div>
-            </div>
-        </div>
-    </div>
-
-    </div>
+  <div id="panel-ta-2"><p style="color:#94a3b8;padding:20px;">Sin datos TripAdvisor</p></div>
   <div class="report-separator"><hr/><span>🍽️ OpenTable</span><hr/></div>
   <div id="panel-ot-2"><p style="color:#94a3b8;padding:20px;">Sin datos OpenTable</p></div>
 </div>
 <script>
 (function(){
-const ctx = document.getElementById('comparisonChart').getContext('2d');
-        const chart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Harry\'s Cancún', 'Porfirio\'s Canún'],
-                datasets: [{
-                    label: 'Rating Promedio',
-                    data: [4.88, 4.55],
-                    backgroundColor: ['#22c55e', '#f59e0b'],
-                    borderRadius: 8,
-                    borderSkipped: false,
-                    borderColor: ['#16a34a', '#d97706'],
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: true,
-                plugins: {
-                    legend: {
-                        display: true,
-                        labels: {
-                            font: { size: 12, weight: '600' },
-                            color: '#1e293b',
-                            padding: 20
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        max: 5,
-                        ticks: {
-                            font: { size: 12 },
-                            color: '#64748b',
-                            callback: function(value) {
-                                return value.toFixed(1);
-                            }
-                        },
-                        grid: {
-                            color: '#e2e8f0',
-                            drawBorder: false
-                        }
-                    },
-                    y: {
-                        ticks: {
-                            font: { size: 12, weight: '600' },
-                            color: '#1e293b'
-                        },
-                        grid: {
-                            display: false
-                        }
-                    }
-                }
-            }
-        });
+const ctx = document.getElementById('barChart').getContext('2d');
+  const ratings = [4.9, 4.6];
+  const colors = ratings.map(r => r >= 4 ? '#22c55e' : r >= 3 ? '#f59e0b' : '#ef4444');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ["Harry's Steakhouse & Raw Bar | Cancun", "Porfirio's Cancún | Restaurante de comida mexicana"],
+      datasets: [{
+        label: 'Rating Promedio (Google)',
+        data: ratings,
+        backgroundColor: colors,
+        borderRadius: 6,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Comparativa de Rating Promedio por Restaurante',
+          font: { size: 14, weight: 'bold' },
+          color: '#1e293b',
+          padding: { bottom: 16 }
+        },
+        tooltip: {
+          callbacks: {
+            label: function(ctx) { return ' Rating: ' + ctx.parsed.y + ' ★'; }
+          }
+        }
+      },
+      scales: {
+        y: {
+          min: 0,
+          max: 5,
+          ticks: { stepSize: 1 },
+          grid: { color: '#f1f5f9' }
+        },
+        x: {
+          ticks: {
+            maxRotation: 15,
+            font: { size: 11 }
+          },
+          grid: { display: false }
+        }
+      }
+    }
+  });
 })();
 </script>
 <script>
